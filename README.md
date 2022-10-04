@@ -43,7 +43,7 @@ source ~/.bashrc
 or reopen the terminal.
 ## Launching the MRAC controller
 ## Setup of the BlueFox3 camera driver
-
+In order to see camera pictures as a rostopic a driver needs to be installed first. Go to the website of [MatrixVision](https://www.matrix-vision.com/en/downloads/driver-software/mvbluefox3-usb-3-0/linux-2-6-4-x-x).
 ## Debugging
 ## ROS packages of the repository
 ### franka-aic
