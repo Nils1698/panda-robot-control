@@ -42,7 +42,8 @@ source ~/.bashrc
 ```
 or reopen the terminal.
 ## Launching the MRAC controller
-## Setup of the camera driver
+## Setup of the BlueFox3 camera driver
+
 ## Debugging
 ## ROS packages of the repository
 ### franka-aic
