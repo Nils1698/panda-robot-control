@@ -15,7 +15,7 @@ This repository is made in order to simplify the setup of the Emika Frank Robot 
 ## Cloneing of the repository
 ## Build a new catkin workspace
 If the old worspace does not work is lost or the user wants to build a new workspace please follow this guide.
-There is also a guide provided by wiki.ros.org which can be found here [here](https://wiki.ros.org/catkin/Tutorials/create_a_workspace).
+There is also a guide provided by wiki.ros.org which can be found [here](https://wiki.ros.org/catkin/Tutorials/create_a_workspace).
 
 This tutorial assumes that you have installed catkin and sourced your environment. If you installed catkin via apt-get for ROS noetic, your command would look like this:
 ```
@@ -27,6 +27,15 @@ $ mkdir -p ~/catkin_ws/src
 $ cd ~/catkin_ws/
 $ catkin_make
 ```
+Then make sure to source the file "catkin_ws/devel/setup.bash" inside of the bashrc file. In order to do so, write the following to open the .bashrc file and add the line "" in the end of it.
+```
+$ gedit ~/.bashrc
+```
+Make sure to save the file before closing it. The write: 
+```
+source ~/.bashrc
+```
+or reopen the terminal.
 ## Launching the MRAC controller
 ## Setup of the camera driver
 ## Debugging
