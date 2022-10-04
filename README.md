@@ -87,6 +87,19 @@ gc_info -l
 ```
 You should be able to see something like this:
 ![gc_info Output example](images/gc_infoOutput.png)
+
+If you do not see the camera try to use a different USB slot, source the .bashrc file, or visit the links listed above. Otherwise, good job, we are nearly done!
+
+We can now run a script to stream some rostopics. In a terminal run `roscore`. While the roscore terminal stays open, run in a new terminal:
+```
+rosrun rc_genicam_camera rc_genicam_camera _device:={DeviceID}
+```
+Make sure to replace {DeviceID} with the actual device ID from the step above. 
+You could now see that topics like "image_raw" are being published. Check with `rostopic list` in a new terminal. If you would like to visualize the data you can run:
+```
+rosrun rqt_image_view rqt_image_view
+```
+Make sure to select the correct topic in the top right of the screen. The image might be quiet dark. Reason is, that in the moment no calibration file is used when running the camera node.
 ## Debugging
 ## ROS packages of the repository
 ### franka-aic
