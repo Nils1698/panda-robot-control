@@ -56,7 +56,7 @@ You can now start importing ros_packages inside the "src" folder. Generally, it 
 ## Setup of the BlueFox3 camera driver
 In order to see camera pictures as a rostopic a driver needs to be installed first. You can follow the instructions of this readme or follow the instructions given on [this](https://www.matrix-vision.com/manuals/mvBlueFOX3/UseCases_section_working_with_ROS.html) website. 
 
-Firstly, go to the website of [MatrixVision](https://www.matrix-vision.com/en/downloads/drivers-software/mvbluefox3-usb-3-0/linux-2-6-4-x-x) and download both files. Then, inside of your terminal move to the download folder and give the installation program execution permissions:
+Firstly, go to the website of [MatrixVision](https://www.matrix-vision.com/en/downloads/drivers-software/mvbluefox3-usb-3-0/linux-2-6-4-x-x) and download both files. Then, inside of your terminal move to the Downloads folder and give the installation program execution permissions:
 ```
 chmod +x install_mvGenTL_Acquire.sh
 ```
