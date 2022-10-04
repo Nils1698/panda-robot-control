@@ -86,7 +86,7 @@ It is possible now to check if the camera is visible to the computer. Make sure 
 gc_info -l
 ```
 You should be able to see something like this:
- 	![alt text](image/gc_infoOutput.png)
+![gc_info Output example](images/gc_infoOutput.png)
 ## Debugging
 ## ROS packages of the repository
 ### franka-aic
