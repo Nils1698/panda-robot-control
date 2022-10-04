@@ -43,7 +43,50 @@ source ~/.bashrc
 or reopen the terminal.
 ## Launching the MRAC controller
 ## Setup of the BlueFox3 camera driver
-In order to see camera pictures as a rostopic a driver needs to be installed first. Go to the website of [MatrixVision](https://www.matrix-vision.com/en/downloads/driver-software/mvbluefox3-usb-3-0/linux-2-6-4-x-x).
+In order to see camera pictures as a rostopic a driver needs to be installed first. You can follow the instructions of this readme or follow the instructions given on [this](https://www.matrix-vision.com/manuals/mvBlueFOX3/UseCases_section_working_with_ROS.html) website. 
+
+Firstly, go to the website of [MatrixVision](https://www.matrix-vision.com/en/downloads/drivers-software/mvbluefox3-usb-3-0/linux-2-6-4-x-x) and download both files. Then, inside of your terminal move to the download folder and give the installation program execution permissions:
+```
+chmod +x install_mvGenTL_Acquire.sh
+```
+Then execute it:
+```
+./install_mvGenTL_Acquire.sh
+```
+Afterwards, the terminal will lead you through the installation process. This takes a few minutes.
+Once the installation is complete, the mvAcquire driver package needs to be installed. Follow the below instructions or have a look at [this](https://www.matrix-vision.com/manuals/SDK_CPP/InstallationFromPrivateSetupRoutines.html#InstallationFromPrivateSetupRouinesLinux) link for more information. 
+
+Navigate into the folder "opt" in the root directory. In there create a folder:
+```
+sudo mkdir genicam
+```
+Make sure that the folder path is as follows "/opt/genicam". Now, the second file needs to be extracted into the newly build genicam folder:
+```
+sudo tar xzvf ~/Downloads/mv_mvGenTL_Acquire-x86_64_ABI2-2.47.0.tgz -C /opt/genicam
+```
+The above command assumes that the downloaded file has not been moved and is still inside of the downloads folder. The name of the file might be slightly different depending on the newest released driver. Change the name accordingly in that case.
+
+Now, open the bashrc file with `gedit ~/.bashrc` and add the following lines in the end of the file:
+```
+export GENICAM_ROOT_V3_3=/opt/genicam
+#if the next line shall work, $HOME/tmp must exist, which it does not by default, thus you might want to create it OR use the global 'tmp' folder
+#export GENICAM_CACHE_V3_3=$HOME/tmp
+export GENICAM_CACHE_V3_3=/tmp
+export GENICAM_LOG_CONFIG_V3_3=$GENICAM_ROOT_V3_3/log/config-unix/DebugLogging.properties
+```
+Finally, you can install the required ROS packages:
+```
+sudo apt-get install ros-noetic-rc-genicam-api
+sudo apt-get install ros-noetic-rc-genicam-camera
+```
+[Here](http://wiki.ros.org/rc_genicam_api) is also a help site for the rc-genicam-package package.
+
+It is possible now to check if the camera is visible to the computer. Make sure that the USB cable is attached to the computer and then run:
+```
+gc_info -l
+```
+You should be able to see something like this:
+ 	![alt text](image/gc_infoOutput.png)
 ## Debugging
 ## ROS packages of the repository
 ### franka-aic
