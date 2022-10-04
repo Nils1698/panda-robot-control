@@ -44,3 +44,6 @@ or reopen the terminal.
 ## Launching the MRAC controller
 ## Setup of the camera driver
 ## Debugging
+## ROS packages of the repository
+### franka-aic
+This package has been made by Christian Kampp Kruse in 2022 and modified by Nils Meile. It mainly includes an MRAC controller and AIC controller which can be launched using the launch files. For more detailed information concerning the project Christians's Master thesis can be found here XXXTODOXXX.
