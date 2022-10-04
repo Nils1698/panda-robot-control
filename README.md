@@ -13,14 +13,23 @@ This repository is made in order to simplify the setup of the Emika Frank Robot 
 ## Robot User Handbook
 ## Start up procedure
 ## Set up of the repository
+This section gives you an introduction on how to clone the git repository into the catkin workspace of your choice.
+
+First make sure that you have git installed and have a secure connection to your Github account. [Here](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/GitHub-SSH-Key-Setup-Config-Ubuntu-Linux) you can find how to setup a ssh connection to your Github account on Ubuntu.
+
+Now move to the location where you want to clone the git repository/catkin workspace then run:
+```
+git clone git@github.com:Nils1698/panda-robot-control.git
+```
+
 ### Required ROS packages for the robot
 There are 2 ROS packages needed, namely `libfranka` and `franka-ros` in order to run the controllers designed by other students. Have a look at [this](https://frankaemika.github.io/docs/installation_linux.html) website for installations instructions or write the following command in the terminal:
 ```
 sudo apt install ros-noetic-libfranka ros-noetic-franka-ros
 ```
 ## Build a new catkin workspace
-If the old worspace does not work is lost or the user wants to build a new workspace please follow this guide.
-There is also a guide provided by wiki.ros.org which can be found [here](https://wiki.ros.org/catkin/Tutorials/create_a_workspace).
+If the old worspace does not work is lost or the user wants to build a new workspace please follow this guide. Just be aware that problems and errors might occur as packages might be missing.
+There is also a basic guide provided by wiki.ros.org which can be found [here](https://wiki.ros.org/catkin/Tutorials/create_a_workspace).
 
 This tutorial assumes that you have installed catkin and sourced your environment. If you installed catkin via apt-get for ROS noetic, your command would look like this:
 ```
@@ -41,6 +50,8 @@ Make sure to save the file before closing it. The write:
 source ~/.bashrc
 ```
 or reopen the terminal.
+
+You can now start importing ros_packages inside the "src" folder. Generally, it is recommended to insert them one by one and run catkin_make from the workspace in between. If errors occur make sure that you understand them correctly. You might need to install missing packages. Sometimes packages are actually not needed so you might want to comment out lines and try to build again. If you do that however, keep track of which lines you comment out as they might be important later on.
 ## Launching the MRAC controller
 ## Setup of the BlueFox3 camera driver
 In order to see camera pictures as a rostopic a driver needs to be installed first. You can follow the instructions of this readme or follow the instructions given on [this](https://www.matrix-vision.com/manuals/mvBlueFOX3/UseCases_section_working_with_ROS.html) website. 
