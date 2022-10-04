@@ -14,11 +14,10 @@ This repository is made in order to simplify the setup of the Emika Frank Robot 
 ## Start up procedure
 ## Set up of the repository
 ### Required ROS packages for the robot
-There are 2 ROS packages needed, namely `libfranka` and `franka-ros` in order to run the controllers designed by other students. Have a look at [this](https://frankaemika.github.io/docs/installation_linux.html) website for installations instructions or write the follwing command in the terminal:
+There are 2 ROS packages needed, namely `libfranka` and `franka-ros` in order to run the controllers designed by other students. Have a look at [this](https://frankaemika.github.io/docs/installation_linux.html) website for installations instructions or write the following command in the terminal:
 ```
 sudo apt install ros-noetic-libfranka ros-noetic-franka-ros
 ```
-
 ## Build a new catkin workspace
 If the old worspace does not work is lost or the user wants to build a new workspace please follow this guide.
 There is also a guide provided by wiki.ros.org which can be found [here](https://wiki.ros.org/catkin/Tutorials/create_a_workspace).
