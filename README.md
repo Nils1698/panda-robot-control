@@ -3,7 +3,7 @@ This repository is made in order to simplify the setup of the Emika Frank Robot 
 # Table of Contents
 1. [Robot User Handbook](#handbook)
 2. [Start up procedure](#startUp)
-3. [Cloneing of the repository](#repository)
+3. [Set up of the repository](#repository)
 4. [Create a catkin workspace](#catkinWorkspace)
 5. [Launching the MRAC controller](#mracLaunch)
 6. [Setup of the camera driver](#cameraDriver)
@@ -12,7 +12,13 @@ This repository is made in order to simplify the setup of the Emika Frank Robot 
 
 ## Robot User Handbook
 ## Start up procedure
-## Cloneing of the repository
+## Set up of the repository
+### Required ROS packages for the robot
+There are 2 ROS packages needed, namely `libfranka` and `franka-ros` in order to run the controllers designed by other students. Have a look at [this](https://frankaemika.github.io/docs/installation_linux.html) website for installations instructions or write the follwing command in the terminal:
+```
+sudo apt install ros-noetic-libfranka ros-noetic-franka-ros
+```
+
 ## Build a new catkin workspace
 If the old worspace does not work is lost or the user wants to build a new workspace please follow this guide.
 There is also a guide provided by wiki.ros.org which can be found [here](https://wiki.ros.org/catkin/Tutorials/create_a_workspace).
