@@ -11,7 +11,19 @@ This repository is made in order to simplify the setup of the Emika Frank Robot 
 
 
 ## Robot User Handbook
-## Start up procedure
+## Start up procedure for the Panda Robot Arm
+1. Ensure everything is connected properly
+2. Turn on the black controller box below the table of the robot arm
+3. Turn on the university computer and login
+4. Disengage the red-yellow Emergency Stop Button labeled as E-Stop button. The robot arm should now be blinking yellow indicating that it is during the start up procedure. If the robot is not blinking yellow it mostproperly does not have any power.
+5. Wait until the light begins to constantly blink yellow
+6. Open the browser and navigate to https://172.16.0.3/desk/
+7. On the website, navigate to 'Joints' on the right hand side and press the unlock button. Then, in the pop up window press 'open'. You will start hearing a clicking sound from the robot indicating that it is opening its joints. The light should now be white or blue.
+8. If the light is blue make sure to press down the black "Mode" button. This will change the Mode from Ready Mode to Free-Moves Mode. You can now press the two buttons on the side of the end effector (the two that are right across from each other) to move the robot arm freely. Make sure to press them only lightly as a strong pressing will stop the robot from moving (safety feature). Furthermore, do not move the arm too fast either.
+9. Make sure to orintate the robot in its default position (see picture) as extreme joint states makes it impossible to execute programs and send commands to the robot arm.
+10. Disengage the Mode Button by rotating clockwise. The light should now be blue.
+11. On the website, navigate to the menu and press "Activate FCI".
+12. You are now able to send commands and receive information of the robot over ROS.
 ## Set up of the repository
 This section gives you an introduction on how to clone the git repository into the catkin workspace of your choice.
 
@@ -114,4 +126,4 @@ Make sure to select the correct topic in the top right of the screen. The image 
 ## Debugging
 ## ROS packages of the repository
 ### franka-aic
-This package has been made by Christian Kampp Kruse in 2022 and modified by Nils Meile. It mainly includes an MRAC controller and AIC controller which can be launched using the launch files. For more detailed information concerning the project Christians's Master thesis can be found here XXXTODOXXX.
+This package has been made by Christian Kampp Kruse in 2022 and modified by Nils Meile. It mainly includes an MRAC controller and AIC controller which can be launched using the launch files. For more detailed information concerning the project Christians's Master thesis can be found [here](https://findit.dtu.dk/en/catalog/62fed4c8f4263013257cec89).
