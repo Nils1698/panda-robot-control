@@ -16,7 +16,7 @@ This repository is made in order to simplify the setup of the Emika Frank Robot 
 2. Turn on the black controller box below the table of the robot arm
 3. Turn on the university computer and log in
 4. Disengage the red-yellow Emergency Stop Button labeled as E-Stop button. The robot arm should now be blinking yellow indicating that it is during the start up procedure. If the robot is not blinking yellow it mostproperly does not have any power.
-![E-Stop Button](images/E-Stop_Button.jpeg)
+<img src="images/E-Stop_Button.jpeg" alt="E-Stop Button" width="200">
 5. Wait until the light begins to constantly blink yellow
 6. Open the browser and navigate to https://172.16.0.3/desk/
 7. On the website, navigate to 'Joints' on the right hand side and press the unlock button. Then, in the pop up window press 'open'. You will start hearing a clicking sound from the robot indicating that it is opening its joints. The light should now be white or blue.
