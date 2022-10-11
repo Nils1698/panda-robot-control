@@ -185,7 +185,7 @@ class Predictor {
         // ros::Duration dur();
         // Funciton to check if frequency is okay: "Rate-something"
         int time_since_prediction = 0;
-            // For Debugging
+        // For Debugging
         // xhat_pred   = F_star * xhat_pred.block(0,0,states,1);
         // buffer << xhat_pred << std::endl;
         // ROS_INFO("xhat_pred: \n%s",buffer.str().c_str());

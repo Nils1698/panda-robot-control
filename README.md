@@ -136,3 +136,4 @@ Make sure to select the correct topic in the top right of the screen. The image 
 ## ROS packages of the repository
 ### franka-aic
 This package has been made by Christian Kampp Kruse in 2022 and modified by Nils Meile. It mainly includes an MRAC controller and AIC controller which can be launched using the launch files. For more detailed information concerning the project Christians's Master thesis can be found [here](https://findit.dtu.dk/en/catalog/62fed4c8f4263013257cec89).
+![Illustration of the robot working](images/Christians-Controller-Working_Trim.gif)
