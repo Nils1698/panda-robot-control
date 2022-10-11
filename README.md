@@ -8,6 +8,7 @@ This repository is made in order to simplify the setup of the Emika Frank Robot 
 5. [Launching the MRAC controller](#mracLaunch)
 6. [Setup of the camera driver](#cameraDriver)
 7. [Debugging](#debugging)
+8. [ROS packages of the repository](#rosPackages)
 
 
 ## Robot User Handbook
