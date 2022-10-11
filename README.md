@@ -158,5 +158,5 @@ You should see RVIZ as well as a live stream of the camera pop up. You can now g
 
 Below is an illustration of the AIC controller running.
 
-<img src="images/AIC_sideview.gif" alt="AIC controller running side" width="200">
-<img src="images/AIC_topview.gif" alt="AIC controller running top" width="200">
+<img src="images/AIC_sideview.gif" alt="AIC controller running side" width="300">
+<img src="images/AIC_topview.gif" alt="AIC controller running top" width="300">
