@@ -134,6 +134,21 @@ rosrun rqt_image_view rqt_image_view
 Make sure to select the correct topic in the top right of the screen. The image might be quiet dark. Reason is, that in the moment no calibration file is used when running the camera node.
 ## Debugging
 ## ROS packages of the repository
-### franka-aic
-This package has been made by Christian Kampp Kruse in 2022 and modified by Nils Meile. It mainly includes an MRAC controller and AIC controller which can be launched using the launch files. For more detailed information concerning the project Christians's Master thesis can be found [here](https://findit.dtu.dk/en/catalog/62fed4c8f4263013257cec89).
+### apriltag_ros, franka-aic, non_realtime_launcher, object_detector, paic, planner, predictor
+These packages have been made or used by Christian Kampp Kruse  for his Master Thesis in 2022 and partially modified by Nils Meile. They mainly include an MRAC controller, an AIC controller, AprilTag detector, and Kalman filter which can be launched using 2 launch files. For more detailed information, Christians's Master thesis can be found [here](https://findit.dtu.dk/en/catalog/62fed4c8f4263013257cec89).
+#### Usage
+In order to get started make sure that ros as well as the packages are correctly installed (there are no errors when running `catkin_make` inside panda_ws), the robot has been started already (FCI is turned on and the lights are blue) and there is enough space around the robot as well as no April Tag is visible for the camera. Running this program also assumes that the old set up (see Christians Master Thesis is still existent). Start by opening a terminal on the university computer and run:
+```
+roscore
+```
+Then, open another terminal and run:
+```
+roslaunch franka_aic MRAC_controller.launch
+```
+The robot should move slightly but should hover on a fixed position awaiting for commands. Turn off the controller if the robot keeps moving. Then, open another terminal and run:
+```
+roslaunch non_realtime_launcher object_detect_select_predict.launch
+```
+You should see RVIZ as well as a live stream of the camera pop up. You can now go closer to the robot (do not move into a range where the robot arm can hit you) and start holding a AprilTag with the number 1 inside of the field of view of the camera (see gif below). You need to hold the AprilTag at least 0.5m above the table as there is no limit defined for the robot and it might hit the table if you go too low. Furthermore, the programm is not exact and there is a slight offset between the End-Effector and AprilTag. Therefore, be cautious where you are holding the Tag to!
+
 ![Illustration of the robot working](images/Christians-Controller-Working_Trim.gif)
