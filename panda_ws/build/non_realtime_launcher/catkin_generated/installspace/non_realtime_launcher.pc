@@ -1,0 +1,8 @@
+prefix=/home/neurorobotic_student/panda_ws/install
+
+Name: non_realtime_launcher
+Description: Description of non_realtime_launcher
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lnon_realtime_launcher
+Requires: roscpp rospy std_msgs

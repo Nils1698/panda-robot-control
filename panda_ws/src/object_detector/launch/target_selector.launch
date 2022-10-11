@@ -1,0 +1,12 @@
+<launch>
+	<!-- <arg name="debug" default="true"/>
+	<arg name="bag_save"		default="false"/>
+	<arg name="bag_play"		default="false"/> -->
+
+	<!-- <arg name="target_tag"		default="7"/> -->
+	<!-- <machine name="laptop"  address="172.18.0.77" ros-root="$(env ROS_HOSTNAME)" ros-package-path="$(env ROS_PACKAGE_PATH)" default="true" /> -->
+	<!-- <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/> -->
+
+	<!-- <remap from="/target_pose_meas" to="/ns_targets/target_pose_meas" /> -->
+  <node name="my_target_selector" pkg="object_detector" type="target_selector" output="log"/>
+</launch>

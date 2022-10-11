@@ -1,0 +1,41 @@
+<launch>
+    <!-- Arguments to object_detector -->
+	<arg name="debug" default="true"/>
+	<arg name="bag_save"		default="false"/>
+	<arg name="bag_play"		default="false"/>
+
+    <!-- <arg name="target_tag"		default="4"/> -->
+    <!-- Arguments to target_selector -->
+    <!-- Arguments to predictor       -->
+
+	<!-- Launch file for the AprilTag Detection	-->
+    
+        <include file="$(find object_detector)/launch/rc_genicam.launch" /> 										<!-- launch the camera 						-->
+        <include file="$(find object_detector)/launch/apriltag_continuous_detection.launch" /> 	<!-- launch the apriltag detector -->
+        
+        <!-- Debugging and display of detections -->
+        <group if="$(arg debug)">
+            <node type="rviz" name="rviz" pkg="rviz" args="-d $(find object_detector)/config/rviz_custom.rviz" />				<!-- launch the dispalyer of the poses of the detected apriltags -->
+            <node pkg="rqt_image_view" type="rqt_image_view" name="image_view_tag_detections" args="/tag_detections_image"/>	<!-- launch the dispalyer of the video of the detected apriltags -->
+        </group>
+
+    <!-- Launch files for the target selector -->
+        <node name="my_target_selector" pkg="object_detector" type="target_selector" output="log"/>
+
+    <!-- Launch files for TF transformer -->
+    	<remap from="/target_detection_camera" to="/target_pose_meas_cov_stamped" />
+        <!-- Launch target pose tf cam to panda -->
+        <node name="target_pose_tf_cam_to_panda" pkg="object_detector" type="pose_tf_cam_to_panda" output="screen"/>
+    
+    <!-- Launch files for the predictor of the targeted AprilTag -->
+        <!-- Remap predictor subscriber -->
+        <remap from="/target_pose_measurement_stamped" to="/target_pose_meas_cov_stamped_panda_link0" /> 	
+        <!-- Launch predictor node -->
+        <node pkg="predictor" type="predictor3d" name="kalman_predictor_3d" output="screen"/>
+        <!-- Remap prediction handler publisher -->
+        <remap from="/target_pose_cov_stamped_panda_link0" to="/desktop/target_pose_cov_stmp_panda_link0" /> 	
+        <!-- Launch target selector node -->
+        <node pkg="nils_master_pkg" type="prediction_handler_or_path_planner" name="target_position_selector" output="screen" />
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="-0.0725 -0.155 1.566 0.707 0.707 0.0 0.0 camera panda_link0" />
+</launch>

@@ -1,0 +1,6 @@
+<launch>
+	<node pkg="predictor" type="predictor2d" name="kalman_predictor_2d" output="screen"/>
+	<!-- <node pkg="rosbag"   	type="record"		 name="rosbag_record_prediction_ref" 
+		args="record -O subset /target_pose_measurement /predicted_poses" /> -->
+		<!-- rosbag record -O subset /target_pose_measurement /predicted_poses -->
+</launch>

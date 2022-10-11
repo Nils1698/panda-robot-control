@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/neurorobotic_student/panda_ws/install/setup.sh

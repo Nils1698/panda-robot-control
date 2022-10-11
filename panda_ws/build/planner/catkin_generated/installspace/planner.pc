@@ -1,0 +1,8 @@
+prefix=/home/neurorobotic_student/panda_ws/install
+
+Name: planner
+Description: Description of planner
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lplanner
+Requires: geometry_msgs image_transport roscpp rospy sensor_msgs std_msgs tf2 tf2_ros

@@ -1,0 +1,2 @@
+% test_init_matlab_franka_emika_panda_robot
+robot = init_matlab_franka_emika_panda_robot()

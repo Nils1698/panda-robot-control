@@ -1,0 +1,8 @@
+prefix=/home/neurorobotic_student/panda_ws/devel
+
+Name: paic
+Description: Description of paic
+Version: 0.0.0
+Cflags: -I/home/neurorobotic_student/panda_ws/src/paic/include
+Libs: -L${prefix}/lib -lpaic
+Requires: roscpp

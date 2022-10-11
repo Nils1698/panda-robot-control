@@ -1,0 +1,50 @@
+<launch>
+<!-- Arguments to object_detector -->
+	<arg name="debug" default="true"/>
+	<arg name="bag_save"		default="false"/>
+	<arg name="bag_play"		default="false"/>
+
+<!-- <arg name="target_tag"		default="4"/> -->
+<!-- Arguments to target_selector -->
+<!-- Arguments to predictor       -->
+
+	<include file="$(find object_detector)/launch/object_detector.launch" /> 		<!-- AprilTag Detection	-->
+	
+  <include file="$(find object_detector)/launch/target_selector.launch" /> 			<!-- A detected Apriltag is chosen and its PoseWithCovarianceStamped i published -->
+  <include file="$(find object_detector)/launch/pose_tf_cam_to_panda.launch" /> 	<!-- A detected Apriltag is chosen and its PoseWithCovarianceStamped i published -->
+  <include file="$(find predictor)/launch/predictor3d.launch" /> 			<!-- A predictor of the target AprilTag is calculated and its predicted trajectory is published -->
+
+
+
+
+
+<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="0.266 0.149 1.546 qx qy qz qw camera panda_link0" /> -->
+<!-- Et godt udgangspunkt: især ift z-displacement -->
+<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="-0.266 0.149 1.546 -0.082 0.997 0 0 camera panda_link0" /> -->
+
+<!-- Tuning of position displacement. I'll take care of orientation afterwards. -->
+<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="-0.1225 -0.215 1.546 0 0 0 1 camera panda_link0" /> -->
+<!-- The position seems to be alright now. Now it's time to fix the orientation, fml. (start out with the guess from the first version) -->
+<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="-0.1225 -0.215 1.546 -0.082 0.997 0 0 camera panda_link0" /> -->
+<!-- Test to see if this quaternion is good enough -->
+<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="-0.0725 -0.155 1.546 0.707 0.707 0.0 0.0 camera panda_link0" /> -->
+<node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="-0.0725 -0.155 1.566 0.707 0.707 0.0 0.0 camera panda_link0" />
+
+
+
+	<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="0.13836 	0.27938 1.2900 	 -0.6674 	0.7443 	-0.0147 	0.0157 		camera 				tag_6_temp" /> -->
+	<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="link2_broadcaster" args="0 				0 			0 				0 			0 			 1 				0 				tag_6_temp 		panda_EE_temp" /> -->
+	<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="link3_broadcaster" args="-0.1911 -0.49202 0.249546 	0.66401 0.74750 -0.00566 -0.016926 	panda_EE_temp panda_link0 " /> -->
+
+
+<!-- Using positions -->
+	<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="0.2358 	0.00915 1.0017 		-0.6968 0.7168 		-0.0019 	0.0187 		camera 				tag_6_temp" />
+	<node pkg="tf2_ros" type="static_transform_publisher" name="link2_broadcaster" args="0 				0 			0 				0 			0 			 	0 				1 				tag_6_temp 		panda_EE_temp" />
+	<node pkg="tf2_ros" type="static_transform_publisher" name="link3_broadcaster" args="0.34046 -0.18598 -0.536926 0.00689 -0.013105 0.70517 	0.70887 	panda_EE_temp panda_link0 " /> -->
+
+<!-- Using Relative Positions -->
+	<!-- <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="0.23587 0.009115 1.0017 -0.69698 0.7168 -0.0019 0.0187 camera tag_6_temp" /> -->
+
+
+
+</launch>

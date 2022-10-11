@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="robot_ip" default="172.16.0.3"/>
+  <arg name="trajectory_method" default="1" />
+  <arg name="load_gripper" default="false" />
+  <include file="$(find franka_control)/launch/franka_control.launch" >
+    <arg name="robot_ip" value="$(arg robot_ip)" />
+    <arg name="load_gripper" value="$(arg load_gripper)" />
+  </include>
+
+
+  <!-- https://bitbucket.org/traclabs/trac_ik/src/master/trac_ik_examples/launch/pr2_arm.launch -->
+  <!-- jeg ved ikke hvad "-""-"inorder gør -->
+  <!-- <param name="robot_description" command="$(find xacro)/xacro '$(find mypackage)/path/to/robot.xacro'" /> -->
+  <!--   <param name="/xacro_param"      command="$(find xacro)/xacro '$(find franka_description)/robots/panda_arm.xacro'" /> -->
+  <!--   <param name="/urdf_xacro_param" command="$(find xacro)/xacro '$(find franka_description)/robots/panda_arm.urdf.xacro'" /> -->
+  <!--   <param name="/that_one_parameter_name" command="$(find xacro)/xacro '$(find franka_aic)/urdf/panda_arm.urdf.xacro'" /> -->
+  <!-- <remap from="/hiro_panda/goto_pose" to="/ns_targets/target_pose_meas"/> -->
+
+  
+
+
+  <param name="/hiro_panda/trajectory_method" type="int" value="$(arg trajectory_method)" />
+  <rosparam file="$(find franka_aic)/config/franka_aic.yaml" command="load" />
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"  args="AIC_controller"/>
+  <!-- Display current robot configuration in rviz: -->
+  <!-- <node pkg="rviz" type="rviz" output="screen" name="rviz" args="-d $(find franka_aic)/launch/robot.rviz"/> -->
+<!--   <node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" required="false" /> -->
+<!--   <node pkg="rosbag" type="record" args="-o /home/neurorobotic_student/ckk_ws/rosbags/aic/ -->
+<!--     /joint_states -->
+<!--     " name="record"/> -->
+
+</launch>

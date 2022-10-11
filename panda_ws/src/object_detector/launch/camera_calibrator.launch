@@ -1,0 +1,6 @@
+<launch>
+  <node name="camera_calibration_node" pkg="camera_calibration" type="cameracalibrator.py"/>
+  <!-- size="9x6" square="0.02365" image="/camera/image_raw" camera="/camera" -->
+	<!-- <node name="my_rc_genicam_camera_node" pkg="rc_genicam_camera" type="rc_genicam_camera" args="_device:=$(arg device) _config_file:=$(arg config_file)" ns="camera"/> -->
+
+</launch>

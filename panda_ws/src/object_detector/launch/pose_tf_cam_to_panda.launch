@@ -1,0 +1,19 @@
+<launch>
+	<!-- <arg name="debug" default="true"/>
+	<arg name="bag_save"		default="false"/>
+	<arg name="bag_play"		default="false"/> -->
+
+	<!-- <arg name="target_tag"		default="7"/> -->
+	<!-- <machine name="laptop"  address="172.18.0.77" ros-root="$(env ROS_HOSTNAME)" ros-package-path="$(env ROS_PACKAGE_PATH)" default="true" /> -->
+	<!-- <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/> -->
+<!-- Change the topic subscribed to: -->
+	<remap from="/target_detection_camera" to="/target_pose_meas_cov_stamped" />
+
+<!-- SPECIAL CASE: Change the topic published to: -->
+<!-- This is only done because I can't figure out why why I canøt remap the topics launched by the AIC_controller.cpp file -->
+<!-- It's very likely because AIC_controller.cpp isn't the "important" file, but rather that the file it's inhereting from is the important one -->
+<!-- This must be investigated further as a future work. -->
+<!-- I did some investigating, it's the /franka_control node that does all the publishing and subscribing to stuff. So that's the node that has to be remaped. -->
+	<!-- <remap from="/target_pose_meas_cov_stamped_panda_link0" to="/desktop/target_pose_cov_stmp_panda_link0" /> -->
+  <node name="target_pose_tf_cam_to_panda" pkg="object_detector" type="pose_tf_cam_to_panda" output="screen"/>
+</launch>

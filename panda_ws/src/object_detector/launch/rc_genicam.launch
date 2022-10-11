@@ -1,0 +1,10 @@
+<launch>
+	<arg name="device" 			default="VID164C_PID5533_FF001107"/>
+	<arg name="frame_id"    default="camera"/>
+	<arg name="config_file" default="/home/neurorobotic_student/panda_ws/src/object_detector/config/rc_genicam_config.config"/>
+	<arg name="calib_file"  default="/home/neurorobotic_student/panda_ws/src/object_detector/config/rc_genicam_calib.config"/>
+	<arg name="calib_id" 		default="-1"/>
+	
+	<node name="my_rc_genicam_camera_node" pkg="rc_genicam_camera" type="rc_genicam_camera" args="_device:=$(arg device) _config_file:=$(arg config_file) _calib_file:=$(arg calib_file) _frame_id:=$(arg frame_id) _calib_id:=$(arg calib_id) " output="screen"/>
+	<!-- ns="camera" -->
+</launch>

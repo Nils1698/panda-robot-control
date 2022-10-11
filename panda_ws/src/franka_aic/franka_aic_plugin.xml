@@ -1,0 +1,12 @@
+<library path="lib/libfranka_aic">
+  <class name="franka_aic/AICController" type="franka_aic::AICController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      An active inference controller.
+    </description>
+  </class>
+  <class name="franka_aic/MRACController" type="franka_aic::MRACController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      A model reference adaptive controller.
+    </description>
+  </class>
+</library>

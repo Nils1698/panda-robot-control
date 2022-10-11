@@ -1,0 +1,8 @@
+prefix=/home/neurorobotic_student/panda_ws/install
+
+Name: predictor_nils_test
+Description: Description of predictor_nils_test
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: apriltag_ros cv_bridge geometry_msgs image_transport message_runtime roscpp rospy sensor_msgs std_msgs tf2 tf2_ros

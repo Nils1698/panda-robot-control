@@ -1,0 +1,18 @@
+<launch>
+	<!-- <remap from="/target_pose_meas_cov_stamped_panda_link0" to="/desktop/target_pose_cov_stmp_panda_link0" /> -->
+	<!-- <remap from="/target_pose_measurement_stamped" to="/target_pose_meas_cov_stamped" /> -->
+
+	<!-- Remap predictor subscriber -->
+	<remap from="/target_pose_measurement_stamped" to="/target_pose_meas_cov_stamped_panda_link0" /> 	
+	<!-- Launch predictor node -->
+	<node pkg="predictor" type="predictor3d" name="kalman_predictor_3d" output="screen"/>
+	<!-- Remap prediction handler subscriber -->
+	<!-- <remap from="/target_pose_meas_cov_stamped_panda_link0" to="/predicted_poses" /> 										 -->
+	<!-- Remap prediction handler publisher -->
+	<remap from="/target_pose_cov_stamped_panda_link0" to="/desktop/target_pose_cov_stmp_panda_link0" /> 	
+	<!-- Launch target selector node -->
+	<node pkg="predictor" type="prediction_handler_or_path_planner" name="target_position_selector" output="screen" />
+	<!-- <node pkg="rosbag"   	type="record"		 name="rosbag_record_prediction_ref" 
+		args="record -O subset /target_pose_measurement /predicted_poses" /> -->
+		<!-- rosbag record -O subset /target_pose_measurement /predicted_poses -->
+</launch>

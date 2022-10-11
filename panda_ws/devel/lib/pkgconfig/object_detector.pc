@@ -1,0 +1,8 @@
+prefix=/home/neurorobotic_student/panda_ws/devel
+
+Name: object_detector
+Description: Description of object_detector
+Version: 0.0.0
+Cflags: -I/home/neurorobotic_student/panda_ws/src/object_detector/include
+Libs: -L${prefix}/lib -lobject_detector
+Requires: roscpp rospy std_msgs sensor_msgs cv_bridge image_transport tf2 message_runtime

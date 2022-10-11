@@ -46,9 +46,9 @@ There are 2 ROS packages needed, namely `libfranka` and `franka-ros` in order to
 ```
 sudo apt install ros-noetic-libfranka ros-noetic-franka-ros
 ```
-## Build a new catkin workspace
+## Creating a new ROS environment
 If the old worspace does not work is lost or the user wants to build a new workspace please follow this guide. Just be aware that problems and errors might occur as packages might be missing.
-There is also a basic guide provided by wiki.ros.org which can be found [here](https://wiki.ros.org/catkin/Tutorials/create_a_workspace).
+There is also a basic guide provided 1by wiki.ros.org which can be found [here](https://wiki.ros.org/catkin/Tutorials/create_a_workspace).
 
 This tutorial assumes that you have installed catkin and sourced your environment. If you installed catkin via apt-get for ROS noetic, your command would look like this:
 ```

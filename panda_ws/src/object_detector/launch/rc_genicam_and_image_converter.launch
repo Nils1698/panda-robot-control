@@ -1,0 +1,6 @@
+<launch>
+	<include file="$(find object_detector)/launch/rc_gemicam.launch"/>
+	<!-- <node name="rc_genicam_camera" pkg="rc_genicam_camera" type="rc_genicam_camera" args="_device:=VID164C_PID5533_FF001107"/> -->
+	<!-- rc_genicam_camera rc_genicam_camera _device:=VID164C_PID5533_FF001107 -->
+	<node name="image_converter" pkg="object_detector" type="image_converter" output="screen"/>
+</launch>

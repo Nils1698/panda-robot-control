@@ -1,0 +1,6 @@
+Strings in QR code images:
+Name of image file   #   Text string:
+img1.png             #   Object_1
+img2.png             #   Object_2
+img3.png             #   Object_3
+img4.png             #   Product_ID_000053123_Time_Stamp_2022-01-05T09.41

@@ -1,0 +1,5 @@
+<launch>
+	<node name="my_qr_detector" pkg="object_detector" type="qr_detector" output="screen"/>
+	<!-- rc_genicam_camera rc_genicam_camera _device:=VID164C_PID5533_FF001107 -->
+	<!-- <node name="my_qr_detector" pkg="object_detector" type="qr_detector" output="screen"/> -->
+</launch>

@@ -1,0 +1,27 @@
+<launch>
+	<arg name="debug" default="true"/>
+	<arg name="bag_save"		default="false"/>
+	<arg name="bag_play"		default="false"/>
+	
+	<include file="$(find object_detector)/launch/rc_genicam.launch" /> 										<!-- launch the camera 						-->
+	<include file="$(find object_detector)/launch/apriltag_continuous_detection.launch" /> 	<!-- launch the apriltag detector -->
+	
+	<!-- Debugging and display of detections -->
+	<group if="$(arg debug)">
+		<node type="rviz" name="rviz" pkg="rviz" args="-d $(find object_detector)/config/rviz_custom.rviz" />							<!-- launch the dispalyer of the poses of the detected apriltags -->
+		<node pkg="rqt_image_view" type="rqt_image_view" name="image_view_tag_detections" args="/tag_detections_image"/>	<!-- launch the dispalyer of the video of the detected apriltags -->
+	</group>
+
+	<group if="$(arg bag_save)"> 																																												<!-- launch the logging of the poses of the detected apriltags -->
+		<node pkg="rosbag" type="record" name="rosbag_record_obj_detection"
+		args="record -o /tf"
+		/>
+	</group>
+
+	<group if="$(arg bag_play)">
+		<arg name="path" default="/home/me/ros_files/" />
+		<arg name="file_1" default="my_file_1" />
+		<arg name="file_2" default="my_file_2" />
+		<node pkg="rosbag" type="play" name="player" output="screen" args="--clock $(arg path)$(arg file_1).bag $(arg path)$(arg file_2).bag"/>
+	</group>
+</launch>

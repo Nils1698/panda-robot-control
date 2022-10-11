@@ -1,0 +1,56 @@
+[
+  {
+    "directory": "F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2021b\\3P.instrset\\mingw_w64.instrset\\bin\\g++ -c -fexceptions -fno-omit-frame-pointer -std=c++11 -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c++11 -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\\interface\" -I \"F:\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=cubic_trajectory_generator_mex -D__USE_MINGW_ANSI_STDIO=1 -DMW_NEEDS_VERSION_H   cubic_trajectory_generator_data.cpp -o build/win64/cubic_trajectory_generator_data.o",
+    "file": "cubic_trajectory_generator_data.cpp",
+    "output": "build/win64/cubic_trajectory_generator_data.o"
+  },
+  {
+    "directory": "F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2021b\\3P.instrset\\mingw_w64.instrset\\bin\\g++ -c -fexceptions -fno-omit-frame-pointer -std=c++11 -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c++11 -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\\interface\" -I \"F:\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=cubic_trajectory_generator_mex -D__USE_MINGW_ANSI_STDIO=1 -DMW_NEEDS_VERSION_H   rt_nonfinite.cpp -o build/win64/rt_nonfinite.o",
+    "file": "rt_nonfinite.cpp",
+    "output": "build/win64/rt_nonfinite.o"
+  },
+  {
+    "directory": "F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2021b\\3P.instrset\\mingw_w64.instrset\\bin\\g++ -c -fexceptions -fno-omit-frame-pointer -std=c++11 -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c++11 -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\\interface\" -I \"F:\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=cubic_trajectory_generator_mex -D__USE_MINGW_ANSI_STDIO=1 -DMW_NEEDS_VERSION_H   cubic_trajectory_generator_initialize.cpp -o build/win64/cubic_trajectory_generator_initialize.o",
+    "file": "cubic_trajectory_generator_initialize.cpp",
+    "output": "build/win64/cubic_trajectory_generator_initialize.o"
+  },
+  {
+    "directory": "F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2021b\\3P.instrset\\mingw_w64.instrset\\bin\\g++ -c -fexceptions -fno-omit-frame-pointer -std=c++11 -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c++11 -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\\interface\" -I \"F:\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=cubic_trajectory_generator_mex -D__USE_MINGW_ANSI_STDIO=1 -DMW_NEEDS_VERSION_H   cubic_trajectory_generator_terminate.cpp -o build/win64/cubic_trajectory_generator_terminate.o",
+    "file": "cubic_trajectory_generator_terminate.cpp",
+    "output": "build/win64/cubic_trajectory_generator_terminate.o"
+  },
+  {
+    "directory": "F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2021b\\3P.instrset\\mingw_w64.instrset\\bin\\g++ -c -fexceptions -fno-omit-frame-pointer -std=c++11 -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c++11 -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\\interface\" -I \"F:\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=cubic_trajectory_generator_mex -D__USE_MINGW_ANSI_STDIO=1 -DMW_NEEDS_VERSION_H   cubic_trajectory_generator.cpp -o build/win64/cubic_trajectory_generator.o",
+    "file": "cubic_trajectory_generator.cpp",
+    "output": "build/win64/cubic_trajectory_generator.o"
+  },
+  {
+    "directory": "F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2021b\\3P.instrset\\mingw_w64.instrset\\bin\\g++ -c -fexceptions -fno-omit-frame-pointer -std=c++11 -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c++11 -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\\interface\" -I \"F:\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=cubic_trajectory_generator_mex -D__USE_MINGW_ANSI_STDIO=1 -DMW_NEEDS_VERSION_H   interface/_coder_cubic_trajectory_generator_api.cpp -o build/win64/_coder_cubic_trajectory_generator_api.o",
+    "file": "interface/_coder_cubic_trajectory_generator_api.cpp",
+    "output": "build/win64/_coder_cubic_trajectory_generator_api.o"
+  },
+  {
+    "directory": "F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2021b\\3P.instrset\\mingw_w64.instrset\\bin\\g++ -c -fexceptions -fno-omit-frame-pointer -std=c++11 -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c++11 -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\\interface\" -I \"F:\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=cubic_trajectory_generator_mex -D__USE_MINGW_ANSI_STDIO=1 -DMW_NEEDS_VERSION_H   interface/_coder_cubic_trajectory_generator_mex.cpp -o build/win64/_coder_cubic_trajectory_generator_mex.o",
+    "file": "interface/_coder_cubic_trajectory_generator_mex.cpp",
+    "output": "build/win64/_coder_cubic_trajectory_generator_mex.o"
+  },
+  {
+    "directory": "F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2021b\\3P.instrset\\mingw_w64.instrset\\bin\\g++ -c -fexceptions -fno-omit-frame-pointer -std=c++11 -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c++11 -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\\interface\" -I \"F:\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=cubic_trajectory_generator_mex -D__USE_MINGW_ANSI_STDIO=1 -DMW_NEEDS_VERSION_H   interface/_coder_cubic_trajectory_generator_info.cpp -o build/win64/_coder_cubic_trajectory_generator_info.o",
+    "file": "interface/_coder_cubic_trajectory_generator_info.cpp",
+    "output": "build/win64/_coder_cubic_trajectory_generator_info.o"
+  },
+  {
+    "directory": "F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator",
+    "command": "C:\\ProgramData\\MATLAB\\SupportPackages\\R2021b\\3P.instrset\\mingw_w64.instrset\\bin\\g++ -c -fexceptions -fno-omit-frame-pointer -std=c++11 -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c++11 -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\" -I \"F:\\DTU\\M.Sc\\5th_win_msc\\program\\inverse_kinematics_sim\\codegen\\mex\\cubic_trajectory_generator\\interface\" -I \"F:\\MATLAB\\R2021b\\extern\\include\" -I \".\" -DMODEL=cubic_trajectory_generator_mex -D__USE_MINGW_ANSI_STDIO=1 -DMW_NEEDS_VERSION_H   F:/MATLAB/R2021b/extern/version/cpp_mexapi_version.cpp -o build/win64/cpp_mexapi_version.o",
+    "file": "F:/MATLAB/R2021b/extern/version/cpp_mexapi_version.cpp",
+    "output": "build/win64/cpp_mexapi_version.o"
+  }
+]
