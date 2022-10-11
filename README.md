@@ -142,9 +142,11 @@ In order to get started make sure that ros as well as the packages are correctly
 ```
 roscore
 ```
-Then, open another terminal and run:
+Then, open another terminal and run for the MRAC controller:
 ```
 roslaunch franka_aic MRAC_controller.launch
+or
+roslaunch franka_aic AIC_controller.launch
 ```
 The robot should move slightly but should hover on a fixed position awaiting for commands. Turn off the controller if the robot keeps moving. Then, open another terminal and run:
 ```
@@ -152,4 +154,6 @@ roslaunch non_realtime_launcher object_detect_select_predict.launch
 ```
 You should see RVIZ as well as a live stream of the camera pop up. You can now go closer to the robot (do not move into a range where the robot arm can hit you) and start holding a AprilTag with the number 1 inside of the field of view of the camera (see gif below). You need to hold the AprilTag at least 0.5m above the table as there is no limit defined for the robot and it might hit the table if you go too low. Furthermore, the programm is not exact and there is a slight offset between the End-Effector and AprilTag. Therefore, be cautious where you are holding the Tag to!
 
-![Illustration of the robot working](images/Christians-Controller-Working_Trim.gif)
+![Illustration of the MRAC working](images/Christians-Controller-Working_Trim.gif)
+![Illustration of the AIC from the side working](images/AIC_sideview.gif)
+![Illustration of the AIC from the side working](images/AIC_topview.gif)
