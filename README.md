@@ -28,6 +28,8 @@ This repository is made in order to simplify the setup of the Emika Frank Robot 
 <img src="images/Free_Moves_Button.jpeg" alt="Mode Button" width="200">
 
 12. Make sure to orintate the robot in its default position (see picture) as extreme joint states makes it impossible to execute programs and send commands to the robot arm.
+<img src="images/default_robot_orientation.jpeg" alt="Mode Button" width="300">
+
 13. Disengage the Mode Button by rotating clockwise. The light should now be blue.
 14. On the website, navigate to the menu and press "Activate FCI".
 15. You are now able to send commands and receive information of the robot over ROS.
