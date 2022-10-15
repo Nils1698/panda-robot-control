@@ -1546,6 +1546,19 @@ tf2_msgs_generate_messages_nodejs/fast:
 .PHONY : tf2_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named publish_tf_apriltag_pose_to_controller_gripper
+
+# Build rule for target.
+publish_tf_apriltag_pose_to_controller_gripper: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 publish_tf_apriltag_pose_to_controller_gripper
+.PHONY : publish_tf_apriltag_pose_to_controller_gripper
+
+# fast build rule for target.
+publish_tf_apriltag_pose_to_controller_gripper/fast:
+	$(MAKE) -f nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_controller_gripper.dir/build.make nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_controller_gripper.dir/build
+.PHONY : publish_tf_apriltag_pose_to_controller_gripper/fast
+
+#=============================================================================
 # Target rules for targets named publish_tf_apriltag_pose_to_predictor
 
 # Build rule for target.
@@ -3263,6 +3276,7 @@ help:
 	@echo "... apriltag_ros_generate_messages_cpp"
 	@echo "... bond_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_nodejs"
+	@echo "... publish_tf_apriltag_pose_to_controller_gripper"
 	@echo "... publish_tf_apriltag_pose_to_predictor"
 	@echo "... publish_apriltag_pose"
 	@echo "... nils_master_pkg_generate_messages"

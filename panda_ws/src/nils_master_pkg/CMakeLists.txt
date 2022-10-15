@@ -78,6 +78,11 @@ target_link_libraries(publish_tf_apriltag_pose_to_controller ${catkin_LIBRARIES}
 target_include_directories(publish_apriltag_pose SYSTEM PUBLIC
 )
 
+add_executable(publish_tf_apriltag_pose_to_controller_gripper src/publish_tf_apriltag_pose_to_controller_gripper.cpp)
+target_link_libraries(publish_tf_apriltag_pose_to_controller_gripper ${catkin_LIBRARIES})
+target_include_directories(publish_tf_apriltag_pose_to_controller_gripper SYSTEM PUBLIC
+)
+
 #############
 ## Testing ##
 #############

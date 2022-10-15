@@ -37,9 +37,9 @@ public:
         buffer_.transform(*point_ptr, point_out, target_frame_);
 
         if (std::sqrt(std::pow(point_out.pose.pose.position.x,2) + std::pow(point_out.pose.pose.position.y,2)) > 0.8){
-            point_out.pose.pose.position.x     = 0.7;
-            point_out.pose.pose.position.y     = -0.2;
-            point_out.pose.pose.position.z     = 0.5;
+            point_out.pose.pose.position.x     = 0.6;
+            point_out.pose.pose.position.y     = 0.0;
+            point_out.pose.pose.position.z     = 0.6;
             point_out.pose.pose.orientation.x  = 0;
             point_out.pose.pose.orientation.y  = 0;
             point_out.pose.pose.orientation.z  = 1;

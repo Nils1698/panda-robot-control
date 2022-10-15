@@ -1,0 +1,6 @@
+robotiq_2finger_grippers/robotiq_modbus_rtu
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/robotiq_modbus_rtu/cmake.lock /home/neurorobotic_student/panda-robot-control/panda_ws/devel/./cmake.lock
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/robotiq_modbus_rtu/lib/pkgconfig/robotiq_modbus_rtu.pc /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/pkgconfig/robotiq_modbus_rtu.pc
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/robotiq_modbus_rtu/lib/python3/dist-packages/robotiq_modbus_rtu/__init__.py /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/robotiq_modbus_rtu/__init__.py
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/robotiq_modbus_rtu/share/robotiq_modbus_rtu/cmake/robotiq_modbus_rtuConfig-version.cmake /home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/robotiq_modbus_rtu/cmake/robotiq_modbus_rtuConfig-version.cmake
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/robotiq_modbus_rtu/share/robotiq_modbus_rtu/cmake/robotiq_modbus_rtuConfig.cmake /home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/robotiq_modbus_rtu/cmake/robotiq_modbus_rtuConfig.cmake

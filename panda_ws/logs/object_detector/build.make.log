@@ -1,0 +1,20 @@
+[35m[1mScanning dependencies of target object_detector[0m
+[35m[1mScanning dependencies of target target_selector[0m
+[35m[1mScanning dependencies of target pose_tf_cam_to_panda[0m
+[35m[1mScanning dependencies of target image_converter[0m
+[35m[1mScanning dependencies of target qr_basic[0m
+[ 10%] [32mBuilding CXX object CMakeFiles/target_selector.dir/src/target_selector.cpp.o[0m
+[ 20%] [32mBuilding CXX object CMakeFiles/pose_tf_cam_to_panda.dir/src/pose_tf_cam_to_panda.cpp.o[0m
+[ 30%] [32mBuilding CXX object CMakeFiles/object_detector.dir/src/object_detector.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/image_converter.dir/src/image_converter.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/qr_basic.dir/src/qr_basic.cpp.o[0m
+[ 60%] [32m[1mLinking CXX executable /home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/object_detector/lib/object_detector/qr_basic[0m
+[ 70%] [32m[1mLinking CXX executable /home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/object_detector/lib/object_detector/image_converter[0m
+[ 70%] Built target qr_basic
+[ 70%] Built target image_converter
+[ 80%] [32m[1mLinking CXX executable /home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/object_detector/lib/object_detector/object_detector[0m
+[ 90%] [32m[1mLinking CXX executable /home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/object_detector/lib/object_detector/target_selector[0m
+[ 90%] Built target target_selector
+[ 90%] Built target object_detector
+[100%] [32m[1mLinking CXX executable /home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/object_detector/lib/object_detector/pose_tf_cam_to_panda[0m
+[100%] Built target pose_tf_cam_to_panda

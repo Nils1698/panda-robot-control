@@ -1,0 +1,8 @@
+Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/pose_tf_cam_to_panda
+Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/object_detector
+Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/image_converter
+Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/target_selector
+Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/qr_basic
+Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/pkgconfig/object_detector.pc
+Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/object_detector/cmake/object_detectorConfig-version.cmake
+Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/object_detector/cmake/object_detectorConfig.cmake

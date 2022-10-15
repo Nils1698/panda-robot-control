@@ -1,0 +1,90 @@
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target _apriltag_ros_generate_messages_check_deps_AnalyzeSingleImage[0m
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target _apriltag_ros_generate_messages_check_deps_AprilTagDetectionArray[0m
+[35m[1mScanning dependencies of target _apriltag_ros_generate_messages_check_deps_AprilTagDetection[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_cpp[0m
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target _apriltag_ros_generate_messages_check_deps_AnalyzeSingleImage
+[  0%] Built target _apriltag_ros_generate_messages_check_deps_AprilTagDetection
+[  0%] Built target _apriltag_ros_generate_messages_check_deps_AprilTagDetectionArray
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_py[0m
+[  0%] Built target sensor_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_eus[0m
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target sensor_msgs_generate_messages_py
+[  0%] Built target geometry_msgs_generate_messages_py
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_eus[0m
+[  0%] Built target std_msgs_generate_messages_eus
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_eus[0m
+[  0%] Built target geometry_msgs_generate_messages_eus
+[  0%] Built target sensor_msgs_generate_messages_eus
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_nodejs[0m
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_nodejs
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_nodejs[0m
+[  0%] Built target sensor_msgs_generate_messages_nodejs
+[35m[1mScanning dependencies of target std_msgs_generate_messages_lisp[0m
+[  0%] Built target std_msgs_generate_messages_lisp
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_lisp[0m
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_lisp[0m
+[  0%] Built target sensor_msgs_generate_messages_lisp
+[35m[1mScanning dependencies of target apriltag_ros_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target apriltag_ros_generate_messages_py[0m
+[  3%] [34m[1mGenerating C++ code from apriltag_ros/AprilTagDetection.msg[0m
+[  6%] [34m[1mGenerating Python from MSG apriltag_ros/AprilTagDetection[0m
+[ 10%] [34m[1mGenerating C++ code from apriltag_ros/AprilTagDetectionArray.msg[0m
+[ 13%] [34m[1mGenerating C++ code from apriltag_ros/AnalyzeSingleImage.srv[0m
+[ 16%] [34m[1mGenerating Python from MSG apriltag_ros/AprilTagDetectionArray[0m
+[ 20%] [34m[1mGenerating Python code from SRV apriltag_ros/AnalyzeSingleImage[0m
+[ 20%] Built target apriltag_ros_generate_messages_cpp
+[35m[1mScanning dependencies of target apriltag_ros_generate_messages_eus[0m
+[35m[1mScanning dependencies of target apriltag_ros_generate_messages_nodejs[0m
+[ 23%] [34m[1mGenerating EusLisp code from apriltag_ros/AprilTagDetection.msg[0m
+[ 26%] [34m[1mGenerating Javascript code from apriltag_ros/AprilTagDetection.msg[0m
+[ 30%] [34m[1mGenerating Python msg __init__.py for apriltag_ros[0m
+[ 33%] [34m[1mGenerating Javascript code from apriltag_ros/AprilTagDetectionArray.msg[0m
+[ 36%] [34m[1mGenerating EusLisp code from apriltag_ros/AprilTagDetectionArray.msg[0m
+[ 40%] [34m[1mGenerating Javascript code from apriltag_ros/AnalyzeSingleImage.srv[0m
+[ 43%] [34m[1mGenerating EusLisp code from apriltag_ros/AnalyzeSingleImage.srv[0m
+[ 46%] [34m[1mGenerating Python srv __init__.py for apriltag_ros[0m
+[ 46%] Built target apriltag_ros_generate_messages_nodejs
+[ 50%] [34m[1mGenerating EusLisp manifest code for apriltag_ros[0m
+[35m[1mScanning dependencies of target apriltag_ros_generate_messages_lisp[0m
+[ 53%] [34m[1mGenerating Lisp code from apriltag_ros/AprilTagDetection.msg[0m
+[ 53%] Built target apriltag_ros_generate_messages_py
+[ 56%] [34m[1mGenerating Lisp code from apriltag_ros/AprilTagDetectionArray.msg[0m
+[35m[1mScanning dependencies of target apriltag_ros_common[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/apriltag_ros_common.dir/src/common_functions.cpp.o[0m
+[ 63%] [34m[1mGenerating Lisp code from apriltag_ros/AnalyzeSingleImage.srv[0m
+[ 63%] Built target apriltag_ros_generate_messages_lisp
+[ 63%] Built target apriltag_ros_generate_messages_eus
+[35m[1mScanning dependencies of target apriltag_ros_generate_messages[0m
+[ 63%] Built target apriltag_ros_generate_messages
+[ 66%] [32m[1mLinking CXX shared library /home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/apriltag_ros/lib/libapriltag_ros_common.so[0m
+[ 66%] Built target apriltag_ros_common
+[35m[1mScanning dependencies of target apriltag_ros_single_image_detector[0m
+[35m[1mScanning dependencies of target apriltag_ros_single_image_client_node[0m
+[35m[1mScanning dependencies of target apriltag_ros_continuous_detector[0m
+[ 70%] [32mBuilding CXX object CMakeFiles/apriltag_ros_single_image_detector.dir/src/single_image_detector.cpp.o[0m
+[ 73%] [32mBuilding CXX object CMakeFiles/apriltag_ros_continuous_detector.dir/src/continuous_detector.cpp.o[0m
+[ 76%] [32mBuilding CXX object CMakeFiles/apriltag_ros_single_image_client_node.dir/src/apriltag_ros_single_image_client_node.cpp.o[0m
+[ 80%] [32m[1mLinking CXX executable /home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/apriltag_ros/lib/apriltag_ros/apriltag_ros_single_image_client_node[0m
+[ 83%] [32m[1mLinking CXX shared library /home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/apriltag_ros/lib/libapriltag_ros_continuous_detector.so[0m
+[ 83%] Built target apriltag_ros_continuous_detector
+[35m[1mScanning dependencies of target apriltag_ros_continuous_node[0m
+[ 83%] Built target apriltag_ros_single_image_client_node
+[ 86%] [32mBuilding CXX object CMakeFiles/apriltag_ros_continuous_node.dir/src/apriltag_ros_continuous_node.cpp.o[0m
+[ 90%] [32m[1mLinking CXX shared library /home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/apriltag_ros/lib/libapriltag_ros_single_image_detector.so[0m
+[ 90%] Built target apriltag_ros_single_image_detector
+[35m[1mScanning dependencies of target apriltag_ros_single_image_server_node[0m
+[ 93%] [32mBuilding CXX object CMakeFiles/apriltag_ros_single_image_server_node.dir/src/apriltag_ros_single_image_server_node.cpp.o[0m
+[ 96%] [32m[1mLinking CXX executable /home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/apriltag_ros/lib/apriltag_ros/apriltag_ros_continuous_node[0m
+[ 96%] Built target apriltag_ros_continuous_node
+[100%] [32m[1mLinking CXX executable /home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/apriltag_ros/lib/apriltag_ros/apriltag_ros_single_image_server_node[0m
+[100%] Built target apriltag_ros_single_image_server_node
