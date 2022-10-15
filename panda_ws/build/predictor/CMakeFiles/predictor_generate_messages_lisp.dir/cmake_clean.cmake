@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/neurorobotic_student/panda_ws/devel/share/common-lisp/ros/predictor/msg/PredictedPoses.lisp"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/common-lisp/ros/predictor/msg/PredictedPoses.lisp"
   "CMakeFiles/predictor_generate_messages_lisp"
 )
 

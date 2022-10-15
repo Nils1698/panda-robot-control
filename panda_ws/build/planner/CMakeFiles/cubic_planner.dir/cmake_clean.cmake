@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/neurorobotic_student/panda_ws/devel/lib/planner/cubic_planner"
-  "/home/neurorobotic_student/panda_ws/devel/lib/planner/cubic_planner.pdb"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/planner/cubic_planner"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/planner/cubic_planner.pdb"
   "CMakeFiles/cubic_planner.dir/src/cubic_planner.cpp.o"
 )
 

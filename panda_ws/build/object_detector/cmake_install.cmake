@@ -1,8 +1,8 @@
-# Install script for directory: /home/neurorobotic_student/panda_ws/src/object_detector
+# Install script for directory: /home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/neurorobotic_student/panda_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/neurorobotic_student/panda-robot-control/panda_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/build/object_detector/catkin_generated/installspace/object_detector.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/build/object_detector/catkin_generated/installspace/object_detector.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/object_detector/cmake" TYPE FILE FILES
-    "/home/neurorobotic_student/panda_ws/build/object_detector/catkin_generated/installspace/object_detectorConfig.cmake"
-    "/home/neurorobotic_student/panda_ws/build/object_detector/catkin_generated/installspace/object_detectorConfig-version.cmake"
+    "/home/neurorobotic_student/panda-robot-control/panda_ws/build/object_detector/catkin_generated/installspace/object_detectorConfig.cmake"
+    "/home/neurorobotic_student/panda-robot-control/panda_ws/build/object_detector/catkin_generated/installspace/object_detectorConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/object_detector" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/src/object_detector/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/object_detector" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/package.xml")
 endif()
 

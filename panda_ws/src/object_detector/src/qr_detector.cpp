@@ -89,11 +89,12 @@ void cameraInfoPrint(const sensor_msgs::ImagePtr& image){
 
 int main(int argc, char **argv)
 {
+  ROS_INFO("qr_detector running...");
   ros::init(argc, argv, "listener");
   // ObjectDetector od;
- ros::NodeHandle n;
- ros::Subscriber sub1 = n.subscribe("image_raw",   10, qrDetector);
-//  ros::Subscriber sub2 = n.subscribe("camera_info", 10, cameraInfoPrint);
+  ros::NodeHandle n;
+  ros::Subscriber sub1 = n.subscribe("image_raw",   10, qrDetector);
+  //  ros::Subscriber sub2 = n.subscribe("camera_info", 10, cameraInfoPrint);
   ros::spin();
   return 0;
 }

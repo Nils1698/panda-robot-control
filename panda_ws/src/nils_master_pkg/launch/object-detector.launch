@@ -1,33 +1,65 @@
 <launch>
     <!-- Arguments to object_detector -->
-	<arg name="debug" default="true"/>
-	<arg name="bag_save"		default="false"/>
-	<arg name="bag_play"		default="false"/>
+	<arg name="debug"           default="false"/>
+    <arg name="attach_gripper"  default="false"/>
+    <arg name="predictor"       default="true"/>
 
-    <!-- <arg name="target_tag"		default="4"/> -->
-    <!-- Arguments to target_selector -->
-    <!-- Arguments to predictor       -->
+    <!-- Arguments for the camera -->
+    <arg name="device" 			default="VID164C_PID5533_FF001107"/>
+    <arg name="frame_id"        default="camera"/>
+    <arg name="config_file"     default="$(find object_detector)/config/rc_genicam_config.config"/>
+    <arg name="calib_file"      default="$(find object_detector)/config/rc_genicam_calib.config"/>
+    <arg name="calib_id" 		default="-1"/>
 
-	<!-- Launch file for the AprilTag Detection	-->
-    
-        <include file="$(find object_detector)/launch/rc_genicam.launch" /> 										<!-- launch the camera 						-->
-        <include file="$(find object_detector)/launch/apriltag_continuous_detection.launch" /> 	<!-- launch the apriltag detector -->
+    <!-- Arguments for the AprilTag detector -->
+    <arg name="launch_prefix" default="" /> 
+    <arg name="node_namespace" default="apriltag_ros_continuous_node" />
+    <arg name="camera_name" default="/" />
+    <arg name="camera_frame" default="camera" />
+    <arg name="image_topic" default="image_raw" />
+
+    <!-- Debugging and display of detections -->
+    <group if="$(arg debug)">
+        <node type="rviz" name="rviz" pkg="rviz" args="-d $(find object_detector)/config/rviz_custom.rviz" />
+        <node pkg="rqt_image_view" type="rqt_image_view" name="image_view_tag_detections" args="/tag_detections_image"/>
+    </group>
+
+    <!-- Set parameters for the AprilTag detector-->
+    <rosparam command="load" file="$(find object_detector)/config/apriltag_settings.yaml" ns="$(arg node_namespace)" />
+    <rosparam command="load" file="$(find object_detector)/config/apriltag_tags.yaml" ns="$(arg node_namespace)" />
+
+    <!-- Launch files for the camera -->
+    <node name="my_rc_genicam_camera_node" pkg="rc_genicam_camera" type="rc_genicam_camera" args="_device:=$(arg device) _config_file:=$(arg config_file) _calib_file:=$(arg calib_file) _frame_id:=$(arg frame_id) _calib_id:=$(arg calib_id) " output="screen"/>
+
+    <!-- Launch files for the AprilTag detector -->   
+    <node pkg="apriltag_ros" type="apriltag_ros_continuous_node" name="$(arg node_namespace)" clear_params="true" output="screen" launch-prefix="$(arg launch_prefix)" >
+        <!-- Remap topics from those used in code to those on the ROS network -->
+        <remap from="image_rect" to="$(arg camera_name)/$(arg image_topic)" />
+        <remap from="camera_info" to="$(arg camera_name)/camera_info" />
+
+        <param name="camera_frame" type="str" value="$(arg camera_frame)" />
+        <param name="publish_tag_detections_image" type="bool" value="true" /> <!-- default: false -->
+        <param name="publish_tf_" type="bool" value="true"/>
+        <param name="remove_duplicates" type="bool" value="true"/>
+    </node>
         
-        <!-- Debugging and display of detections -->
-        <group if="$(arg debug)">
-            <node type="rviz" name="rviz" pkg="rviz" args="-d $(find object_detector)/config/rviz_custom.rviz" />				<!-- launch the dispalyer of the poses of the detected apriltags -->
-            <node pkg="rqt_image_view" type="rqt_image_view" name="image_view_tag_detections" args="/tag_detections_image"/>	<!-- launch the dispalyer of the video of the detected apriltags -->
-        </group>
-
     <!-- Launch files for the target selector -->
-        <node name="my_target_selector" pkg="object_detector" type="target_selector" output="log"/>
+    <!--<node name="my_target_selector" pkg="object_detector" type="target_selector" output="log"/>-->
+    <node pkg="nils_master_pkg" type="publish_apriltag_pose" name="publish_apriltag_pose" output="screen"/>
 
     <!-- Launch files for TF transformer -->
-    	<remap from="/target_detection_camera" to="/target_pose_meas_cov_stamped" />
-        <!-- Launch target pose tf cam to panda -->
-        <node name="target_pose_tf_cam_to_panda" pkg="object_detector" type="pose_tf_cam_to_panda" output="screen"/>
+    <remap from="/target_detection_camera" to="/target_pose_meas_cov_stamped" />
+
+    <!-- Launch tf converter from cam to panda -->
+    <!-- Here it is important to note that in the case that the predictor is turned to false 
+    this node will directly publish the transformed apriltag coordinates to the controller.
+    Thus the controller will not follow the estimate of the Kalman filter-->
     
+    <node pkg="nils_master_pkg" name="publish_tf_apriltag_pose_to_controller" type="publish_tf_apriltag_pose_to_controller" output="screen" if="$(eval arg('predictor') == false)"/>
+
     <!-- Launch files for the predictor of the targeted AprilTag -->
+    <group if="$(arg predictor)">
+        <node pkg="nils_master_pkg" name="publish_tf_apriltag_pose_to_predictor" type="publish_tf_apriltag_pose_to_predictor" output="screen"/>
         <!-- Remap predictor subscriber -->
         <remap from="/target_pose_measurement_stamped" to="/target_pose_meas_cov_stamped_panda_link0" /> 	
         <!-- Launch predictor node -->
@@ -35,7 +67,13 @@
         <!-- Remap prediction handler publisher -->
         <remap from="/target_pose_cov_stamped_panda_link0" to="/desktop/target_pose_cov_stmp_panda_link0" /> 	
         <!-- Launch target selector node -->
-        <node pkg="nils_master_pkg" type="prediction_handler_or_path_planner" name="target_position_selector" output="screen" />
+        <node pkg="predictor" type="prediction_handler_or_path_planner" name="target_position_selector" output="screen" />
+    </group>
 
     <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="-0.0725 -0.155 1.566 0.707 0.707 0.0 0.0 camera panda_link0" />
+    
+    <!--Adds an tf frame to the tf tree. However the robot does not care about this up to now.-->
+    <group if="$(arg attach_gripper)">
+        <node pkg="tf2_ros" type="static_transform_publisher" name="gripper_broadcaster" args="0.0 0.0 0.195 0.0 0.0 0.0 1.0 panda_link8 gripper"/>
+    </group>
 </launch>

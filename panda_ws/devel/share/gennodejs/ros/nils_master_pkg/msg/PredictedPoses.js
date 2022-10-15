@@ -11,8 +11,8 @@ const _deserializer = _ros_msg_utils.Deserialize;
 const _arrayDeserializer = _deserializer.Array;
 const _finder = _ros_msg_utils.Find;
 const _getByteLength = _ros_msg_utils.getByteLength;
-let std_msgs = _finder('std_msgs');
 let geometry_msgs = _finder('geometry_msgs');
+let std_msgs = _finder('std_msgs');
 
 //-----------------------------------------------------------
 
@@ -103,7 +103,6 @@ class PredictedPoses {
     std_msgs/Header header
     std_msgs/MultiArrayLayout layout
     geometry_msgs/PoseWithCovariance[] poses
-    
     ================================================================================
     MSG: std_msgs/Header
     # Standard metadata for higher-level stamped data types.

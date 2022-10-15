@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/neurorobotic_student/panda_ws/src/paic/include/paic/paic.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/paic/include/paic/paic.h
 ros/ros.h
 -
 
-/home/neurorobotic_student/panda_ws/src/paic/src/paic.cpp
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/paic/src/paic.cpp
 paic/paic.h
-/home/neurorobotic_student/panda_ws/src/paic/src/paic/paic.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/paic/src/paic/paic.h
 
 /opt/ros/noetic/include/ros/advertise_options.h
 ros/forwards.h

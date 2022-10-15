@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/neurorobotic_student/panda_ws/src
+CMAKE_SOURCE_DIR = /home/neurorobotic_student/panda-robot-control/panda_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/neurorobotic_student/panda_ws/build
+CMAKE_BINARY_DIR = /home/neurorobotic_student/panda-robot-control/panda_ws/build
 
 # Utility rule file for predictor_genlisp.
 
@@ -63,10 +63,10 @@ predictor/CMakeFiles/predictor_genlisp.dir/build: predictor_genlisp
 .PHONY : predictor/CMakeFiles/predictor_genlisp.dir/build
 
 predictor/CMakeFiles/predictor_genlisp.dir/clean:
-	cd /home/neurorobotic_student/panda_ws/build/predictor && $(CMAKE_COMMAND) -P CMakeFiles/predictor_genlisp.dir/cmake_clean.cmake
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build/predictor && $(CMAKE_COMMAND) -P CMakeFiles/predictor_genlisp.dir/cmake_clean.cmake
 .PHONY : predictor/CMakeFiles/predictor_genlisp.dir/clean
 
 predictor/CMakeFiles/predictor_genlisp.dir/depend:
-	cd /home/neurorobotic_student/panda_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/neurorobotic_student/panda_ws/src /home/neurorobotic_student/panda_ws/src/predictor /home/neurorobotic_student/panda_ws/build /home/neurorobotic_student/panda_ws/build/predictor /home/neurorobotic_student/panda_ws/build/predictor/CMakeFiles/predictor_genlisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/neurorobotic_student/panda-robot-control/panda_ws/src /home/neurorobotic_student/panda-robot-control/panda_ws/src/predictor /home/neurorobotic_student/panda-robot-control/panda_ws/build /home/neurorobotic_student/panda-robot-control/panda_ws/build/predictor /home/neurorobotic_student/panda-robot-control/panda_ws/build/predictor/CMakeFiles/predictor_genlisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : predictor/CMakeFiles/predictor_genlisp.dir/depend
 

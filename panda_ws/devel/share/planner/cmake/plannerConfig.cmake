@@ -67,14 +67,14 @@ set(planner_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(planner_SOURCE_PREFIX /home/neurorobotic_student/panda_ws/src/planner)
-  set(planner_DEVEL_PREFIX /home/neurorobotic_student/panda_ws/devel)
+  set(planner_SOURCE_PREFIX /home/neurorobotic_student/panda-robot-control/panda_ws/src/planner)
+  set(planner_DEVEL_PREFIX /home/neurorobotic_student/panda-robot-control/panda_ws/devel)
   set(planner_INSTALL_PREFIX "")
   set(planner_PREFIX ${planner_DEVEL_PREFIX})
 else()
   set(planner_SOURCE_PREFIX "")
   set(planner_DEVEL_PREFIX "")
-  set(planner_INSTALL_PREFIX /home/neurorobotic_student/panda_ws/install)
+  set(planner_INSTALL_PREFIX /home/neurorobotic_student/panda-robot-control/panda_ws/install)
   set(planner_PREFIX ${planner_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(planner_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/neurorobotic_student/panda_ws/devel/include;/home/neurorobotic_student/panda_ws/src/planner/include;/home/neurorobotic_student/panda_ws/src/planner/include/planner/cubic_trajectory_generator/ " STREQUAL " ")
+if(NOT "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include;/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/include;/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/include/planner/cubic_trajectory_generator/ " STREQUAL " ")
   set(planner_INCLUDE_DIRS "")
-  set(_include_dirs "/home/neurorobotic_student/panda_ws/devel/include;/home/neurorobotic_student/panda_ws/src/planner/include;/home/neurorobotic_student/panda_ws/src/planner/include/planner/cubic_trajectory_generator/")
+  set(_include_dirs "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include;/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/include;/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/include/planner/cubic_trajectory_generator/")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/neurorobotic_student/panda_ws/devel/include;/home/neurorobotic_stu
         message(FATAL_ERROR "Project 'planner' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'planner' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/neurorobotic_student/panda_ws/src/planner/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'planner' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/${idir}'.  ${_report}")
     endif()
     _list_append_unique(planner_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/neurorobotic_student/panda_ws/devel/lib;/home/neurorobotic_student/panda_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

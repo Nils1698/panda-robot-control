@@ -43,33 +43,33 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/neurorobotic_student/panda_ws/src
+CMAKE_SOURCE_DIR = /home/neurorobotic_student/panda-robot-control/panda_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/neurorobotic_student/panda_ws/build
+CMAKE_BINARY_DIR = /home/neurorobotic_student/panda-robot-control/panda_ws/build
 
 # Utility rule file for franka_aic_generate_messages_py.
 
 # Include the progress variables for this target.
 include franka_aic/CMakeFiles/franka_aic_generate_messages_py.dir/progress.make
 
-franka_aic/CMakeFiles/franka_aic_generate_messages_py: /home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/_JointTorqueComparison.py
-franka_aic/CMakeFiles/franka_aic_generate_messages_py: /home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/__init__.py
+franka_aic/CMakeFiles/franka_aic_generate_messages_py: /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/_JointTorqueComparison.py
+franka_aic/CMakeFiles/franka_aic_generate_messages_py: /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/__init__.py
 
 
-/home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/_JointTorqueComparison.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/_JointTorqueComparison.py: /home/neurorobotic_student/panda_ws/src/franka_aic/msg/JointTorqueComparison.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/neurorobotic_student/panda_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG franka_aic/JointTorqueComparison"
-	cd /home/neurorobotic_student/panda_ws/build/franka_aic && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/neurorobotic_student/panda_ws/src/franka_aic/msg/JointTorqueComparison.msg -Ifranka_aic:/home/neurorobotic_student/panda_ws/src/franka_aic/msg -p franka_aic -o /home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/_JointTorqueComparison.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/_JointTorqueComparison.py: /home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/msg/JointTorqueComparison.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/neurorobotic_student/panda-robot-control/panda_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG franka_aic/JointTorqueComparison"
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build/franka_aic && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/msg/JointTorqueComparison.msg -Ifranka_aic:/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/msg -p franka_aic -o /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg
 
-/home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/__init__.py: /home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/_JointTorqueComparison.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/neurorobotic_student/panda_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for franka_aic"
-	cd /home/neurorobotic_student/panda_ws/build/franka_aic && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg --initpy
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/__init__.py: /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/_JointTorqueComparison.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/neurorobotic_student/panda-robot-control/panda_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for franka_aic"
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build/franka_aic && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg --initpy
 
 franka_aic_generate_messages_py: franka_aic/CMakeFiles/franka_aic_generate_messages_py
-franka_aic_generate_messages_py: /home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/_JointTorqueComparison.py
-franka_aic_generate_messages_py: /home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/__init__.py
+franka_aic_generate_messages_py: /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/_JointTorqueComparison.py
+franka_aic_generate_messages_py: /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/__init__.py
 franka_aic_generate_messages_py: franka_aic/CMakeFiles/franka_aic_generate_messages_py.dir/build.make
 
 .PHONY : franka_aic_generate_messages_py
@@ -80,10 +80,10 @@ franka_aic/CMakeFiles/franka_aic_generate_messages_py.dir/build: franka_aic_gene
 .PHONY : franka_aic/CMakeFiles/franka_aic_generate_messages_py.dir/build
 
 franka_aic/CMakeFiles/franka_aic_generate_messages_py.dir/clean:
-	cd /home/neurorobotic_student/panda_ws/build/franka_aic && $(CMAKE_COMMAND) -P CMakeFiles/franka_aic_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build/franka_aic && $(CMAKE_COMMAND) -P CMakeFiles/franka_aic_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : franka_aic/CMakeFiles/franka_aic_generate_messages_py.dir/clean
 
 franka_aic/CMakeFiles/franka_aic_generate_messages_py.dir/depend:
-	cd /home/neurorobotic_student/panda_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/neurorobotic_student/panda_ws/src /home/neurorobotic_student/panda_ws/src/franka_aic /home/neurorobotic_student/panda_ws/build /home/neurorobotic_student/panda_ws/build/franka_aic /home/neurorobotic_student/panda_ws/build/franka_aic/CMakeFiles/franka_aic_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/neurorobotic_student/panda-robot-control/panda_ws/src /home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic /home/neurorobotic_student/panda-robot-control/panda_ws/build /home/neurorobotic_student/panda-robot-control/panda_ws/build/franka_aic /home/neurorobotic_student/panda-robot-control/panda_ws/build/franka_aic/CMakeFiles/franka_aic_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : franka_aic/CMakeFiles/franka_aic_generate_messages_py.dir/depend
 

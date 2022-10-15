@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/neurorobotic_student/panda_ws/devel/include/apriltag_ros/AprilTagDetection.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/apriltag_ros/AprilTagDetection.h
 string
 -
 vector
@@ -24,7 +24,7 @@ ros/message_operations.h
 geometry_msgs/PoseWithCovarianceStamped.h
 -
 
-/home/neurorobotic_student/panda_ws/devel/include/apriltag_ros/AprilTagDetectionArray.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/apriltag_ros/AprilTagDetectionArray.h
 string
 -
 vector
@@ -44,7 +44,7 @@ std_msgs/Header.h
 apriltag_ros/AprilTagDetection.h
 -
 
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/include/apriltag_ros/common_functions.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/include/apriltag_ros/common_functions.h
 string
 -
 sstream
@@ -80,33 +80,33 @@ tf/transform_broadcaster.h
 apriltag.h
 -
 apriltag_ros/AprilTagDetection.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/include/apriltag_ros/apriltag_ros/AprilTagDetection.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/include/apriltag_ros/apriltag_ros/AprilTagDetection.h
 apriltag_ros/AprilTagDetectionArray.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/include/apriltag_ros/apriltag_ros/AprilTagDetectionArray.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/include/apriltag_ros/apriltag_ros/AprilTagDetectionArray.h
 
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/common_functions.cpp
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/common_functions.cpp
 apriltag_ros/common_functions.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/apriltag_ros/common_functions.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/apriltag_ros/common_functions.h
 image_geometry/pinhole_camera_model.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/image_geometry/pinhole_camera_model.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/image_geometry/pinhole_camera_model.h
 common/homography.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/common/homography.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/common/homography.h
 tagStandard52h13.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/tagStandard52h13.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/tagStandard52h13.h
 tagStandard41h12.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/tagStandard41h12.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/tagStandard41h12.h
 tag36h11.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/tag36h11.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/tag36h11.h
 tag25h9.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/tag25h9.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/tag25h9.h
 tag16h5.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/tag16h5.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/tag16h5.h
 tagCustom48h12.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/tagCustom48h12.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/tagCustom48h12.h
 tagCircle21h7.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/tagCircle21h7.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/tagCircle21h7.h
 tagCircle49h12.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/tagCircle49h12.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/tagCircle49h12.h
 
 /opt/ros/noetic/include/apriltag/apriltag.h
 stdlib.h

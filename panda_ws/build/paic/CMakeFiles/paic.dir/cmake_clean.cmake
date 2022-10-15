@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/neurorobotic_student/panda_ws/devel/lib/libpaic.pdb"
-  "/home/neurorobotic_student/panda_ws/devel/lib/libpaic.so"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/libpaic.pdb"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/libpaic.so"
   "CMakeFiles/paic.dir/src/paic.cpp.o"
 )
 

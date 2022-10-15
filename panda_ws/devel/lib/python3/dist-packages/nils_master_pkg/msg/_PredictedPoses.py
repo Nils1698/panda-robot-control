@@ -16,7 +16,6 @@ class PredictedPoses(genpy.Message):
   _full_text = """std_msgs/Header header
 std_msgs/MultiArrayLayout layout
 geometry_msgs/PoseWithCovariance[] poses
-
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.

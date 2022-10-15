@@ -67,14 +67,14 @@ set(object_detector_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(object_detector_SOURCE_PREFIX /home/neurorobotic_student/panda_ws/src/object_detector)
-  set(object_detector_DEVEL_PREFIX /home/neurorobotic_student/panda_ws/devel)
+  set(object_detector_SOURCE_PREFIX /home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector)
+  set(object_detector_DEVEL_PREFIX /home/neurorobotic_student/panda-robot-control/panda_ws/devel)
   set(object_detector_INSTALL_PREFIX "")
   set(object_detector_PREFIX ${object_detector_DEVEL_PREFIX})
 else()
   set(object_detector_SOURCE_PREFIX "")
   set(object_detector_DEVEL_PREFIX "")
-  set(object_detector_INSTALL_PREFIX /home/neurorobotic_student/panda_ws/install)
+  set(object_detector_INSTALL_PREFIX /home/neurorobotic_student/panda-robot-control/panda_ws/install)
   set(object_detector_PREFIX ${object_detector_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(object_detector_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/neurorobotic_student/panda_ws/src/object_detector/include " STREQUAL " ")
+if(NOT "/home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/include " STREQUAL " ")
   set(object_detector_INCLUDE_DIRS "")
-  set(_include_dirs "/home/neurorobotic_student/panda_ws/src/object_detector/include")
+  set(_include_dirs "/home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/neurorobotic_student/panda_ws/src/object_detector/include " STREQU
         message(FATAL_ERROR "Project 'object_detector' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'object_detector' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/neurorobotic_student/panda_ws/src/object_detector/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'object_detector' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/${idir}'.  ${_report}")
     endif()
     _list_append_unique(object_detector_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/neurorobotic_student/panda_ws/devel/lib;/home/neurorobotic_student/panda_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

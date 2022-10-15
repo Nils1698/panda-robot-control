@@ -1,8 +1,8 @@
-# Install script for directory: /home/neurorobotic_student/panda_ws/src/nils_master_pkg
+# Install script for directory: /home/neurorobotic_student/panda-robot-control/panda_ws/src/nils_master_pkg
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/neurorobotic_student/panda_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/neurorobotic_student/panda-robot-control/panda_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,53 +38,53 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nils_master_pkg/msg" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/src/nils_master_pkg/msg/PredictedPoses.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nils_master_pkg/msg" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/src/nils_master_pkg/msg/PredictedPoses.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nils_master_pkg/cmake" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/build/nils_master_pkg/catkin_generated/installspace/nils_master_pkg-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nils_master_pkg/cmake" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/build/nils_master_pkg/catkin_generated/installspace/nils_master_pkg-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/devel/include/nils_master_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/nils_master_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/devel/share/roseus/ros/nils_master_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/roseus/ros/nils_master_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/devel/share/common-lisp/ros/nils_master_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/common-lisp/ros/nils_master_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/devel/share/gennodejs/ros/nils_master_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/gennodejs/ros/nils_master_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/nils_master_pkg")
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/nils_master_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/nils_master_pkg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/nils_master_pkg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/build/nils_master_pkg/catkin_generated/installspace/nils_master_pkg.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/build/nils_master_pkg/catkin_generated/installspace/nils_master_pkg.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nils_master_pkg/cmake" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/build/nils_master_pkg/catkin_generated/installspace/nils_master_pkg-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nils_master_pkg/cmake" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/build/nils_master_pkg/catkin_generated/installspace/nils_master_pkg-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nils_master_pkg/cmake" TYPE FILE FILES
-    "/home/neurorobotic_student/panda_ws/build/nils_master_pkg/catkin_generated/installspace/nils_master_pkgConfig.cmake"
-    "/home/neurorobotic_student/panda_ws/build/nils_master_pkg/catkin_generated/installspace/nils_master_pkgConfig-version.cmake"
+    "/home/neurorobotic_student/panda-robot-control/panda_ws/build/nils_master_pkg/catkin_generated/installspace/nils_master_pkgConfig.cmake"
+    "/home/neurorobotic_student/panda-robot-control/panda_ws/build/nils_master_pkg/catkin_generated/installspace/nils_master_pkgConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nils_master_pkg" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/src/nils_master_pkg/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nils_master_pkg" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/src/nils_master_pkg/package.xml")
 endif()
 

@@ -6,5 +6,5 @@ CXX_FLAGS = -O3 -DNDEBUG -fPIC
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"paic\" -Dpaic_EXPORTS
 
-CXX_INCLUDES = -I/home/neurorobotic_student/panda_ws/src/paic/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/neurorobotic_student/panda-robot-control/panda_ws/src/paic/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

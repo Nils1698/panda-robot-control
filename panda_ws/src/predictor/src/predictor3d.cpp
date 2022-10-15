@@ -367,7 +367,6 @@ class Predictor {
 
 int main (int argc, char **argv)
 {
-    ROS_INFO("predictor3d.cpp running...");
     ros::init(argc, argv, "kalman_predictor");
     ros::NodeHandle nh;
     Predictor nc = Predictor(&nh);

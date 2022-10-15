@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/neurorobotic_student/panda_ws/devel/lib/predictor/predictor"
-  "/home/neurorobotic_student/panda_ws/devel/lib/predictor/predictor.pdb"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/predictor/predictor"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/predictor/predictor.pdb"
   "CMakeFiles/predictor.dir/src/predictor.cpp.o"
 )
 

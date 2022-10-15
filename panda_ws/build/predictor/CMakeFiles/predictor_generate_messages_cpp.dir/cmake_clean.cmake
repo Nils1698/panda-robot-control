@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/neurorobotic_student/panda_ws/devel/include/predictor/PredictedPoses.h"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/predictor/PredictedPoses.h"
   "CMakeFiles/predictor_generate_messages_cpp"
 )
 

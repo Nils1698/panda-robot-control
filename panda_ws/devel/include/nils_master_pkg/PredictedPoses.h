@@ -164,7 +164,6 @@ struct Definition< ::nils_master_pkg::PredictedPoses_<ContainerAllocator> >
     return "std_msgs/Header header\n"
 "std_msgs/MultiArrayLayout layout\n"
 "geometry_msgs/PoseWithCovariance[] poses\n"
-"\n"
 "================================================================================\n"
 "MSG: std_msgs/Header\n"
 "# Standard metadata for higher-level stamped data types.\n"

@@ -1,8 +1,8 @@
-# Install script for directory: /home/neurorobotic_student/panda_ws/src/paic
+# Install script for directory: /home/neurorobotic_student/panda-robot-control/panda_ws/src/paic
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/neurorobotic_student/panda_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/neurorobotic_student/panda-robot-control/panda_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,18 +38,18 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/build/paic/catkin_generated/installspace/paic.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/build/paic/catkin_generated/installspace/paic.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/paic/cmake" TYPE FILE FILES
-    "/home/neurorobotic_student/panda_ws/build/paic/catkin_generated/installspace/paicConfig.cmake"
-    "/home/neurorobotic_student/panda_ws/build/paic/catkin_generated/installspace/paicConfig-version.cmake"
+    "/home/neurorobotic_student/panda-robot-control/panda_ws/build/paic/catkin_generated/installspace/paicConfig.cmake"
+    "/home/neurorobotic_student/panda-robot-control/panda_ws/build/paic/catkin_generated/installspace/paicConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/paic" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/src/paic/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/paic" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/src/paic/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -59,7 +59,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpaic.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/neurorobotic_student/panda_ws/devel/lib/libpaic.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/libpaic.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpaic.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpaic.so")
     file(RPATH_CHANGE
@@ -76,6 +76,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/paic" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/src/paic/include/paic/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/paic" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/src/paic/include/paic/")
 endif()
 

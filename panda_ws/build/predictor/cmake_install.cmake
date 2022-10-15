@@ -1,8 +1,8 @@
-# Install script for directory: /home/neurorobotic_student/panda_ws/src/predictor
+# Install script for directory: /home/neurorobotic_student/panda-robot-control/panda_ws/src/predictor
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/neurorobotic_student/panda_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/neurorobotic_student/panda-robot-control/panda_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,53 +38,53 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/predictor/msg" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/src/predictor/msg/PredictedPoses.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/predictor/msg" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/src/predictor/msg/PredictedPoses.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/predictor/cmake" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/build/predictor/catkin_generated/installspace/predictor-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/predictor/cmake" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/build/predictor/catkin_generated/installspace/predictor-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/devel/include/predictor")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/predictor")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/devel/share/roseus/ros/predictor")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/roseus/ros/predictor")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/devel/share/common-lisp/ros/predictor")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/common-lisp/ros/predictor")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/devel/share/gennodejs/ros/predictor")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/gennodejs/ros/predictor")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/predictor")
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/predictor")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/predictor")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/predictor")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/build/predictor/catkin_generated/installspace/predictor.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/build/predictor/catkin_generated/installspace/predictor.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/predictor/cmake" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/build/predictor/catkin_generated/installspace/predictor-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/predictor/cmake" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/build/predictor/catkin_generated/installspace/predictor-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/predictor/cmake" TYPE FILE FILES
-    "/home/neurorobotic_student/panda_ws/build/predictor/catkin_generated/installspace/predictorConfig.cmake"
-    "/home/neurorobotic_student/panda_ws/build/predictor/catkin_generated/installspace/predictorConfig-version.cmake"
+    "/home/neurorobotic_student/panda-robot-control/panda_ws/build/predictor/catkin_generated/installspace/predictorConfig.cmake"
+    "/home/neurorobotic_student/panda-robot-control/panda_ws/build/predictor/catkin_generated/installspace/predictorConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/predictor" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/src/predictor/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/predictor" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/src/predictor/package.xml")
 endif()
 

@@ -4,6 +4,7 @@
 void sayHello()
 {
     ROS_INFO("Hello! paic");
+    ROS_INFO("paic.cpp running...");
 }
 
 

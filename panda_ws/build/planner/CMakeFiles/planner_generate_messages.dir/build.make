@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/neurorobotic_student/panda_ws/src
+CMAKE_SOURCE_DIR = /home/neurorobotic_student/panda-robot-control/panda_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/neurorobotic_student/panda_ws/build
+CMAKE_BINARY_DIR = /home/neurorobotic_student/panda-robot-control/panda_ws/build
 
 # Utility rule file for planner_generate_messages.
 
@@ -63,10 +63,10 @@ planner/CMakeFiles/planner_generate_messages.dir/build: planner_generate_message
 .PHONY : planner/CMakeFiles/planner_generate_messages.dir/build
 
 planner/CMakeFiles/planner_generate_messages.dir/clean:
-	cd /home/neurorobotic_student/panda_ws/build/planner && $(CMAKE_COMMAND) -P CMakeFiles/planner_generate_messages.dir/cmake_clean.cmake
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build/planner && $(CMAKE_COMMAND) -P CMakeFiles/planner_generate_messages.dir/cmake_clean.cmake
 .PHONY : planner/CMakeFiles/planner_generate_messages.dir/clean
 
 planner/CMakeFiles/planner_generate_messages.dir/depend:
-	cd /home/neurorobotic_student/panda_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/neurorobotic_student/panda_ws/src /home/neurorobotic_student/panda_ws/src/planner /home/neurorobotic_student/panda_ws/build /home/neurorobotic_student/panda_ws/build/planner /home/neurorobotic_student/panda_ws/build/planner/CMakeFiles/planner_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/neurorobotic_student/panda-robot-control/panda_ws/src /home/neurorobotic_student/panda-robot-control/panda_ws/src/planner /home/neurorobotic_student/panda-robot-control/panda_ws/build /home/neurorobotic_student/panda-robot-control/panda_ws/build/planner /home/neurorobotic_student/panda-robot-control/panda_ws/build/planner/CMakeFiles/planner_generate_messages.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : planner/CMakeFiles/planner_generate_messages.dir/depend
 

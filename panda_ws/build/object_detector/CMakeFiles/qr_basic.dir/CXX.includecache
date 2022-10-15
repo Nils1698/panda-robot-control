@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/neurorobotic_student/panda_ws/src/object_detector/src/qr_basic.cpp
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/src/qr_basic.cpp
 ros/ros.h
 -
 opencv2/objdetect.hpp

@@ -67,14 +67,14 @@ set(franka_aic_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(franka_aic_SOURCE_PREFIX /home/neurorobotic_student/panda_ws/src/franka_aic)
-  set(franka_aic_DEVEL_PREFIX /home/neurorobotic_student/panda_ws/devel)
+  set(franka_aic_SOURCE_PREFIX /home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic)
+  set(franka_aic_DEVEL_PREFIX /home/neurorobotic_student/panda-robot-control/panda_ws/devel)
   set(franka_aic_INSTALL_PREFIX "")
   set(franka_aic_PREFIX ${franka_aic_DEVEL_PREFIX})
 else()
   set(franka_aic_SOURCE_PREFIX "")
   set(franka_aic_DEVEL_PREFIX "")
-  set(franka_aic_INSTALL_PREFIX /home/neurorobotic_student/panda_ws/install)
+  set(franka_aic_INSTALL_PREFIX /home/neurorobotic_student/panda-robot-control/panda_ws/install)
   set(franka_aic_PREFIX ${franka_aic_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(franka_aic_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/neurorobotic_student/panda_ws/devel/include;/home/neurorobotic_student/panda_ws/src/franka_aic/include;/opt/ros/noetic/include " STREQUAL " ")
+if(NOT "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include;/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/include;/opt/ros/noetic/include " STREQUAL " ")
   set(franka_aic_INCLUDE_DIRS "")
-  set(_include_dirs "/home/neurorobotic_student/panda_ws/devel/include;/home/neurorobotic_student/panda_ws/src/franka_aic/include;/opt/ros/noetic/include")
+  set(_include_dirs "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include;/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/include;/opt/ros/noetic/include")
   if(NOT "https://github.com/frankaemika/franka_ros/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/frankaemika/franka_ros/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/neurorobotic_student/panda_ws/devel/include;/home/neurorobotic_stu
         message(FATAL_ERROR "Project 'franka_aic' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'franka_aic' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/neurorobotic_student/panda_ws/src/franka_aic/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'franka_aic' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/${idir}'.  ${_report}")
     endif()
     _list_append_unique(franka_aic_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/neurorobotic_student/panda_ws/devel/lib;/home/neurorobotic_student/panda_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

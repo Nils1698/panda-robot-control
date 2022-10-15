@@ -67,14 +67,14 @@ set(predictor_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(predictor_SOURCE_PREFIX /home/neurorobotic_student/panda_ws/src/predictor)
-  set(predictor_DEVEL_PREFIX /home/neurorobotic_student/panda_ws/devel)
+  set(predictor_SOURCE_PREFIX /home/neurorobotic_student/panda-robot-control/panda_ws/src/predictor)
+  set(predictor_DEVEL_PREFIX /home/neurorobotic_student/panda-robot-control/panda_ws/devel)
   set(predictor_INSTALL_PREFIX "")
   set(predictor_PREFIX ${predictor_DEVEL_PREFIX})
 else()
   set(predictor_SOURCE_PREFIX "")
   set(predictor_DEVEL_PREFIX "")
-  set(predictor_INSTALL_PREFIX /home/neurorobotic_student/panda_ws/install)
+  set(predictor_INSTALL_PREFIX /home/neurorobotic_student/panda-robot-control/panda_ws/install)
   set(predictor_PREFIX ${predictor_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/neurorobotic_student/panda_ws/install/lib;/home/neurorobotic_student/panda_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/neurorobotic_student/panda-robot-control/panda_ws/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/common_functions.cpp" "/home/neurorobotic_student/panda_ws/build/apriltag_ros/CMakeFiles/apriltag_ros_common.dir/src/common_functions.cpp.o"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/common_functions.cpp" "/home/neurorobotic_student/panda-robot-control/panda_ws/build/apriltag_ros/CMakeFiles/apriltag_ros_common.dir/src/common_functions.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -18,8 +18,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/neurorobotic_student/panda_ws/devel/include"
-  "/home/neurorobotic_student/panda_ws/src/apriltag_ros/include"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/eigen3"
   "/opt/ros/noetic/include"

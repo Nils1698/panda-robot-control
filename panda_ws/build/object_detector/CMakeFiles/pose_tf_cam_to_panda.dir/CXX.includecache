@@ -6,21 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/neurorobotic_student/panda_ws/src/object_detector/src/pose_tf_cam_to_panda.cpp
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/src/pose_tf_cam_to_panda.cpp
 ros/ros.h
-/home/neurorobotic_student/panda_ws/src/object_detector/src/ros/ros.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/src/ros/ros.h
 geometry_msgs/PoseWithCovarianceStamped.h
 -
 geometry_msgs/PointStamped.h
-/home/neurorobotic_student/panda_ws/src/object_detector/src/geometry_msgs/PointStamped.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/src/geometry_msgs/PointStamped.h
 tf2_ros/transform_listener.h
-/home/neurorobotic_student/panda_ws/src/object_detector/src/tf2_ros/transform_listener.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/src/tf2_ros/transform_listener.h
 tf2_ros/message_filter.h
-/home/neurorobotic_student/panda_ws/src/object_detector/src/tf2_ros/message_filter.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/src/tf2_ros/message_filter.h
 message_filters/subscriber.h
-/home/neurorobotic_student/panda_ws/src/object_detector/src/message_filters/subscriber.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/src/message_filters/subscriber.h
 tf2_geometry_msgs/tf2_geometry_msgs.h
-/home/neurorobotic_student/panda_ws/src/object_detector/src/tf2_geometry_msgs/tf2_geometry_msgs.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/src/tf2_geometry_msgs/tf2_geometry_msgs.h
 
 /opt/ros/noetic/include/geometry_msgs/Point.h
 string

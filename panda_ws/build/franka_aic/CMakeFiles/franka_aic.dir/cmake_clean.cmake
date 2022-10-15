@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/neurorobotic_student/panda_ws/devel/lib/libfranka_aic.pdb"
-  "/home/neurorobotic_student/panda_ws/devel/lib/libfranka_aic.so"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/libfranka_aic.pdb"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/libfranka_aic.so"
   "CMakeFiles/franka_aic.dir/src/AIC_controller.cpp.o"
   "CMakeFiles/franka_aic.dir/src/AICpanda.cpp.o"
   "CMakeFiles/franka_aic.dir/src/MRAC_controller.cpp.o"

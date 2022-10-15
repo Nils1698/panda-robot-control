@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/neurorobotic_student/panda_ws/devel/share/gennodejs/ros/predictor/msg/PredictedPoses.js"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/gennodejs/ros/predictor/msg/PredictedPoses.js"
   "CMakeFiles/predictor_generate_messages_nodejs"
 )
 

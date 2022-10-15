@@ -1,4 +1,4 @@
-prefix=/home/neurorobotic_student/panda_ws/install
+prefix=/home/neurorobotic_student/panda-robot-control/panda_ws/install
 
 Name: nils_master_pkg
 Description: Description of nils_master_pkg

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/neurorobotic_student/panda_ws/devel/lib/apriltag_ros/apriltag_ros_single_image_client_node"
-  "/home/neurorobotic_student/panda_ws/devel/lib/apriltag_ros/apriltag_ros_single_image_client_node.pdb"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/apriltag_ros/apriltag_ros_single_image_client_node"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/apriltag_ros/apriltag_ros_single_image_client_node.pdb"
   "CMakeFiles/apriltag_ros_single_image_client_node.dir/src/apriltag_ros_single_image_client_node.cpp.o"
 )
 

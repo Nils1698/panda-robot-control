@@ -1,4 +1,4 @@
-prefix=/home/neurorobotic_student/panda_ws/install
+prefix=/home/neurorobotic_student/panda-robot-control/panda_ws/install
 
 Name: non_realtime_launcher
 Description: Description of non_realtime_launcher

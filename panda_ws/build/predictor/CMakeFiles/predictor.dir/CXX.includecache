@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/neurorobotic_student/panda_ws/devel/include/predictor/PredictedPoses.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/predictor/PredictedPoses.h
 string
 -
 vector
@@ -28,7 +28,7 @@ std_msgs/MultiArrayLayout.h
 geometry_msgs/PoseWithCovariance.h
 -
 
-/home/neurorobotic_student/panda_ws/src/predictor/src/predictor.cpp
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/predictor/src/predictor.cpp
 memory
 -
 string

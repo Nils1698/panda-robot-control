@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/neurorobotic_student/panda_ws/devel/include/predictor/PredictedPoses.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/predictor/PredictedPoses.h
 string
 -
 vector
@@ -28,31 +28,31 @@ std_msgs/MultiArrayLayout.h
 geometry_msgs/PoseWithCovariance.h
 -
 
-/home/neurorobotic_student/panda_ws/src/planner/include/planner/cubic_trajectory_generator/cubic_trajectory_generator.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/include/planner/cubic_trajectory_generator/cubic_trajectory_generator.h
 rtwtypes.h
-/home/neurorobotic_student/panda_ws/src/planner/include/planner/cubic_trajectory_generator/rtwtypes.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/include/planner/cubic_trajectory_generator/rtwtypes.h
 cstddef
 -
 cstdlib
 -
 
-/home/neurorobotic_student/panda_ws/src/planner/include/planner/cubic_trajectory_generator/cubic_trajectory_generator_terminate.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/include/planner/cubic_trajectory_generator/cubic_trajectory_generator_terminate.h
 rtwtypes.h
-/home/neurorobotic_student/panda_ws/src/planner/include/planner/cubic_trajectory_generator/rtwtypes.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/include/planner/cubic_trajectory_generator/rtwtypes.h
 cstddef
 -
 cstdlib
 -
 
-/home/neurorobotic_student/panda_ws/src/planner/include/planner/cubic_trajectory_generator/rt_nonfinite.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/include/planner/cubic_trajectory_generator/rt_nonfinite.h
 rtwtypes.h
-/home/neurorobotic_student/panda_ws/src/planner/include/planner/cubic_trajectory_generator/rtwtypes.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/include/planner/cubic_trajectory_generator/rtwtypes.h
 
-/home/neurorobotic_student/panda_ws/src/planner/include/planner/cubic_trajectory_generator/rtwtypes.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/include/planner/cubic_trajectory_generator/rtwtypes.h
 tmwtypes.h
-/home/neurorobotic_student/panda_ws/src/planner/include/planner/cubic_trajectory_generator/tmwtypes.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/include/planner/cubic_trajectory_generator/tmwtypes.h
 
-/home/neurorobotic_student/panda_ws/src/planner/src/cubic_planner.cpp
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/src/cubic_planner.cpp
 memory
 -
 string
@@ -84,11 +84,11 @@ iostream
 sstream
 -
 planner/cubic_trajectory_generator/cubic_trajectory_generator.h
-/home/neurorobotic_student/panda_ws/src/planner/src/planner/cubic_trajectory_generator/cubic_trajectory_generator.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/src/planner/cubic_trajectory_generator/cubic_trajectory_generator.h
 planner/cubic_trajectory_generator/cubic_trajectory_generator_terminate.h
-/home/neurorobotic_student/panda_ws/src/planner/src/planner/cubic_trajectory_generator/cubic_trajectory_generator_terminate.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/src/planner/cubic_trajectory_generator/cubic_trajectory_generator_terminate.h
 planner/cubic_trajectory_generator/rt_nonfinite.h
-/home/neurorobotic_student/panda_ws/src/planner/src/planner/cubic_trajectory_generator/rt_nonfinite.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/src/planner/cubic_trajectory_generator/rt_nonfinite.h
 
 /opt/ros/noetic/include/geometry_msgs/Point.h
 string

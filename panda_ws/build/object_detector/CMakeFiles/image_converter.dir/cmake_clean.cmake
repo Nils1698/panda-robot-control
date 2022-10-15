@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/neurorobotic_student/panda_ws/devel/lib/object_detector/image_converter"
-  "/home/neurorobotic_student/panda_ws/devel/lib/object_detector/image_converter.pdb"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/image_converter"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/image_converter.pdb"
   "CMakeFiles/image_converter.dir/src/image_converter.cpp.o"
 )
 

@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/neurorobotic_student/panda_ws/devel/include/nils_master_pkg/PredictedPoses.h"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/nils_master_pkg/PredictedPoses.h"
   "CMakeFiles/nils_master_pkg_generate_messages_cpp"
 )
 

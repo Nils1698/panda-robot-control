@@ -1,8 +1,8 @@
-# Install script for directory: /home/neurorobotic_student/panda_ws/src/franka_aic
+# Install script for directory: /home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/neurorobotic_student/panda_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/neurorobotic_student/panda-robot-control/panda_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,74 +38,74 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/franka_aic/msg" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/src/franka_aic/msg/JointTorqueComparison.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/franka_aic/msg" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/msg/JointTorqueComparison.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/franka_aic/cmake" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/build/franka_aic/catkin_generated/installspace/franka_aic-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/franka_aic/cmake" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/build/franka_aic/catkin_generated/installspace/franka_aic-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/devel/include/franka_aic")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/franka_aic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/devel/share/roseus/ros/franka_aic")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/roseus/ros/franka_aic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/devel/share/common-lisp/ros/franka_aic")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/common-lisp/ros/franka_aic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/devel/share/gennodejs/ros/franka_aic")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/gennodejs/ros/franka_aic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic")
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/franka_aic" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/devel/include/franka_aic/compliance_paramConfig.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/franka_aic" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/franka_aic/compliance_paramConfig.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/franka_aic" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/devel/include/franka_aic/desired_mass_paramConfig.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/franka_aic" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/franka_aic/desired_mass_paramConfig.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/franka_aic" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic/__init__.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/franka_aic" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic/__init__.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic/cfg")
+  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic/cfg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/franka_aic" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic/cfg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/franka_aic" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic/cfg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/build/franka_aic/catkin_generated/installspace/franka_aic.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/build/franka_aic/catkin_generated/installspace/franka_aic.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/franka_aic/cmake" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/build/franka_aic/catkin_generated/installspace/franka_aic-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/franka_aic/cmake" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/build/franka_aic/catkin_generated/installspace/franka_aic-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/franka_aic/cmake" TYPE FILE FILES
-    "/home/neurorobotic_student/panda_ws/build/franka_aic/catkin_generated/installspace/franka_aicConfig.cmake"
-    "/home/neurorobotic_student/panda_ws/build/franka_aic/catkin_generated/installspace/franka_aicConfig-version.cmake"
+    "/home/neurorobotic_student/panda-robot-control/panda_ws/build/franka_aic/catkin_generated/installspace/franka_aicConfig.cmake"
+    "/home/neurorobotic_student/panda-robot-control/panda_ws/build/franka_aic/catkin_generated/installspace/franka_aicConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/franka_aic" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/src/franka_aic/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/franka_aic" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -115,7 +115,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libfranka_aic.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/neurorobotic_student/panda_ws/devel/lib/libfranka_aic.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/libfranka_aic.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libfranka_aic.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libfranka_aic.so")
     file(RPATH_CHANGE
@@ -132,22 +132,22 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/franka_aic" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/src/franka_aic/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/franka_aic" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/launch")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/franka_aic" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda_ws/src/franka_aic/config")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/franka_aic" TYPE DIRECTORY FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/config")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/franka_aic" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/src/franka_aic/franka_aic_plugin.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/franka_aic" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/franka_aic_plugin.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/franka_aic" TYPE PROGRAM FILES "/home/neurorobotic_student/panda_ws/build/franka_aic/catkin_generated/installspace/interactive_marker.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/franka_aic" TYPE PROGRAM FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/build/franka_aic/catkin_generated/installspace/interactive_marker.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/franka_aic" TYPE PROGRAM FILES "/home/neurorobotic_student/panda_ws/build/franka_aic/catkin_generated/installspace/move_to_start.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/franka_aic" TYPE PROGRAM FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/build/franka_aic/catkin_generated/installspace/move_to_start.py")
 endif()
 

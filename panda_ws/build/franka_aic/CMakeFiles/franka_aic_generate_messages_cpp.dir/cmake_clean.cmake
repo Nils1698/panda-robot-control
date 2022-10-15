@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/neurorobotic_student/panda_ws/devel/include/franka_aic/JointTorqueComparison.h"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/franka_aic/JointTorqueComparison.h"
   "CMakeFiles/franka_aic_generate_messages_cpp"
 )
 

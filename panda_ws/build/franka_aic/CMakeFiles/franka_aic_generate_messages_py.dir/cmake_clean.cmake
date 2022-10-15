@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/_JointTorqueComparison.py"
-  "/home/neurorobotic_student/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/__init__.py"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/_JointTorqueComparison.py"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/franka_aic/msg/__init__.py"
   "CMakeFiles/franka_aic_generate_messages_py"
 )
 

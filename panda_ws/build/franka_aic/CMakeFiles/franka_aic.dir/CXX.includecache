@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/neurorobotic_student/panda_ws/src/franka_aic/include/franka_aic/AIC_controller.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/include/franka_aic/AIC_controller.h
 controller_interface/multi_interface_controller.h
 -
 franka_hw/franka_cartesian_command_interface.h
@@ -26,7 +26,7 @@ geometry_msgs/PoseWithCovarianceStamped.h
 tf2_geometry_msgs/tf2_geometry_msgs.h
 -
 panda_utils/panda_trac_ik.h
-/home/neurorobotic_student/panda_ws/src/franka_aic/include/franka_aic/panda_utils/panda_trac_ik.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/include/franka_aic/panda_utils/panda_trac_ik.h
 dynamic_reconfigure/server.h
 -
 franka_hw/franka_model_interface.h
@@ -46,19 +46,19 @@ iterator
 Eigen/Core
 -
 std_msgs/MultiArrayLayout.h
-/home/neurorobotic_student/panda_ws/src/franka_aic/include/franka_aic/std_msgs/MultiArrayLayout.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/include/franka_aic/std_msgs/MultiArrayLayout.h
 std_msgs/MultiArrayDimension.h
-/home/neurorobotic_student/panda_ws/src/franka_aic/include/franka_aic/std_msgs/MultiArrayDimension.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/include/franka_aic/std_msgs/MultiArrayDimension.h
 std_msgs/Float32MultiArray.h
-/home/neurorobotic_student/panda_ws/src/franka_aic/include/franka_aic/std_msgs/Float32MultiArray.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/include/franka_aic/std_msgs/Float32MultiArray.h
 std_msgs/Float64.h
-/home/neurorobotic_student/panda_ws/src/franka_aic/include/franka_aic/std_msgs/Float64.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/include/franka_aic/std_msgs/Float64.h
 sensor_msgs/JointState.h
 -
 std_msgs/UInt32.h
 -
 
-/home/neurorobotic_student/panda_ws/src/franka_aic/include/franka_aic/MRAC_controller.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/include/franka_aic/MRAC_controller.h
 controller_interface/multi_interface_controller.h
 -
 franka_hw/franka_cartesian_command_interface.h
@@ -78,7 +78,7 @@ geometry_msgs/PoseWithCovarianceStamped.h
 tf2_geometry_msgs/tf2_geometry_msgs.h
 -
 panda_utils/panda_trac_ik.h
-/home/neurorobotic_student/panda_ws/src/franka_aic/include/franka_aic/panda_utils/panda_trac_ik.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/include/franka_aic/panda_utils/panda_trac_ik.h
 dynamic_reconfigure/server.h
 -
 franka_hw/franka_model_interface.h
@@ -98,17 +98,17 @@ iterator
 Eigen/Core
 -
 std_msgs/MultiArrayLayout.h
-/home/neurorobotic_student/panda_ws/src/franka_aic/include/franka_aic/std_msgs/MultiArrayLayout.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/include/franka_aic/std_msgs/MultiArrayLayout.h
 std_msgs/MultiArrayDimension.h
-/home/neurorobotic_student/panda_ws/src/franka_aic/include/franka_aic/std_msgs/MultiArrayDimension.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/include/franka_aic/std_msgs/MultiArrayDimension.h
 std_msgs/Float32MultiArray.h
-/home/neurorobotic_student/panda_ws/src/franka_aic/include/franka_aic/std_msgs/Float32MultiArray.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/include/franka_aic/std_msgs/Float32MultiArray.h
 std_msgs/Float64.h
-/home/neurorobotic_student/panda_ws/src/franka_aic/include/franka_aic/std_msgs/Float64.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/include/franka_aic/std_msgs/Float64.h
 sensor_msgs/JointState.h
 -
 
-/home/neurorobotic_student/panda_ws/src/franka_aic/include/panda_utils/panda_trac_ik.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/include/panda_utils/panda_trac_ik.h
 trac_ik/trac_ik.hpp
 -
 ros/ros.h
@@ -124,7 +124,7 @@ memory
 string
 -
 
-/home/neurorobotic_student/panda_ws/src/franka_aic/src/AIC_controller.cpp
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/src/AIC_controller.cpp
 franka_aic/AIC_controller.h
 -
 controller_interface/controller_base.h
@@ -156,7 +156,7 @@ hardware_interface/hardware_interface.h
 tf/transform_listener.h
 -
 
-/home/neurorobotic_student/panda_ws/src/franka_aic/src/AICpanda.cpp
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/src/AICpanda.cpp
 iostream
 -
 array
@@ -172,9 +172,9 @@ Eigen/Core
 Eigen/Dense
 -
 examples_common.h
-/home/neurorobotic_student/panda_ws/src/franka_aic/src/examples_common.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/src/examples_common.h
 
-/home/neurorobotic_student/panda_ws/src/franka_aic/src/MRAC_controller.cpp
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/src/MRAC_controller.cpp
 franka_aic/MRAC_controller.h
 -
 cmath
@@ -188,7 +188,7 @@ ros/ros.h
 franka/robot_state.h
 -
 
-/home/neurorobotic_student/panda_ws/src/franka_aic/src/examples_common.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/src/examples_common.h
 array
 -
 Eigen/Core
@@ -202,9 +202,9 @@ franka/robot.h
 franka/robot_state.h
 -
 
-/home/neurorobotic_student/panda_ws/src/franka_aic/src/panda_utils/panda_trac_ik.cpp
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/src/panda_utils/panda_trac_ik.cpp
 panda_utils/panda_trac_ik.h
-/home/neurorobotic_student/panda_ws/src/franka_aic/src/panda_utils/panda_utils/panda_trac_ik.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic/src/panda_utils/panda_utils/panda_trac_ik.h
 
 /opt/ros/noetic/include/class_loader/class_loader.hpp
 boost/bind.hpp

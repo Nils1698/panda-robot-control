@@ -57,6 +57,7 @@ class PoseTransformerCam2Panda{
 };
 
 int main(int argc, char** argv){
+  ROS_INFO("V1_pose_transformer.cpp running...");
   ros::init(argc, argv, "camera_detection_tf_listener");
   ros::NodeHandle n;
 

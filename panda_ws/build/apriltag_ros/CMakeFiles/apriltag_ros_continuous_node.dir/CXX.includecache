@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/apriltag_ros_continuous_node.cpp
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/apriltag_ros_continuous_node.cpp
 ros/ros.h
 -
 nodelet/loader.h

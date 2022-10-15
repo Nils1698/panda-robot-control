@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/neurorobotic_student/panda_ws/src/object_detector/src/object_detector.cpp
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/src/object_detector.cpp
 ros/ros.h
 -
 std_msgs/String.h
@@ -36,9 +36,9 @@ opencv2/highgui/highgui.hpp
 opencv2/core/version.hpp
 -
 paic/paic.h
-/home/neurorobotic_student/panda_ws/src/object_detector/src/paic/paic.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/src/paic/paic.h
 
-/home/neurorobotic_student/panda_ws/src/paic/include/paic/paic.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/paic/include/paic/paic.h
 ros/ros.h
 -
 

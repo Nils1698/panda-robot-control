@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/neurorobotic_student/panda_ws/devel/share/gennodejs/ros/planner/msg/PredictedPoses.js"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/gennodejs/ros/planner/msg/PredictedPoses.js"
   "CMakeFiles/planner_generate_messages_nodejs"
 )
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/neurorobotic_student/panda_ws/src
+CMAKE_SOURCE_DIR = /home/neurorobotic_student/panda-robot-control/panda_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/neurorobotic_student/panda_ws/build
+CMAKE_BINARY_DIR = /home/neurorobotic_student/panda-robot-control/panda_ws/build
 
 # Utility rule file for visualization_msgs_generate_messages_cpp.
 
@@ -63,10 +63,10 @@ franka_aic/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build: visual
 .PHONY : franka_aic/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
 
 franka_aic/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/clean:
-	cd /home/neurorobotic_student/panda_ws/build/franka_aic && $(CMAKE_COMMAND) -P CMakeFiles/visualization_msgs_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build/franka_aic && $(CMAKE_COMMAND) -P CMakeFiles/visualization_msgs_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : franka_aic/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/clean
 
 franka_aic/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/depend:
-	cd /home/neurorobotic_student/panda_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/neurorobotic_student/panda_ws/src /home/neurorobotic_student/panda_ws/src/franka_aic /home/neurorobotic_student/panda_ws/build /home/neurorobotic_student/panda_ws/build/franka_aic /home/neurorobotic_student/panda_ws/build/franka_aic/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/neurorobotic_student/panda-robot-control/panda_ws/src /home/neurorobotic_student/panda-robot-control/panda_ws/src/franka_aic /home/neurorobotic_student/panda-robot-control/panda_ws/build /home/neurorobotic_student/panda-robot-control/panda_ws/build/franka_aic /home/neurorobotic_student/panda-robot-control/panda_ws/build/franka_aic/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : franka_aic/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/depend
 

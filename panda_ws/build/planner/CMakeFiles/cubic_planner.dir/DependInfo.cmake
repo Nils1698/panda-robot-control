@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/neurorobotic_student/panda_ws/src/planner/src/cubic_planner.cpp" "/home/neurorobotic_student/panda_ws/build/planner/CMakeFiles/cubic_planner.dir/src/cubic_planner.cpp.o"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/src/cubic_planner.cpp" "/home/neurorobotic_student/panda-robot-control/panda_ws/build/planner/CMakeFiles/cubic_planner.dir/src/cubic_planner.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,9 +17,9 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/neurorobotic_student/panda_ws/devel/include"
-  "/home/neurorobotic_student/panda_ws/src/planner/include"
-  "/home/neurorobotic_student/panda_ws/src/apriltag_ros/include"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/src/planner/include"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/opt/ros/noetic/include"
   "/opt/ros/noetic/include/apriltag"
@@ -29,9 +29,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/neurorobotic_student/panda_ws/build/apriltag_ros/CMakeFiles/apriltag_ros_continuous_detector.dir/DependInfo.cmake"
-  "/home/neurorobotic_student/panda_ws/build/apriltag_ros/CMakeFiles/apriltag_ros_single_image_detector.dir/DependInfo.cmake"
-  "/home/neurorobotic_student/panda_ws/build/apriltag_ros/CMakeFiles/apriltag_ros_common.dir/DependInfo.cmake"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/build/apriltag_ros/CMakeFiles/apriltag_ros_continuous_detector.dir/DependInfo.cmake"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/build/apriltag_ros/CMakeFiles/apriltag_ros_single_image_detector.dir/DependInfo.cmake"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/build/apriltag_ros/CMakeFiles/apriltag_ros_common.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

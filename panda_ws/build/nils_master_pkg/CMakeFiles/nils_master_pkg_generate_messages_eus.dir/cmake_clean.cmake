@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/neurorobotic_student/panda_ws/devel/share/roseus/ros/nils_master_pkg/manifest.l"
-  "/home/neurorobotic_student/panda_ws/devel/share/roseus/ros/nils_master_pkg/msg/PredictedPoses.l"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/roseus/ros/nils_master_pkg/manifest.l"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/roseus/ros/nils_master_pkg/msg/PredictedPoses.l"
   "CMakeFiles/nils_master_pkg_generate_messages_eus"
 )
 

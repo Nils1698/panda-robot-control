@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/neurorobotic_student/panda_ws/devel/lib/nils_master_pkg/prediction_handler"
-  "/home/neurorobotic_student/panda_ws/devel/lib/nils_master_pkg/prediction_handler.pdb"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/nils_master_pkg/prediction_handler"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/nils_master_pkg/prediction_handler.pdb"
   "CMakeFiles/prediction_handler.dir/src/prediction_handler.cpp.o"
 )
 

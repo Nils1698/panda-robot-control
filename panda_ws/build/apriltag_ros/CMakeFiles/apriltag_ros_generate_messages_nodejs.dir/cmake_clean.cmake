@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/neurorobotic_student/panda_ws/devel/share/gennodejs/ros/apriltag_ros/msg/AprilTagDetection.js"
-  "/home/neurorobotic_student/panda_ws/devel/share/gennodejs/ros/apriltag_ros/msg/AprilTagDetectionArray.js"
-  "/home/neurorobotic_student/panda_ws/devel/share/gennodejs/ros/apriltag_ros/srv/AnalyzeSingleImage.js"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/gennodejs/ros/apriltag_ros/msg/AprilTagDetection.js"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/gennodejs/ros/apriltag_ros/msg/AprilTagDetectionArray.js"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/gennodejs/ros/apriltag_ros/srv/AnalyzeSingleImage.js"
   "CMakeFiles/apriltag_ros_generate_messages_nodejs"
 )
 

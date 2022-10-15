@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/neurorobotic_student/panda_ws/devel/include/apriltag_ros/AnalyzeSingleImage.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/apriltag_ros/AnalyzeSingleImage.h
 ros/service_traits.h
 -
 apriltag_ros/AnalyzeSingleImageRequest.h
@@ -14,7 +14,7 @@ apriltag_ros/AnalyzeSingleImageRequest.h
 apriltag_ros/AnalyzeSingleImageResponse.h
 -
 
-/home/neurorobotic_student/panda_ws/devel/include/apriltag_ros/AnalyzeSingleImageRequest.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/apriltag_ros/AnalyzeSingleImageRequest.h
 string
 -
 vector
@@ -32,7 +32,7 @@ ros/message_operations.h
 sensor_msgs/CameraInfo.h
 -
 
-/home/neurorobotic_student/panda_ws/devel/include/apriltag_ros/AnalyzeSingleImageResponse.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/apriltag_ros/AnalyzeSingleImageResponse.h
 string
 -
 vector
@@ -50,7 +50,7 @@ ros/message_operations.h
 apriltag_ros/AprilTagDetectionArray.h
 -
 
-/home/neurorobotic_student/panda_ws/devel/include/apriltag_ros/AprilTagDetection.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/apriltag_ros/AprilTagDetection.h
 string
 -
 vector
@@ -68,7 +68,7 @@ ros/message_operations.h
 geometry_msgs/PoseWithCovarianceStamped.h
 -
 
-/home/neurorobotic_student/panda_ws/devel/include/apriltag_ros/AprilTagDetectionArray.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/apriltag_ros/AprilTagDetectionArray.h
 string
 -
 vector
@@ -88,7 +88,7 @@ std_msgs/Header.h
 apriltag_ros/AprilTagDetection.h
 -
 
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/include/apriltag_ros/common_functions.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/include/apriltag_ros/common_functions.h
 string
 -
 sstream
@@ -124,13 +124,13 @@ tf/transform_broadcaster.h
 apriltag.h
 -
 apriltag_ros/AprilTagDetection.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/include/apriltag_ros/apriltag_ros/AprilTagDetection.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/include/apriltag_ros/apriltag_ros/AprilTagDetection.h
 apriltag_ros/AprilTagDetectionArray.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/include/apriltag_ros/apriltag_ros/AprilTagDetectionArray.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/include/apriltag_ros/apriltag_ros/AprilTagDetectionArray.h
 
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/apriltag_ros_single_image_client_node.cpp
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/apriltag_ros_single_image_client_node.cpp
 apriltag_ros/common_functions.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/apriltag_ros/common_functions.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/apriltag_ros/common_functions.h
 apriltag_ros/AnalyzeSingleImage.h
 -
 

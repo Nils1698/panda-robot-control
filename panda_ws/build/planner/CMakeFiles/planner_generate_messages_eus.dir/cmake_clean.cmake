@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/neurorobotic_student/panda_ws/devel/share/roseus/ros/planner/manifest.l"
-  "/home/neurorobotic_student/panda_ws/devel/share/roseus/ros/planner/msg/PredictedPoses.l"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/roseus/ros/planner/manifest.l"
+  "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/roseus/ros/planner/msg/PredictedPoses.l"
   "CMakeFiles/planner_generate_messages_eus"
 )
 

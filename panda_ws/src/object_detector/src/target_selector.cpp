@@ -15,53 +15,52 @@
 
 // namespace target_selector {
 
-
-
-class TargetSelector {
-  public:
+class TargetSelector
+{
+public:
   // int target_tag;
   // private:
-  ros::Subscriber sub; // Subscriber to apriltag /tag_detections
+  ros::Subscriber sub;              // Subscriber to apriltag /tag_detections
   ros::Publisher pub_pose_cov_stmp; // publisher of target object pose covariance stamped
-  ros::Publisher pub_pose; // publisher of target object pose 
+  ros::Publisher pub_pose;          // publisher of target object pose
   // apriltag_ros::AprilTagDetection target;
-  geometry_msgs::Pose                       target_pose;
-  geometry_msgs::PoseWithCovarianceStamped  target_pose_measurement;
-  public:
-  TargetSelector(ros::NodeHandle *n){ // Constructor
+  geometry_msgs::Pose target_pose;
+  geometry_msgs::PoseWithCovarianceStamped target_pose_measurement;
 
-    pub_pose_cov_stmp = n->advertise<geometry_msgs::PoseWithCovarianceStamped>
-      ("/target_pose_meas_cov_stamped",10);
-    pub_pose = n->advertise<geometry_msgs::Pose>
-      ("/target_pose_meas",10);
+public:
+  TargetSelector(ros::NodeHandle *n)
+  { // Constructor
 
-    sub = n->subscribe("/tag_detections", 1000, 
-      &TargetSelector::target_select_callback,this);  
+    pub_pose_cov_stmp = n->advertise<geometry_msgs::PoseWithCovarianceStamped>("/target_pose_meas_cov_stamped", 10);
+    pub_pose = n->advertise<geometry_msgs::Pose>("/target_pose_meas", 10);
+
+    sub = n->subscribe("/tag_detections", 1000,
+                       &TargetSelector::target_select_callback, this);
   }
 
-  void target_select_callback(const apriltag_ros::AprilTagDetectionArray& msg)
+  void target_select_callback(const apriltag_ros::AprilTagDetectionArray &msg)
   // void chatterCallback(const std_msgs::String::ConstPtr& msg)
   {
-    target_pose_measurement.header  = msg.header; // Copy header from AprilTagDetectionArray
+    target_pose_measurement.header = msg.header; // Copy header from AprilTagDetectionArray
     // target_pose.header              = msg.header;
-    std::for_each(std::begin(msg.detections), std::end(msg.detections), 
-    [this](apriltag_ros::AprilTagDetection const& detection) { // this has to be in the [this] to be able to call the class members from inside the lambda function.
-
-      ROS_INFO("I heard: [%d]", detection.id[0]);
-      if(detection.id[0]==1){
-        ROS_INFO("Target %d Selected",detection.id[0]);
-        // target_pose_measurement.pose = detection.pose.pose; //https://answers.ros.org/question/191012/problem-with-subscribe-and-callback-function/
-        target_pose_measurement = detection.pose; // PoseWithCovarianceStamped is set (probably, try to print a measurement) //https://answers.ros.org/question/191012/problem-with-subscribe-and-callback-function/
-        target_pose             = detection.pose.pose.pose;
-        // target_pose_measurement.covariance = ;TODO: just assume zero for now and take care of it in the kalman filter initialization. Answer: This has been handled in the kalman filter
-        // ROS_INFO("target_pose_measurement.pose.x = %f",target_pose_measurement.pose.pose.position.x);
-        pub_pose_cov_stmp.publish(target_pose_measurement);
-        pub_pose.publish(target_pose);
-        // target = msg.detections[0];
-        // pub.publish(msg.detections[0].pose);
-      }
-      // std::cout << detection << "\n";
-    });
+    std::for_each(std::begin(msg.detections), std::end(msg.detections),
+                  [this](apriltag_ros::AprilTagDetection const &detection) { // this has to be in the [this] to be able to call the class members from inside the lambda function.
+                    ROS_INFO("I heard: [%d]", detection.id[0]);
+                    if (detection.id[0] == 1)
+                    {
+                      ROS_INFO("Target %d Selected", detection.id[0]);
+                      // target_pose_measurement.pose = detection.pose.pose; //https://answers.ros.org/question/191012/problem-with-subscribe-and-callback-function/
+                      target_pose_measurement = detection.pose; // PoseWithCovarianceStamped is set (probably, try to print a measurement) //https://answers.ros.org/question/191012/problem-with-subscribe-and-callback-function/
+                      target_pose = detection.pose.pose.pose;
+                      // target_pose_measurement.covariance = ;TODO: just assume zero for now and take care of it in the kalman filter initialization. Answer: This has been handled in the kalman filter
+                      // ROS_INFO("target_pose_measurement.pose.x = %f",target_pose_measurement.pose.pose.position.x);
+                      pub_pose_cov_stmp.publish(target_pose_measurement);
+                      pub_pose.publish(target_pose);
+                      // target = msg.detections[0];
+                      // pub.publish(msg.detections[0].pose);
+                    }
+                    // std::cout << detection << "\n";
+                  });
     // geometry_msgs::PoseWithCovarianceStamped TagDetector::makeTagPose(
     //     const Eigen::Matrix4d& transform,
     //     const Eigen::Quaternion<double> rot_quaternion,
@@ -86,8 +85,10 @@ class TargetSelector {
 };
 // }
 
-int main(int argc, char** argv){
+int main(int argc, char **argv)
+{
   ROS_INFO("target_selector.cpp running...");
+
   ros::init(argc, argv, "my_tf2_listener");
   ros::NodeHandle n;
   // int target_tag = 6;
@@ -107,4 +108,3 @@ int main(int argc, char** argv){
   ros::spin();
   return 0;
 };
-

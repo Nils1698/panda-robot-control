@@ -1,8 +1,8 @@
-# Install script for directory: /home/neurorobotic_student/panda_ws/src/non_realtime_launcher
+# Install script for directory: /home/neurorobotic_student/panda-robot-control/panda_ws/src/non_realtime_launcher
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/neurorobotic_student/panda_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/neurorobotic_student/panda-robot-control/panda_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/build/non_realtime_launcher/catkin_generated/installspace/non_realtime_launcher.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/build/non_realtime_launcher/catkin_generated/installspace/non_realtime_launcher.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/non_realtime_launcher/cmake" TYPE FILE FILES
-    "/home/neurorobotic_student/panda_ws/build/non_realtime_launcher/catkin_generated/installspace/non_realtime_launcherConfig.cmake"
-    "/home/neurorobotic_student/panda_ws/build/non_realtime_launcher/catkin_generated/installspace/non_realtime_launcherConfig-version.cmake"
+    "/home/neurorobotic_student/panda-robot-control/panda_ws/build/non_realtime_launcher/catkin_generated/installspace/non_realtime_launcherConfig.cmake"
+    "/home/neurorobotic_student/panda-robot-control/panda_ws/build/non_realtime_launcher/catkin_generated/installspace/non_realtime_launcherConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/non_realtime_launcher" TYPE FILE FILES "/home/neurorobotic_student/panda_ws/src/non_realtime_launcher/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/non_realtime_launcher" TYPE FILE FILES "/home/neurorobotic_student/panda-robot-control/panda_ws/src/non_realtime_launcher/package.xml")
 endif()
 

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/neurorobotic_student/panda_ws/src/object_detector/src/image_converter.cpp
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/src/image_converter.cpp
 ros/ros.h
 -
 image_transport/image_transport.h
@@ -20,9 +20,9 @@ opencv2/imgproc/imgproc.hpp
 opencv2/highgui/highgui.hpp
 -
 paic/paic.h
-/home/neurorobotic_student/panda_ws/src/object_detector/src/paic/paic.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/src/paic/paic.h
 
-/home/neurorobotic_student/panda_ws/src/paic/include/paic/paic.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/paic/include/paic/paic.h
 ros/ros.h
 -
 

@@ -7,6 +7,7 @@
 #include <turtlesim/Spawn.h>
 
 int main(int argc, char** argv){
+  ROS_INFO("dummy_tf_listener.cpp running...");
   ros::init(argc, argv, "my_dummy_tf2_listener");
 
   ros::NodeHandle node;

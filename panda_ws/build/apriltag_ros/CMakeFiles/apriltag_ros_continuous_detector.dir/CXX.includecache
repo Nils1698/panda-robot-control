@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/neurorobotic_student/panda_ws/devel/include/apriltag_ros/AprilTagDetection.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/apriltag_ros/AprilTagDetection.h
 string
 -
 vector
@@ -24,7 +24,7 @@ ros/message_operations.h
 geometry_msgs/PoseWithCovarianceStamped.h
 -
 
-/home/neurorobotic_student/panda_ws/devel/include/apriltag_ros/AprilTagDetectionArray.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include/apriltag_ros/AprilTagDetectionArray.h
 string
 -
 vector
@@ -44,7 +44,7 @@ std_msgs/Header.h
 apriltag_ros/AprilTagDetection.h
 -
 
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/include/apriltag_ros/common_functions.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/include/apriltag_ros/common_functions.h
 string
 -
 sstream
@@ -80,21 +80,21 @@ tf/transform_broadcaster.h
 apriltag.h
 -
 apriltag_ros/AprilTagDetection.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/include/apriltag_ros/apriltag_ros/AprilTagDetection.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/include/apriltag_ros/apriltag_ros/AprilTagDetection.h
 apriltag_ros/AprilTagDetectionArray.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/include/apriltag_ros/apriltag_ros/AprilTagDetectionArray.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/include/apriltag_ros/apriltag_ros/AprilTagDetectionArray.h
 
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/include/apriltag_ros/continuous_detector.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/include/apriltag_ros/continuous_detector.h
 apriltag_ros/common_functions.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/include/apriltag_ros/apriltag_ros/common_functions.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/include/apriltag_ros/apriltag_ros/common_functions.h
 memory
 -
 nodelet/nodelet.h
 -
 
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/continuous_detector.cpp
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/continuous_detector.cpp
 apriltag_ros/continuous_detector.h
-/home/neurorobotic_student/panda_ws/src/apriltag_ros/src/apriltag_ros/continuous_detector.h
+/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/src/apriltag_ros/continuous_detector.h
 pluginlib/class_list_macros.hpp
 -
 
