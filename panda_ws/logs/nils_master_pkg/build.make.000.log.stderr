@@ -1,0 +1,8 @@
+[01m[K/home/neurorobotic_student/panda-robot-control/panda_ws/src/nils_master_pkg/src/prediction_handler.cpp:15:10:[m[K [01;31m[Kfatal error: [m[Kpredictor/PredictedPoses.h: No such file or directory
+   15 | #include [01;31m[K<predictor/PredictedPoses.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/prediction_handler.dir/build.make:63: CMakeFiles/prediction_handler.dir/src/prediction_handler.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:247: CMakeFiles/prediction_handler.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:141: all] Error 2

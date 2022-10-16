@@ -1,33 +1,32 @@
 <?xml version="1.0" ?>
 <launch>
   <arg name="robot_ip" default="172.16.0.3"/>
+  <arg name="robot" default="panda" doc="choose your robot. Possible values: [panda, fr3]"/>
+  <arg name="arm_id" default="$(arg robot)" />
   <arg name="trajectory_method" default="1" />
   <arg name="load_gripper" default="false" />
-  <include file="$(find franka_control)/launch/franka_control.launch" >
-    <arg name="robot_ip" value="$(arg robot_ip)" />
-    <arg name="load_gripper" value="$(arg load_gripper)" />
-  </include>
+  <arg name="xacro_args" default="" />
 
+  <!-- franka_control.launch -->
+  <param name="robot_description" command="$(find xacro)/xacro $(find nils_master_pkg)/robots/panda_with_gripper_mounted.urdf.xacro hand:=$(arg load_gripper) arm_id:=$(arg arm_id) $(arg xacro_args)"/>
 
-  <!-- https://bitbucket.org/traclabs/trac_ik/src/master/trac_ik_examples/launch/pr2_arm.launch -->
-  <!-- jeg ved ikke hvad "-""-"inorder gør -->
-  <!-- <param name="robot_description" command="$(find xacro)/xacro '$(find mypackage)/path/to/robot.xacro'" /> -->
-  <!--   <param name="/xacro_param"      command="$(find xacro)/xacro '$(find franka_description)/robots/panda_arm.xacro'" /> -->
-  <!--   <param name="/urdf_xacro_param" command="$(find xacro)/xacro '$(find franka_description)/robots/panda_arm.urdf.xacro'" /> -->
-  <!--   <param name="/that_one_parameter_name" command="$(find xacro)/xacro '$(find franka_aic)/urdf/panda_arm.urdf.xacro'" /> -->
-  <!-- <remap from="/hiro_panda/goto_pose" to="/ns_targets/target_pose_meas"/> -->
+  <node name="franka_control" pkg="franka_control" type="franka_control_node" output="screen" required="true">
+    <rosparam command="load" file="$(find franka_control)/config/franka_control_node.yaml" subst_value="true" />
+    <param name="robot_ip" value="$(arg robot_ip)" />
+  </node>
 
+  <rosparam command="load" file="$(find franka_control)/config/default_controllers.yaml" subst_value="true" />
+  <node name="state_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="franka_state_controller"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen"/>
+  <node name="joint_state_publisher" type="joint_state_publisher" pkg="joint_state_publisher" output="screen">
+    <rosparam unless="$(arg load_gripper)" param="source_list">[/joint_states] </rosparam>
+    <rosparam param="use_gui">false</rosparam>
+    <param name="rate" value="30"/>
+  </node>
   
-
-
+  <!-- AIC controller launch -->
   <param name="/hiro_panda/trajectory_method" type="int" value="$(arg trajectory_method)" />
   <rosparam file="$(find franka_aic)/config/franka_aic.yaml" command="load" />
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"  args="AIC_controller"/>
-  <!-- Display current robot configuration in rviz: -->
-  <!-- <node pkg="rviz" type="rviz" output="screen" name="rviz" args="-d $(find franka_aic)/launch/robot.rviz"/> -->
-<!--   <node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" required="false" /> -->
-<!--   <node pkg="rosbag" type="record" args="-o /home/neurorobotic_student/ckk_ws/rosbags/aic/ -->
-<!--     /joint_states -->
-<!--     " name="record"/> -->
 
 </launch>

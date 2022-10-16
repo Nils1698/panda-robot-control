@@ -1,0 +1,10 @@
+object_detector
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/object_detector/cmake.lock /home/neurorobotic_student/panda-robot-control/panda_ws/devel/./cmake.lock
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/object_detector/lib/object_detector/pose_tf_cam_to_panda /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/pose_tf_cam_to_panda
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/object_detector/lib/object_detector/object_detector /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/object_detector
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/object_detector/lib/object_detector/image_converter /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/image_converter
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/object_detector/lib/object_detector/target_selector /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/target_selector
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/object_detector/lib/object_detector/qr_basic /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/qr_basic
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/object_detector/lib/pkgconfig/object_detector.pc /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/pkgconfig/object_detector.pc
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/object_detector/share/object_detector/cmake/object_detectorConfig-version.cmake /home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/object_detector/cmake/object_detectorConfig-version.cmake
+/home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/object_detector/share/object_detector/cmake/object_detectorConfig.cmake /home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/object_detector/cmake/object_detectorConfig.cmake

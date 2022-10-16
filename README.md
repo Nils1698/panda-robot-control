@@ -180,6 +180,36 @@ Make sure to select the correct topic in the top right of the screen. The image 
 
 ## Debugging
 
+# <<<<<<< HEAD
+
+### General advise
+
+Make sure your system stays update and regularly run:
+
+```
+sudo apt update
+sudo apt upgrade
+```
+
+### The ROS package does not show up
+
+This error is quiet common and there are few things that need to checked regularly. First of all, make sure to run `catkin_make` inside off you panda_ws workspace. Verify that no errors occur otherwise try to delete the build and devel folder and run `catkin_make` again. Next, source the panda_ws folder inside of you -bashrc file. You can open and edit the file as follows:
+
+```
+gedit ~/.bashrc
+```
+
+Save the file and then restart the terminal. If this does not work try to run the following:
+
+```
+rospack profile
+rospack find <your_package_name>
+```
+
+If the rospackage shows up it means that ros can see it. You might not find it with for example roslaunch because it does not include any launch files or you are missspelling the folder name.
+
+> > > > > > > 2570327a35f47b07e034aa4a8fe44d46c8f46acb
+
 ## ROS packages of the repository
 
 ### apriltag_ros, franka-aic, non_realtime_launcher, object_detector, paic, planner, predictor

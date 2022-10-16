@@ -1,0 +1,3 @@
+Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/pkgconfig/panda_moveit_config.pc
+Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/panda_moveit_config/cmake/panda_moveit_configConfig-version.cmake
+Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/panda_moveit_config/cmake/panda_moveit_configConfig.cmake
