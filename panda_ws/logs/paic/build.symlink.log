@@ -1,0 +1,4 @@
+Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/libpaic.so
+Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/pkgconfig/paic.pc
+Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/paic/cmake/paicConfig.cmake
+Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/paic/cmake/paicConfig-version.cmake

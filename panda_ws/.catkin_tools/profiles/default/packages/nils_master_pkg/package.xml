@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>nils_master_pkg</name>
+  <version>0.0.0</version>
+  <description>The nils_master_pkg package</description>
+
+  <maintainer email="s202507@dtu.dk">Nils Meile</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>message_generation</build_depend>
+  <build_depend>eigen</build_depend>
+  <url type="website">https://github.com/Nils1698/panda-robot-control</url>
+
+  <build_export_depend>message_runtime</build_export_depend>
+
+  <depend>apriltag_ros</depend>
+  <depend>cv_bridge</depend>
+  <depend>geometry_msgs</depend>
+  <depend>image_transport</depend>
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+
+  <exec_depend>message_runtime</exec_depend>
+  
+</package>

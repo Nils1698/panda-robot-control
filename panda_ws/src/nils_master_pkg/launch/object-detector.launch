@@ -1,7 +1,7 @@
 <launch>
     <!-- Arguments to object_detector -->
 	<arg name="debug"           default="false"/>
-    <arg name="attach_gripper"  default="false"/>
+    <arg name="attach_gripper"  default="true"/>
     <arg name="predictor"       default="true"/>
 
     <!-- Arguments for the camera -->
@@ -51,11 +51,15 @@
     <remap from="/target_detection_camera" to="/target_pose_meas_cov_stamped" />
 
     <!-- Launch tf converter from cam to panda -->
-    <!-- Here it is important to note that in the case that the predictor is turned to false 
+    <!-- Here it is important to note that in the case that the predictor is turned to false
     this node will directly publish the transformed apriltag coordinates to the controller.
     Thus the controller will not follow the estimate of the Kalman filter-->
-    
-    <node pkg="nils_master_pkg" name="publish_tf_apriltag_pose_to_controller" type="publish_tf_apriltag_pose_to_controller" output="screen" if="$(eval arg('predictor') == false)"/>
+    <group if="$(eval arg('attach_gripper') == false)">
+        <node pkg="nils_master_pkg" name="publish_tf_apriltag_pose_to_controller" type="publish_tf_apriltag_pose_to_controller" output="screen" if="$(eval arg('predictor') == false)"/>
+    </group>
+    <group if="$(arg attach_gripper)">
+        <node pkg="nils_master_pkg" name="publish_tf_apriltag_pose_to_controller" type="publish_tf_apriltag_pose_to_controller_gripper" output="screen" if="$(eval arg('predictor') == false)"/>
+    </group>
 
     <!-- Launch files for the predictor of the targeted AprilTag -->
     <group if="$(arg predictor)">
@@ -74,6 +78,6 @@
     
     <!--Adds an tf frame to the tf tree. However the robot does not care about this up to now.-->
     <group if="$(arg attach_gripper)">
-        <node pkg="tf2_ros" type="static_transform_publisher" name="gripper_broadcaster" args="0.0 0.0 0.195 0.0 0.0 0.0 1.0 panda_link8 gripper"/>
+        <node pkg="tf2_ros" type="static_transform_publisher" name="gripper_broadcaster" args="0.0 0.195 0.0 0.0 0.0 0.0 1.0 panda_link8 robotiq_arg2f_base_link"/>
     </group>
 </launch>

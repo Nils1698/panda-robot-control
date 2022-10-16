@@ -1,0 +1,18 @@
+[35m[1mScanning dependencies of target predictor3d[0m
+[35m[1mScanning dependencies of target prediction_handler_or_path_planner[0m
+[  7%] [32mBuilding CXX object CMakeFiles/predictor3d.dir/src/predictor3d.cpp.o[0m
+[ 14%] [32mBuilding CXX object CMakeFiles/prediction_handler_or_path_planner.dir/src/prediction_handler_or_path_planner.cpp.o[0m
+[01m[K/home/neurorobotic_student/panda-robot-control/panda_ws/src/predictor/src/predictor3d.cpp:14:10:[m[K [01;31m[Kfatal error: [m[Kpredictor/PredictedPoses.h: No such file or directory
+   14 | #include [01;31m[K<predictor/PredictedPoses.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/predictor3d.dir/build.make:63: CMakeFiles/predictor3d.dir/src/predictor3d.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:247: CMakeFiles/predictor3d.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[01m[K/home/neurorobotic_student/panda-robot-control/panda_ws/src/predictor/src/prediction_handler_or_path_planner.cpp:14:10:[m[K [01;31m[Kfatal error: [m[Kpredictor/PredictedPoses.h: No such file or directory
+   14 | #include [01;31m[K<predictor/PredictedPoses.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/prediction_handler_or_path_planner.dir/build.make:63: CMakeFiles/prediction_handler_or_path_planner.dir/src/prediction_handler_or_path_planner.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:220: CMakeFiles/prediction_handler_or_path_planner.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

@@ -1,0 +1,18 @@
+[35m[1mScanning dependencies of target publish_tf_apriltag_pose_to_controller[0m
+[  6%] [32mBuilding CXX object CMakeFiles/publish_tf_apriltag_pose_to_controller.dir/src/publish_tf_apriltag_pose_to_controller.cpp.o[0m
+[35m[1mScanning dependencies of target prediction_handler[0m
+[ 13%] [32mBuilding CXX object CMakeFiles/prediction_handler.dir/src/prediction_handler.cpp.o[0m
+[35m[1mScanning dependencies of target publish_tf_apriltag_pose_to_predictor[0m
+[ 20%] [32mBuilding CXX object CMakeFiles/publish_tf_apriltag_pose_to_predictor.dir/src/publish_tf_apriltag_pose_to_predictor.cpp.o[0m
+[01m[K/home/neurorobotic_student/panda-robot-control/panda_ws/src/nils_master_pkg/src/prediction_handler.cpp:15:10:[m[K [01;31m[Kfatal error: [m[Kpredictor/PredictedPoses.h: No such file or directory
+   15 | #include [01;31m[K<predictor/PredictedPoses.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/prediction_handler.dir/build.make:63: CMakeFiles/prediction_handler.dir/src/prediction_handler.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:247: CMakeFiles/prediction_handler.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 26%] [32m[1mLinking CXX executable /home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/nils_master_pkg/lib/nils_master_pkg/publish_tf_apriltag_pose_to_controller[0m
+[ 26%] Built target publish_tf_apriltag_pose_to_controller
+[ 33%] [32m[1mLinking CXX executable /home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/nils_master_pkg/lib/nils_master_pkg/publish_tf_apriltag_pose_to_predictor[0m
+[ 33%] Built target publish_tf_apriltag_pose_to_predictor
+make: *** [Makefile:141: all] Error 2
