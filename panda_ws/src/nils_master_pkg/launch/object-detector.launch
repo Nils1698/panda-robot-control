@@ -1,7 +1,7 @@
 <launch>
     <!-- Arguments to object_detector -->
 	<arg name="debug"           default="false"/>
-    <arg name="attach_gripper"  default="true"/>
+    <arg name="attach_gripper"  default="false"/>
     <arg name="predictor"       default="true"/>
 
     <!-- Arguments for the camera -->
@@ -58,7 +58,7 @@
         <node pkg="nils_master_pkg" name="publish_tf_apriltag_pose_to_controller" type="publish_tf_apriltag_pose_to_controller" output="screen" if="$(eval arg('predictor') == false)"/>
     </group>
     <group if="$(arg attach_gripper)">
-        <node pkg="nils_master_pkg" name="publish_tf_apriltag_pose_to_controller" type="publish_tf_apriltag_pose_to_controller_gripper" output="screen" if="$(eval arg('predictor') == false)"/>
+        <node pkg="nils_master_pkg" name="publish_tf_apriltag_pose_to_controller_gripper" type="publish_tf_apriltag_pose_to_controller_gripper" output="screen" if="$(eval arg('predictor') == false)"/>
     </group>
 
     <!-- Launch files for the predictor of the targeted AprilTag -->
