@@ -212,7 +212,7 @@ chmod 755 TeensyduinoInstall.linux64
 An installation menu should open. Complete the steps. Be aware when being asked for the Arduino folder that you should select the folder after extraction. In my case that was "arduino-1-8-13". Afterwards, start the arduino software with `./arduino` again. Under tools a new menu point "Board: Teenzy 3.2/3.1" should have been added.
 You can now run programs on the Teenzy from the terminal.
 
-It might be that the USB port does not have permissions to run programs. In order, to fix this problem you need to find the USB dev path of the Teenzyboard and give it permissions. There is a script called usb inside of panda-robot-arm which you can run to get a list of all connected external USB devices with their USB dev part:
+It might be that the USB port does not have permissions to run programs. In order, to fix this problem you need to find the USB dev path of the Teenzyboard and give it permissions. There is a script called "usb" inside of panda-robot-arm/other_scripts which you can run to get a list of all connected external USB devices with their USB dev part:
 
 ```
 chmod 755 usb

@@ -1,0 +1,22 @@
+
+--Torque Control--
+Max: 			2*I_N (2 x nominal current = 1.7A)
+Gain KP: 		2950 mOhm
+Intergral Time TN: 	150 us
+
+--Velocity Control--
+Max:			500000 um/s (= 5.63e7 rev/min)
+Gain Kp:		245e-6
+Integral Time TN:	23 us
+Gain Factor:		128
+Feed Forward: 		0
+Filters on velocity set-point and actual value are disabled.
+
+--Position Control--
+Gain Kv:		29 1/s
+
+
+
+
+
+

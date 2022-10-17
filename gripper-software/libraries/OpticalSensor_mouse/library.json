@@ -1,0 +1,15 @@
+{
+    "name": "OpticalSensor_mouse",
+    "version": "1.0.0",
+    "keywords": "optical, sensor",
+    "description": "",
+    "platforms": ["teensy36"],
+    "dependencies":
+    [
+        {
+            "owner": "paulstoffregen",
+            "name": "USBHost_t36",
+            "version": "^0.1"
+        }
+    ]
+}
