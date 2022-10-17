@@ -1,0 +1,11 @@
+{
+    "name": "OPT_demo",
+    "version": "1.0.0",
+    "platforms": ["teensy36"],
+    "dependencies":
+    [
+        {"name": "TactileSensor"},
+        {"name": "OpticalSensor_PAA5100"},
+        {"name": "SPI"}
+    ]
+}

@@ -5,13 +5,14 @@ This repository is made in order to simplify the setup of the Emika Frank Robot 
 # Table of Contents
 
 1. [Robot User Handbook](#handbook)
-2. [Start up procedure](#startUp)
+2. [Start up procedure for the Panda Robot Arm](#startUp)
 3. [Set up of the repository](#repository)
 4. [Create a catkin workspace](#catkinWorkspace)
 5. [Launching the MRAC controller](#mracLaunch)
 6. [Setup of the camera driver](#cameraDriver)
-7. [Debugging](#debugging)
-8. [ROS packages of the repository](#rosPackages)
+7. [Setup a ros interface to the gripper](#rosgripper)
+8. [Debugging](#debugging)
+9. [ROS packages of the repository](#rosPackages)
 
 ## Robot User Handbook
 
@@ -178,9 +179,53 @@ rosrun rqt_image_view rqt_image_view
 
 Make sure to select the correct topic in the top right of the screen. The image might be quiet dark. Reason is, that in the moment no calibration file is used when running the camera node.
 
-## Debugging
+## Setup a ros interface to the gripper
 
-# <<<<<<< HEAD
+This guide is used to setup a interface to the Graspian gripper using ROS noetic. If you are using the University computer you should not need to reinstall this. You can aslo have a look at [this](https://www.youtube.com/watch?v=k56e-KBiP-w) youtube tutorial as it has been used as a guide.
+
+Start by downloading the Ubuntu Arduina IDE from [this](https://www.arduino.cc/en/software) website. It is important to note here, that I was unable to use the newest Arduino version (2.0). Instead I used 1.8.19. Also make sure that the file is a .tar file. Then, use ther terminal to move to the file and extract and run the file as follows:
+
+```
+tar -xvf arduino-1.8.19-linux64.tar.xz
+cd arduino-1.8.19
+./arduino
+```
+
+Be aware that the name of the execution file as well as zip file might be slighly different as the arduino package is constantly updated.
+
+You should now have the window for the Arduino open. Navigate to the Tools -> Manage Libraries in the top bar. Then search for "rosserial" inside of the poup window. A "Rosserial Arduino Library" should show up, install it.
+
+Next, go to [this](https://www.pjrc.com/teensy/td_download.html) website and save the "Linux udev rules" on your computer. Next, navigate to the files folder inside of the terminal and run:
+
+```
+sudo cp 00-teensy.rules /etc/udev/rules.d/
+```
+
+From the same website, download the corresponding Teensyduino installer ("Linux Installer (X86 64 bit)").
+In the terminal, move to the location of the Installer and then run:
+
+```
+chmod 755 TeensyduinoInstall.linux64
+./TeensyduinoInstall.linux64
+```
+
+An installation menu should open. Complete the steps. Be aware when being asked for the Arduino folder that you should select the folder after extraction. In my case that was "arduino-1-8-13". Afterwards, start the arduino software with `./arduino` again. Under tools a new menu point "Board: Teenzy 3.2/3.1" should have been added.
+You can now run programs on the Teenzy from the terminal.
+
+It might be that the USB port does not have permissions to run programs. In order, to fix this problem you need to find the USB dev path of the Teenzyboard and give it permissions. There is a script called "usb" inside of panda-robot-arm/other_scripts which you can run to get a list of all connected external USB devices with their USB dev part:
+
+```
+chmod 755 usb
+./usb
+```
+
+Find the correct path and then run (in my case the dev path was "/dev/ttyACM0"):
+
+```
+sudo chmod 666 /dev/ttyACM0
+```
+
+## Debugging
 
 ### General advise
 
@@ -207,8 +252,6 @@ rospack find <your_package_name>
 ```
 
 If the rospackage shows up it means that ros can see it. You might not find it with for example roslaunch because it does not include any launch files or you are missspelling the folder name.
-
-> > > > > > > 2570327a35f47b07e034aa4a8fe44d46c8f46acb
 
 ## ROS packages of the repository
 

@@ -528,6 +528,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "apriltag_ros/CMakeFiles/apriltag_ros_common.dir/DependInfo.cmake"
   "apriltag_ros/CMakeFiles/apriltag_ros_continuous_node.dir/DependInfo.cmake"
   "apriltag_ros/CMakeFiles/apriltag_ros_single_image_server_node.dir/DependInfo.cmake"
+  "nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_predictor_gripper.dir/DependInfo.cmake"
   "nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_controller_gripper.dir/DependInfo.cmake"
   "nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_predictor.dir/DependInfo.cmake"
   "nils_master_pkg/CMakeFiles/publish_apriltag_pose.dir/DependInfo.cmake"

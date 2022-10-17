@@ -1,0 +1,11 @@
+{
+    "name": "OpticalSensor_PAA5100",
+    "version": "1.0.0",
+    "keywords": "optical, sensor",
+    "description": "",
+    "platforms": ["teensy36"],
+    "dependencies":
+    [
+        {"name":"SPI"}
+    ]
+}

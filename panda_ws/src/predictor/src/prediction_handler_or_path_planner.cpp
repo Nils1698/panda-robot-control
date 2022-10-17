@@ -62,9 +62,9 @@ class PredictionHandler{
     // If the target is further than 60cm away from the base of the robot arm in the 
     // xy plane use instead a default target position untill the target gets within range
     if (std::sqrt(std::pow(single_target_pose.pose.pose.position.x,2) + std::pow(single_target_pose.pose.pose.position.y,2)) > 0.8){
-      single_target_pose.pose.pose.position.x     = 0.7;  //msg.poses[target_prediction_step*pred_order + target_prediction_order].pose.position.x;
-      single_target_pose.pose.pose.position.y     = -0.2;  //msg.poses[target_prediction_step*pred_order + target_prediction_order].pose.position.y;
-      single_target_pose.pose.pose.position.z     = 0.5;  //msg.poses[target_prediction_step*pred_order + target_prediction_order].pose.position.z;
+      single_target_pose.pose.pose.position.x     = 0.6;  //msg.poses[target_prediction_step*pred_order + target_prediction_order].pose.position.x;
+      single_target_pose.pose.pose.position.y     = 0.0;  //msg.poses[target_prediction_step*pred_order + target_prediction_order].pose.position.y;
+      single_target_pose.pose.pose.position.z     = 0.6;  //msg.poses[target_prediction_step*pred_order + target_prediction_order].pose.position.z;
       single_target_pose.pose.pose.orientation.x  = 0;    //msg.poses[target_prediction_step*pred_order + target_prediction_order].pose.orientation.x;
       single_target_pose.pose.pose.orientation.y  = 0;    //msg.poses[target_prediction_step*pred_order + target_prediction_order].pose.orientation.y;
       single_target_pose.pose.pose.orientation.z  = 1;    //msg.poses[target_prediction_step*pred_order + target_prediction_order].pose.orientation.z;

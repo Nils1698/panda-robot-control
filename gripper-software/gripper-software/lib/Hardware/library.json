@@ -1,0 +1,14 @@
+{
+    "name": "Hardware",
+    "version": "1.0.0",
+    "keywords": "subscriber, publisher",
+    "description": "",
+    "platforms": ["teensy36"],
+    "dependencies":
+    [
+        {"name": "TactileCircuit"},
+        {"name": "OPT_demo"},
+        {"name": "MotorControl"}
+
+    ]
+}

@@ -33,26 +33,26 @@ public:
     geometry_msgs::PoseWithCovarianceStamped point_out;
     try 
     {
-        //Transform from Camera to Base Link 0
-        buffer_.transform(*point_ptr, point_out, target_frame_);
-            //Cheating so that there is space for the gripper
-            point_out.pose.pose.position.z     = point_out.pose.pose.position.z + 0.195;
+      //Transform from Camera to Base Link 0
+      buffer_.transform(*point_ptr, point_out, target_frame_);
+      //Cheating so that there is space for the gripper
+      point_out.pose.pose.position.z     = point_out.pose.pose.position.z + 0.195;
 
-        if (std::sqrt(std::pow(point_out.pose.pose.position.x,2) + std::pow(point_out.pose.pose.position.y,2)) > 0.8){
-            point_out.pose.pose.position.x     = 0.6;
-            point_out.pose.pose.position.y     = 0.0;
-            point_out.pose.pose.position.z     = 0.6;
-            point_out.pose.pose.orientation.x  = 0;
-            point_out.pose.pose.orientation.y  = 0;
-            point_out.pose.pose.orientation.z  = 1;
-            point_out.pose.pose.orientation.w  = 0;
-        }
+      if (std::sqrt(std::pow(point_out.pose.pose.position.x,2) + std::pow(point_out.pose.pose.position.y,2)) > 0.8){
+          point_out.pose.pose.position.x     = 0.6;
+          point_out.pose.pose.position.y     = 0.0;
+          point_out.pose.pose.position.z     = 0.6;
+          point_out.pose.pose.orientation.x  = 0;
+          point_out.pose.pose.orientation.y  = 0;
+          point_out.pose.pose.orientation.z  = 1;
+          point_out.pose.pose.orientation.w  = 0;
+      }
 
-        ROS_INFO("x=%f", point_out.pose.pose.position.x);
-        ROS_INFO("y=%f", point_out.pose.pose.position.y);
-        ROS_INFO("z=%f", point_out.pose.pose.position.z);
+      ROS_INFO("x=%f", point_out.pose.pose.position.x);
+      ROS_INFO("y=%f", point_out.pose.pose.position.y);
+      ROS_INFO("z=%f", point_out.pose.pose.position.z);
 
-        pub_.publish(point_out);
+      pub_.publish(point_out);
     }
     catch (tf2::TransformException &ex) 
     {

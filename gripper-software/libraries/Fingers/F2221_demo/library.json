@@ -1,0 +1,11 @@
+{
+    "name": "F2221_demo",
+    "version": "1.0.0",
+    "platforms": ["teensy36"],
+    "dependencies":
+    [
+        {
+            "name": "TactileSensor"
+        }
+    ]
+}

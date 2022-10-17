@@ -1,0 +1,12 @@
+{
+    "name": "UserStream",
+    "version": "1.0.0",
+    "keywords": "debug",
+    "description": "",
+    "platforms": ["teensy36"],
+    "dependencies":
+    [
+        {"name": "Streaming"},
+        {"name": "RS485_Module"}
+    ]
+}
