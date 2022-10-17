@@ -1,8 +1,8 @@
 <launch>
     <!-- Arguments to object_detector -->
 	<arg name="debug"           default="false"/>
-    <arg name="attach_gripper"  default="false"/>
-    <arg name="predictor"       default="true"/>
+    <arg name="attach_gripper"  default="true"/>
+    <arg name="predictor"       default="false"/>
 
     <!-- Arguments for the camera -->
     <arg name="device" 			default="VID164C_PID5533_FF001107"/>
@@ -54,16 +54,25 @@
     <!-- Here it is important to note that in the case that the predictor is turned to false
     this node will directly publish the transformed apriltag coordinates to the controller.
     Thus the controller will not follow the estimate of the Kalman filter-->
-    <group if="$(eval arg('attach_gripper') == false)">
-        <node pkg="nils_master_pkg" name="publish_tf_apriltag_pose_to_controller" type="publish_tf_apriltag_pose_to_controller" output="screen" if="$(eval arg('predictor') == false)"/>
-    </group>
-    <group if="$(arg attach_gripper)">
-        <node pkg="nils_master_pkg" name="publish_tf_apriltag_pose_to_controller_gripper" type="publish_tf_apriltag_pose_to_controller_gripper" output="screen" if="$(eval arg('predictor') == false)"/>
+    <group if="$(eval arg('predictor') == false)">
+        <group if="$(eval arg('attach_gripper') == false)">
+            <node pkg="nils_master_pkg" name="publish_tf_apriltag_pose_to_controller" type="publish_tf_apriltag_pose_to_controller" output="screen"/>
+        </group>
+        <group if="$(arg attach_gripper)">
+            <node pkg="nils_master_pkg" name="publish_tf_apriltag_pose_to_controller_gripper" type="publish_tf_apriltag_pose_to_controller_gripper" output="screen"/>
+        </group>
     </group>
 
     <!-- Launch files for the predictor of the targeted AprilTag -->
     <group if="$(arg predictor)">
-        <node pkg="nils_master_pkg" name="publish_tf_apriltag_pose_to_predictor" type="publish_tf_apriltag_pose_to_predictor" output="screen"/>
+        <!-- 2 Nodes that are activated depending on if the gripper is attached or not to avoid collison with the table -->
+        <group if="$(eval arg('attach_gripper') == false)">
+            <node pkg="nils_master_pkg" name="publish_tf_apriltag_pose_to_predictor" type="publish_tf_apriltag_pose_to_predictor" output="screen"/>
+        </group>
+        <group if="$(arg attach_gripper)">
+            <node pkg="nils_master_pkg" name="publish_tf_apriltag_pose_to_predictor_gripper" type="publish_tf_apriltag_pose_to_predictor_gripper" output="screen"/>
+        </group>
+
         <!-- Remap predictor subscriber -->
         <remap from="/target_pose_measurement_stamped" to="/target_pose_meas_cov_stamped_panda_link0" /> 	
         <!-- Launch predictor node -->

@@ -1273,6 +1273,19 @@ apriltag_ros_single_image_server_node/fast:
 .PHONY : apriltag_ros_single_image_server_node/fast
 
 #=============================================================================
+# Target rules for targets named publish_tf_apriltag_pose_to_predictor_gripper
+
+# Build rule for target.
+publish_tf_apriltag_pose_to_predictor_gripper: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 publish_tf_apriltag_pose_to_predictor_gripper
+.PHONY : publish_tf_apriltag_pose_to_predictor_gripper
+
+# fast build rule for target.
+publish_tf_apriltag_pose_to_predictor_gripper/fast:
+	$(MAKE) -f nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_predictor_gripper.dir/build.make nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_predictor_gripper.dir/build
+.PHONY : publish_tf_apriltag_pose_to_predictor_gripper/fast
+
+#=============================================================================
 # Target rules for targets named publish_tf_apriltag_pose_to_controller_gripper
 
 # Build rule for target.
@@ -2917,6 +2930,7 @@ help:
 	@echo "... apriltag_ros_common"
 	@echo "... apriltag_ros_continuous_node"
 	@echo "... apriltag_ros_single_image_server_node"
+	@echo "... publish_tf_apriltag_pose_to_predictor_gripper"
 	@echo "... publish_tf_apriltag_pose_to_controller_gripper"
 	@echo "... publish_tf_apriltag_pose_to_predictor"
 	@echo "... publish_apriltag_pose"

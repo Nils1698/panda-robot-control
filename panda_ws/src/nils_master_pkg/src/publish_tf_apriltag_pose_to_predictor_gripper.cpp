@@ -24,7 +24,7 @@ public:
     point_sub_.subscribe(n_, "target_detection_camera", 10);
     tf2_filter_.registerCallback( boost::bind(&PoseDrawer::msgCallback, this, _1) );
     pub_ = n_.advertise<geometry_msgs::PoseWithCovarianceStamped>
-      ("/desktop/target_pose_cov_stmp_panda_link0",10);
+      ("/target_pose_meas_cov_stamped_panda_link0",10);
   }
 
   //  Callback to register with tf2_ros::MessageFilter to be called when transforms are available
@@ -33,26 +33,12 @@ public:
     geometry_msgs::PoseWithCovarianceStamped point_out;
     try 
     {
-      //Transform from Camera to Base Link 0
-      buffer_.transform(*point_ptr, point_out, target_frame_);
-      //Cheating so that there is space for the gripper
-      point_out.pose.pose.position.z     = point_out.pose.pose.position.z + 0.195;
+        buffer_.transform(*point_ptr, point_out, target_frame_);
 
-      if (std::sqrt(std::pow(point_out.pose.pose.position.x,2) + std::pow(point_out.pose.pose.position.y,2)) > 0.8){
-          point_out.pose.pose.position.x     = 0.6;
-          point_out.pose.pose.position.y     = 0.0;
-          point_out.pose.pose.position.z     = 0.6;
-          point_out.pose.pose.orientation.x  = 0;
-          point_out.pose.pose.orientation.y  = 0;
-          point_out.pose.pose.orientation.z  = 1;
-          point_out.pose.pose.orientation.w  = 0;
-      }
+        //Makes sure that april tag is seen higher so that gripper collision is avoided
+        point_out.pose.pose.position.z     = point_out.pose.pose.position.z + 0.195;
 
-      ROS_INFO("x=%f", point_out.pose.pose.position.x);
-      ROS_INFO("y=%f", point_out.pose.pose.position.y);
-      ROS_INFO("z=%f", point_out.pose.pose.position.z);
-
-      pub_.publish(point_out);
+        pub_.publish(point_out);
     }
     catch (tf2::TransformException &ex) 
     {
@@ -63,9 +49,9 @@ public:
 
 int main(int argc, char ** argv)
 {
-  ROS_INFO("publish_tf_apriltag_pose_to_controller_gripper.cpp running...");
+  ROS_INFO("publish_tf_apriltag_pose_to_predictor_gripper.cpp running...");
   
-  ros::init(argc, argv, "publish_tf_apriltag_pose_to_controller"); //Init ROS
+  ros::init(argc, argv, "publish_tf_apriltag_pose_to_predictor_gripper"); //Init ROS
   PoseDrawer pd; //Construct class
   ros::spin(); // Run until interupted 
   return 0;

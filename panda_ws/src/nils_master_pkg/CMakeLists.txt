@@ -83,6 +83,11 @@ target_link_libraries(publish_tf_apriltag_pose_to_controller_gripper ${catkin_LI
 target_include_directories(publish_tf_apriltag_pose_to_controller_gripper SYSTEM PUBLIC
 )
 
+add_executable(publish_tf_apriltag_pose_to_predictor_gripper src/publish_tf_apriltag_pose_to_predictor_gripper.cpp)
+target_link_libraries(publish_tf_apriltag_pose_to_predictor_gripper ${catkin_LIBRARIES})
+target_include_directories(publish_tf_apriltag_pose_to_predictor_gripper SYSTEM PUBLIC
+)
+
 #############
 ## Testing ##
 #############
