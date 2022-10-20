@@ -2,3 +2,5 @@
 */devel/
 */calib_imgs/
 */.vscode/
+*/__pycache__/
+*/tmp/

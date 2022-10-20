@@ -66,7 +66,6 @@ class GripperInterface(SensorInterface):
 
     def execute(self, cmd, blocking):
         if(self.isEnabled()==False): return
-
         with self._lock:
             self._ack_received=False
             self._is_active=True

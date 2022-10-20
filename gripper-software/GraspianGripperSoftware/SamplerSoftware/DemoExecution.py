@@ -482,7 +482,7 @@ if(__name__=="__main__"):
     robot = RobotInterface()
     robot.connect()
 
-    gripper = GripperInterface("/dev/ttyUSB0")
+    gripper = GripperInterface("/dev/ttyACM0")
 
     demo = Demo(robot, gripper)
     demo.run1()
