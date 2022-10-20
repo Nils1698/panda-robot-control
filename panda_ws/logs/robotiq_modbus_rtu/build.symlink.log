@@ -1,4 +1,0 @@
-Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/pkgconfig/robotiq_modbus_rtu.pc
-Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/robotiq_modbus_rtu/__init__.py
-Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/robotiq_modbus_rtu/cmake/robotiq_modbus_rtuConfig-version.cmake
-Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/robotiq_modbus_rtu/cmake/robotiq_modbus_rtuConfig.cmake

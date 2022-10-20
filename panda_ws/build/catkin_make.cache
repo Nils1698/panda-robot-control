@@ -1,2 +1,2 @@
-apriltag_ros:franka_aic:nils_master_pkg:non_realtime_launcher:object_detector:paic:planner:predictor
+apriltag_ros:franka_aic:nils_master_pkg:non_realtime_launcher:object_detector:planner:predictor
 -DCATKIN_DEVEL_PREFIX=/home/neurorobotic_student/panda-robot-control/panda_ws/devel -DCMAKE_INSTALL_PREFIX=/home/neurorobotic_student/panda-robot-control/panda_ws/install -G Unix Makefiles

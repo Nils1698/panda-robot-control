@@ -17,7 +17,6 @@ find_package(
   image_transport
   cv_bridge
   geometry_msgs
-  paic
   tf2
   tf2_ros
   apriltag_ros

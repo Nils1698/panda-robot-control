@@ -131,7 +131,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/neurorobotic_student/panda-robot-control/panda_ws/build/gtest/cmake_install.cmake")
-  include("/home/neurorobotic_student/panda-robot-control/panda_ws/build/paic/cmake_install.cmake")
   include("/home/neurorobotic_student/panda-robot-control/panda_ws/build/apriltag_ros/cmake_install.cmake")
   include("/home/neurorobotic_student/panda-robot-control/panda_ws/build/nils_master_pkg/cmake_install.cmake")
   include("/home/neurorobotic_student/panda-robot-control/panda_ws/build/object_detector/cmake_install.cmake")

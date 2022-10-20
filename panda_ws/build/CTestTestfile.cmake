@@ -5,7 +5,6 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
-subdirs("paic")
 subdirs("apriltag_ros")
 subdirs("nils_master_pkg")
 subdirs("object_detector")

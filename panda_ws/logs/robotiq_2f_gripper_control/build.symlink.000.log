@@ -1,7 +1,0 @@
-Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/robotiq_2f_gripper_control/cmake.lock
-Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/robotiq_2f_gripper_control/robotiq_2f_action_server.py
-Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/robotiq_2f_gripper_control/robotiq_2f_action_client_example.py
-Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/pkgconfig/robotiq_2f_gripper_control.pc
-Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/python3/dist-packages/robotiq_2f_gripper_control/__init__.py
-Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/robotiq_2f_gripper_control/cmake/robotiq_2f_gripper_controlConfig-version.cmake
-Symlinking /home/neurorobotic_student/panda-robot-control/panda_ws/devel/share/robotiq_2f_gripper_control/cmake/robotiq_2f_gripper_controlConfig.cmake

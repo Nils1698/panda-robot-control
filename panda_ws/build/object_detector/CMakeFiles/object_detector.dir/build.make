@@ -79,7 +79,6 @@ object_detector_EXTERNAL_OBJECTS =
 
 /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/object_detector: object_detector/CMakeFiles/object_detector.dir/src/object_detector.cpp.o
 /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/object_detector: object_detector/CMakeFiles/object_detector.dir/build.make
-/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/object_detector: /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/libpaic.so
 /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/object_detector: /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/libapriltag_ros_continuous_detector.so
 /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/object_detector: /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/libapriltag_ros_single_image_detector.so
 /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/object_detector: /usr/lib/x86_64-linux-gnu/libm.so
