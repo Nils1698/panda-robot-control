@@ -1,0 +1,37 @@
+<launch>
+    <!-- This launch file will send hardcoded coordinates to the robot arm which will then pick up an object-->
+    <!-- It is required that the AIC or MRAC Controller from franka_aic is running and that a gripper is attached-->
+
+    <!-- Arguments to object_detector -->
+	<arg name="debug"           default="false"/>
+
+    <!-- Arguments for the camera -->
+    <arg name="device" 			default="VID164C_PID5533_FF001107"/>
+    <arg name="frame_id"        default="camera"/>
+    <arg name="config_file"     default="$(find object_detector)/config/rc_genicam_config.config"/>
+    <arg name="calib_file"      default="$(find object_detector)/config/rc_genicam_calib.config"/>
+    <arg name="calib_id" 		default="-1"/>
+
+    <!-- Debugging and display of detections -->
+    <group if="$(arg debug)">
+        <node type="rviz" name="rviz" pkg="rviz" args="-d $(find object_detector)/config/rviz_custom.rviz" />
+        <node pkg="rqt_image_view" type="rqt_image_view" name="image_view_tag_detections" args="/tag_detections_image"/>
+    </group>
+
+    <!-- Launch files for the camera -->
+    <node name="my_rc_genicam_camera_node" pkg="rc_genicam_camera" type="rc_genicam_camera" args="_device:=$(arg device) _config_file:=$(arg config_file) _calib_file:=$(arg calib_file) _frame_id:=$(arg frame_id) _calib_id:=$(arg calib_id) " output="screen"/>
+
+    <!-- Launch files for TF transformer -->
+    <remap from="/target_detection_camera" to="/target_pose_meas_cov_stamped" />
+
+    <!-- Launch tf converter from cam to panda -->
+    <node pkg="nils_master_pkg" name="publish_tf_apriltag_pose_to_controller_gripper" type="publish_tf_apriltag_pose_to_controller_gripper" output="screen"/>
+
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="-0.0725 -0.155 1.566 0.707 0.707 0.0 0.0 camera panda_link0" />
+    
+    <!--Adds an tf frame to the tf tree. However the robot does not care about this up to now.-->
+    <group if="$(arg attach_gripper)">
+        <node pkg="tf2_ros" type="static_transform_publisher" name="gripper_broadcaster" args="0.0 0.195 0.0 0.0 0.0 0.0 1.0 panda_link8 robotiq_arg2f_base_link"/>
+    </group>
+</launch>
