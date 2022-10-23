@@ -19,17 +19,17 @@ add_custom_target(apriltag_ros_generate_messages ALL)
 
 get_filename_component(_filename "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg" NAME_WE)
 add_custom_target(_apriltag_ros_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "apriltag_ros" "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg" "geometry_msgs/Pose:std_msgs/Header:geometry_msgs/Point:geometry_msgs/PoseWithCovariance:geometry_msgs/PoseWithCovarianceStamped:geometry_msgs/Quaternion"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "apriltag_ros" "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg" "geometry_msgs/Point:geometry_msgs/Pose:geometry_msgs/PoseWithCovarianceStamped:geometry_msgs/PoseWithCovariance:geometry_msgs/Quaternion:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg" NAME_WE)
 add_custom_target(_apriltag_ros_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "apriltag_ros" "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg" "apriltag_ros/AprilTagDetection:geometry_msgs/Pose:std_msgs/Header:geometry_msgs/Point:geometry_msgs/PoseWithCovariance:geometry_msgs/PoseWithCovarianceStamped:geometry_msgs/Quaternion"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "apriltag_ros" "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg" "geometry_msgs/Point:geometry_msgs/Pose:geometry_msgs/PoseWithCovarianceStamped:apriltag_ros/AprilTagDetection:geometry_msgs/PoseWithCovariance:geometry_msgs/Quaternion:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/srv/AnalyzeSingleImage.srv" NAME_WE)
 add_custom_target(_apriltag_ros_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "apriltag_ros" "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/srv/AnalyzeSingleImage.srv" "sensor_msgs/CameraInfo:apriltag_ros/AprilTagDetection:apriltag_ros/AprilTagDetectionArray:std_msgs/Header:geometry_msgs/Pose:geometry_msgs/Point:sensor_msgs/RegionOfInterest:geometry_msgs/PoseWithCovariance:geometry_msgs/PoseWithCovarianceStamped:geometry_msgs/Quaternion"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "apriltag_ros" "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/srv/AnalyzeSingleImage.srv" "geometry_msgs/Point:geometry_msgs/PoseWithCovariance:sensor_msgs/CameraInfo:sensor_msgs/RegionOfInterest:geometry_msgs/Pose:geometry_msgs/PoseWithCovarianceStamped:apriltag_ros/AprilTagDetection:apriltag_ros/AprilTagDetectionArray:geometry_msgs/Quaternion:std_msgs/Header"
 )
 
 #
@@ -41,13 +41,13 @@ add_custom_target(_apriltag_ros_generate_messages_check_deps_${_filename}
 _generate_msg_cpp(apriltag_ros
   "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/apriltag_ros
 )
 _generate_msg_cpp(apriltag_ros
   "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/apriltag_ros
 )
 
@@ -55,7 +55,7 @@ _generate_msg_cpp(apriltag_ros
 _generate_srv_cpp(apriltag_ros
   "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/srv/AnalyzeSingleImage.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/CameraInfo.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/RegionOfInterest.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/CameraInfo.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/RegionOfInterest.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/apriltag_ros
 )
 
@@ -90,13 +90,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS apriltag_ros_generate_messages_cpp)
 _generate_msg_eus(apriltag_ros
   "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/apriltag_ros
 )
 _generate_msg_eus(apriltag_ros
   "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/apriltag_ros
 )
 
@@ -104,7 +104,7 @@ _generate_msg_eus(apriltag_ros
 _generate_srv_eus(apriltag_ros
   "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/srv/AnalyzeSingleImage.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/CameraInfo.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/RegionOfInterest.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/CameraInfo.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/RegionOfInterest.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/apriltag_ros
 )
 
@@ -139,13 +139,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS apriltag_ros_generate_messages_eus)
 _generate_msg_lisp(apriltag_ros
   "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/apriltag_ros
 )
 _generate_msg_lisp(apriltag_ros
   "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/apriltag_ros
 )
 
@@ -153,7 +153,7 @@ _generate_msg_lisp(apriltag_ros
 _generate_srv_lisp(apriltag_ros
   "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/srv/AnalyzeSingleImage.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/CameraInfo.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/RegionOfInterest.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/CameraInfo.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/RegionOfInterest.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/apriltag_ros
 )
 
@@ -188,13 +188,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS apriltag_ros_generate_messages_lisp
 _generate_msg_nodejs(apriltag_ros
   "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/apriltag_ros
 )
 _generate_msg_nodejs(apriltag_ros
   "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/apriltag_ros
 )
 
@@ -202,7 +202,7 @@ _generate_msg_nodejs(apriltag_ros
 _generate_srv_nodejs(apriltag_ros
   "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/srv/AnalyzeSingleImage.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/CameraInfo.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/RegionOfInterest.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/CameraInfo.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/RegionOfInterest.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/apriltag_ros
 )
 
@@ -237,13 +237,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS apriltag_ros_generate_messages_node
 _generate_msg_py(apriltag_ros
   "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/apriltag_ros
 )
 _generate_msg_py(apriltag_ros
   "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/apriltag_ros
 )
 
@@ -251,7 +251,7 @@ _generate_msg_py(apriltag_ros
 _generate_srv_py(apriltag_ros
   "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/srv/AnalyzeSingleImage.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/CameraInfo.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/RegionOfInterest.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovariance.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/CameraInfo.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/RegionOfInterest.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseWithCovarianceStamped.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetection.msg;/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/msg/AprilTagDetectionArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/apriltag_ros
 )
 

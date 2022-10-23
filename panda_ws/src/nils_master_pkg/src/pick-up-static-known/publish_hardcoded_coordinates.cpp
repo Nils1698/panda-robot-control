@@ -1,25 +1,53 @@
 #include <ros/ros.h>
-#include <geometry_msgs/Twist.h>
 #include <stdlib.h>
 
-int main(int argc, char**argv){
-ros::init(argc, argv, "publish_hardcoded_coordinates");
-ros::NodeHandle nh;
+#include <geometry_msgs/PoseWithCovarianceStamped.h>
 
-ros::Publisher pub = nh.advertise<geometry_msgs::Twist>("turtle1/cmd_vel", 1000);
+class PosePubHardcoded
+{
+    private:
+        ros::NodeHandle nh;
+        ros::Publisher pub;
 
-srand(time(0));
+    public:
+        PosePubHardcoded()
+        {
 
-ros::Rate rate(2);
-while(ros::ok()){
-geometry_msgs::Twist msg;
-msg.linear.x = double(rand())/double(RAND_MAX);
-msg.angular.z = 2*double(rand())/double(RAND_MAX) - 1;
+            pub = nh.advertise<geometry_msgs::PoseWithCovarianceStamped>("turtle1/cmd_vel", 10);
 
-pub.publish(msg);
+            //Begin of loop
+            ros::Rate loop_rate(10);
+            while(ros::ok)
+                {
+                    pubPose(1.2, 0.0, 0.1, 0.0, 0.0, 0.0, 1.0);
+                    ros::spinOnce();        
+                    loop_rate.sleep(); 
+                }
+        }
 
-ROS_INFO_STREAM("Sending random velocity command:"<<" linear="<<msg.linear.x<<" angular="<<msg.angular.z);
+        void pubPose(double px, double py, double pz, double ox, double oy, double oz, double ow) 
+        {
+            //Initialization
+            geometry_msgs::PoseWithCovarianceStamped msg;
+            
+            msg.pose.pose.position.x  = px;
+            msg.pose.pose.position.y  = py;
+            msg.pose.pose.position.z  = pz;
+            msg.pose.pose.orientation.x = ox;
+            msg.pose.pose.orientation.y = oy;
+            msg.pose.pose.orientation.z = oz;
+            
+            //ROS_INFO_STREAM("Sending random velocity command:"<<" linear="<<msg.pose.pose.position.x<<" angular="<<msg.pose.pose.orientation.x);
 
-rate.sleep();
-}
-}
+            //Publish Hardcoded pose
+            pub.publish(msg);
+        }
+};
+
+int main(int argc, char**argv)
+{
+    ros::init(argc, argv, "publish_hardcoded_coordinates");
+    PosePubHardcoded pph;
+    ros::spin(); // Run until interupted 
+    return 0;
+};

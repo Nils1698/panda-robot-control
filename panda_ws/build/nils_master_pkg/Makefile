@@ -318,6 +318,21 @@ nils_master_pkg_generate_messages_cpp/fast:
 .PHONY : nils_master_pkg_generate_messages_cpp/fast
 
 # Convenience name for target.
+nils_master_pkg/CMakeFiles/pubRobotPose.dir/rule:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nils_master_pkg/CMakeFiles/pubRobotPose.dir/rule
+.PHONY : nils_master_pkg/CMakeFiles/pubRobotPose.dir/rule
+
+# Convenience name for target.
+pubRobotPose: nils_master_pkg/CMakeFiles/pubRobotPose.dir/rule
+
+.PHONY : pubRobotPose
+
+# fast build rule for target.
+pubRobotPose/fast:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/pubRobotPose.dir/build.make nils_master_pkg/CMakeFiles/pubRobotPose.dir/build
+.PHONY : pubRobotPose/fast
+
+# Convenience name for target.
 nils_master_pkg/CMakeFiles/nils_master_pkg_geneus.dir/rule:
 	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nils_master_pkg/CMakeFiles/nils_master_pkg_geneus.dir/rule
 .PHONY : nils_master_pkg/CMakeFiles/nils_master_pkg_geneus.dir/rule
@@ -521,6 +536,33 @@ src/prediction_handler.cpp.s:
 	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/prediction_handler.dir/build.make nils_master_pkg/CMakeFiles/prediction_handler.dir/src/prediction_handler.cpp.s
 .PHONY : src/prediction_handler.cpp.s
 
+src/pubRobotPose.o: src/pubRobotPose.cpp.o
+
+.PHONY : src/pubRobotPose.o
+
+# target to build an object file
+src/pubRobotPose.cpp.o:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/pubRobotPose.dir/build.make nils_master_pkg/CMakeFiles/pubRobotPose.dir/src/pubRobotPose.cpp.o
+.PHONY : src/pubRobotPose.cpp.o
+
+src/pubRobotPose.i: src/pubRobotPose.cpp.i
+
+.PHONY : src/pubRobotPose.i
+
+# target to preprocess a source file
+src/pubRobotPose.cpp.i:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/pubRobotPose.dir/build.make nils_master_pkg/CMakeFiles/pubRobotPose.dir/src/pubRobotPose.cpp.i
+.PHONY : src/pubRobotPose.cpp.i
+
+src/pubRobotPose.s: src/pubRobotPose.cpp.s
+
+.PHONY : src/pubRobotPose.s
+
+# target to generate assembly for a file
+src/pubRobotPose.cpp.s:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/pubRobotPose.dir/build.make nils_master_pkg/CMakeFiles/pubRobotPose.dir/src/pubRobotPose.cpp.s
+.PHONY : src/pubRobotPose.cpp.s
+
 src/publish_apriltag_pose.o: src/publish_apriltag_pose.cpp.o
 
 .PHONY : src/publish_apriltag_pose.o
@@ -678,6 +720,7 @@ help:
 	@echo "... _nils_master_pkg_generate_messages_check_deps_PredictedPoses"
 	@echo "... nils_master_pkg_gennodejs"
 	@echo "... nils_master_pkg_generate_messages_cpp"
+	@echo "... pubRobotPose"
 	@echo "... nils_master_pkg_geneus"
 	@echo "... prediction_handler"
 	@echo "... nils_master_pkg_genlisp"
@@ -695,6 +738,9 @@ help:
 	@echo "... src/prediction_handler.o"
 	@echo "... src/prediction_handler.i"
 	@echo "... src/prediction_handler.s"
+	@echo "... src/pubRobotPose.o"
+	@echo "... src/pubRobotPose.i"
+	@echo "... src/pubRobotPose.s"
 	@echo "... src/publish_apriltag_pose.o"
 	@echo "... src/publish_apriltag_pose.i"
 	@echo "... src/publish_apriltag_pose.s"

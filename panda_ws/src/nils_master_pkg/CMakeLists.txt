@@ -58,6 +58,11 @@ include_directories(
 ## Exceutables ##
 #################
 
+add_executable(pubRobotPose src/pubRobotPose.cpp)
+target_link_libraries(pubRobotPose ${catkin_LIBRARIES})
+target_include_directories(pubRobotPose SYSTEM PUBLIC
+)
+
 add_executable(prediction_handler src/prediction_handler.cpp)
 target_link_libraries(prediction_handler ${catkin_LIBRARIES})
 target_include_directories(prediction_handler SYSTEM PUBLIC

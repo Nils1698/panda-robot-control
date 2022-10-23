@@ -1390,6 +1390,19 @@ nils_master_pkg_generate_messages_cpp/fast:
 .PHONY : nils_master_pkg_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named pubRobotPose
+
+# Build rule for target.
+pubRobotPose: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pubRobotPose
+.PHONY : pubRobotPose
+
+# fast build rule for target.
+pubRobotPose/fast:
+	$(MAKE) -f nils_master_pkg/CMakeFiles/pubRobotPose.dir/build.make nils_master_pkg/CMakeFiles/pubRobotPose.dir/build
+.PHONY : pubRobotPose/fast
+
+#=============================================================================
 # Target rules for targets named nils_master_pkg_geneus
 
 # Build rule for target.
@@ -2939,6 +2952,7 @@ help:
 	@echo "... _nils_master_pkg_generate_messages_check_deps_PredictedPoses"
 	@echo "... nils_master_pkg_gennodejs"
 	@echo "... nils_master_pkg_generate_messages_cpp"
+	@echo "... pubRobotPose"
 	@echo "... nils_master_pkg_geneus"
 	@echo "... prediction_handler"
 	@echo "... nils_master_pkg_genlisp"
