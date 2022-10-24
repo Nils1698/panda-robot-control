@@ -14,7 +14,6 @@
 #include <opencv2/highgui/highgui.hpp>
 // #include <opencv2/highgui.hpp>
 #include <opencv2/core/version.hpp>
-#include "paic/paic.h" 
 
 
 static const std::string OPENCV_WINDOW = "Image window";
@@ -72,7 +71,6 @@ public:
     try
     {
       cv_ptr   = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
-      sayHello(); // from paic.h
       // cv_ptr->image = inputImage;
       // detected = qrDecoder.detect(cv_ptr->image, bbox);
       std::string data = qrDecoder.detectAndDecode(cv_ptr->image, bbox, rectifiedImage);

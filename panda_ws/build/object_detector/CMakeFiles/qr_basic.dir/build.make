@@ -79,7 +79,6 @@ qr_basic_EXTERNAL_OBJECTS =
 
 /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/qr_basic: object_detector/CMakeFiles/qr_basic.dir/src/qr_basic.cpp.o
 /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/qr_basic: object_detector/CMakeFiles/qr_basic.dir/build.make
-/home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/qr_basic: /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/libpaic.so
 /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/qr_basic: /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/libapriltag_ros_continuous_detector.so
 /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/qr_basic: /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/libapriltag_ros_single_image_detector.so
 /home/neurorobotic_student/panda-robot-control/panda_ws/devel/lib/object_detector/qr_basic: /usr/lib/x86_64-linux-gnu/libm.so

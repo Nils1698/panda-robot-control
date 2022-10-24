@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+nils_master_pkg/CMakeFiles/publish_hardcoded_coordinates.dir/rule:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nils_master_pkg/CMakeFiles/publish_hardcoded_coordinates.dir/rule
+.PHONY : nils_master_pkg/CMakeFiles/publish_hardcoded_coordinates.dir/rule
+
+# Convenience name for target.
+publish_hardcoded_coordinates: nils_master_pkg/CMakeFiles/publish_hardcoded_coordinates.dir/rule
+
+.PHONY : publish_hardcoded_coordinates
+
+# fast build rule for target.
+publish_hardcoded_coordinates/fast:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/publish_hardcoded_coordinates.dir/build.make nils_master_pkg/CMakeFiles/publish_hardcoded_coordinates.dir/build
+.PHONY : publish_hardcoded_coordinates/fast
+
+# Convenience name for target.
 nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_predictor_gripper.dir/rule:
 	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_predictor_gripper.dir/rule
 .PHONY : nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_predictor_gripper.dir/rule
@@ -301,6 +316,21 @@ nils_master_pkg_generate_messages_cpp: nils_master_pkg/CMakeFiles/nils_master_pk
 nils_master_pkg_generate_messages_cpp/fast:
 	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/nils_master_pkg_generate_messages_cpp.dir/build.make nils_master_pkg/CMakeFiles/nils_master_pkg_generate_messages_cpp.dir/build
 .PHONY : nils_master_pkg_generate_messages_cpp/fast
+
+# Convenience name for target.
+nils_master_pkg/CMakeFiles/pubRobotPose.dir/rule:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nils_master_pkg/CMakeFiles/pubRobotPose.dir/rule
+.PHONY : nils_master_pkg/CMakeFiles/pubRobotPose.dir/rule
+
+# Convenience name for target.
+pubRobotPose: nils_master_pkg/CMakeFiles/pubRobotPose.dir/rule
+
+.PHONY : pubRobotPose
+
+# fast build rule for target.
+pubRobotPose/fast:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/pubRobotPose.dir/build.make nils_master_pkg/CMakeFiles/pubRobotPose.dir/build
+.PHONY : pubRobotPose/fast
 
 # Convenience name for target.
 nils_master_pkg/CMakeFiles/nils_master_pkg_geneus.dir/rule:
@@ -452,6 +482,33 @@ nils_master_pkg_genpy/fast:
 	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/nils_master_pkg_genpy.dir/build.make nils_master_pkg/CMakeFiles/nils_master_pkg_genpy.dir/build
 .PHONY : nils_master_pkg_genpy/fast
 
+src/pick-up-static-known/publish_hardcoded_coordinates.o: src/pick-up-static-known/publish_hardcoded_coordinates.cpp.o
+
+.PHONY : src/pick-up-static-known/publish_hardcoded_coordinates.o
+
+# target to build an object file
+src/pick-up-static-known/publish_hardcoded_coordinates.cpp.o:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/publish_hardcoded_coordinates.dir/build.make nils_master_pkg/CMakeFiles/publish_hardcoded_coordinates.dir/src/pick-up-static-known/publish_hardcoded_coordinates.cpp.o
+.PHONY : src/pick-up-static-known/publish_hardcoded_coordinates.cpp.o
+
+src/pick-up-static-known/publish_hardcoded_coordinates.i: src/pick-up-static-known/publish_hardcoded_coordinates.cpp.i
+
+.PHONY : src/pick-up-static-known/publish_hardcoded_coordinates.i
+
+# target to preprocess a source file
+src/pick-up-static-known/publish_hardcoded_coordinates.cpp.i:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/publish_hardcoded_coordinates.dir/build.make nils_master_pkg/CMakeFiles/publish_hardcoded_coordinates.dir/src/pick-up-static-known/publish_hardcoded_coordinates.cpp.i
+.PHONY : src/pick-up-static-known/publish_hardcoded_coordinates.cpp.i
+
+src/pick-up-static-known/publish_hardcoded_coordinates.s: src/pick-up-static-known/publish_hardcoded_coordinates.cpp.s
+
+.PHONY : src/pick-up-static-known/publish_hardcoded_coordinates.s
+
+# target to generate assembly for a file
+src/pick-up-static-known/publish_hardcoded_coordinates.cpp.s:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/publish_hardcoded_coordinates.dir/build.make nils_master_pkg/CMakeFiles/publish_hardcoded_coordinates.dir/src/pick-up-static-known/publish_hardcoded_coordinates.cpp.s
+.PHONY : src/pick-up-static-known/publish_hardcoded_coordinates.cpp.s
+
 src/prediction_handler.o: src/prediction_handler.cpp.o
 
 .PHONY : src/prediction_handler.o
@@ -478,6 +535,33 @@ src/prediction_handler.s: src/prediction_handler.cpp.s
 src/prediction_handler.cpp.s:
 	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/prediction_handler.dir/build.make nils_master_pkg/CMakeFiles/prediction_handler.dir/src/prediction_handler.cpp.s
 .PHONY : src/prediction_handler.cpp.s
+
+src/pubRobotPose.o: src/pubRobotPose.cpp.o
+
+.PHONY : src/pubRobotPose.o
+
+# target to build an object file
+src/pubRobotPose.cpp.o:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/pubRobotPose.dir/build.make nils_master_pkg/CMakeFiles/pubRobotPose.dir/src/pubRobotPose.cpp.o
+.PHONY : src/pubRobotPose.cpp.o
+
+src/pubRobotPose.i: src/pubRobotPose.cpp.i
+
+.PHONY : src/pubRobotPose.i
+
+# target to preprocess a source file
+src/pubRobotPose.cpp.i:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/pubRobotPose.dir/build.make nils_master_pkg/CMakeFiles/pubRobotPose.dir/src/pubRobotPose.cpp.i
+.PHONY : src/pubRobotPose.cpp.i
+
+src/pubRobotPose.s: src/pubRobotPose.cpp.s
+
+.PHONY : src/pubRobotPose.s
+
+# target to generate assembly for a file
+src/pubRobotPose.cpp.s:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/pubRobotPose.dir/build.make nils_master_pkg/CMakeFiles/pubRobotPose.dir/src/pubRobotPose.cpp.s
+.PHONY : src/pubRobotPose.cpp.s
 
 src/publish_apriltag_pose.o: src/publish_apriltag_pose.cpp.o
 
@@ -623,6 +707,7 @@ help:
 	@echo "... install/local"
 	@echo "... install"
 	@echo "... test"
+	@echo "... publish_hardcoded_coordinates"
 	@echo "... publish_tf_apriltag_pose_to_predictor_gripper"
 	@echo "... publish_tf_apriltag_pose_to_controller_gripper"
 	@echo "... publish_tf_apriltag_pose_to_predictor"
@@ -635,6 +720,7 @@ help:
 	@echo "... _nils_master_pkg_generate_messages_check_deps_PredictedPoses"
 	@echo "... nils_master_pkg_gennodejs"
 	@echo "... nils_master_pkg_generate_messages_cpp"
+	@echo "... pubRobotPose"
 	@echo "... nils_master_pkg_geneus"
 	@echo "... prediction_handler"
 	@echo "... nils_master_pkg_genlisp"
@@ -646,9 +732,15 @@ help:
 	@echo "... _catkin_empty_exported_target"
 	@echo "... nils_master_pkg_gencpp"
 	@echo "... nils_master_pkg_genpy"
+	@echo "... src/pick-up-static-known/publish_hardcoded_coordinates.o"
+	@echo "... src/pick-up-static-known/publish_hardcoded_coordinates.i"
+	@echo "... src/pick-up-static-known/publish_hardcoded_coordinates.s"
 	@echo "... src/prediction_handler.o"
 	@echo "... src/prediction_handler.i"
 	@echo "... src/prediction_handler.s"
+	@echo "... src/pubRobotPose.o"
+	@echo "... src/pubRobotPose.i"
+	@echo "... src/pubRobotPose.s"
 	@echo "... src/publish_apriltag_pose.o"
 	@echo "... src/publish_apriltag_pose.i"
 	@echo "... src/publish_apriltag_pose.s"

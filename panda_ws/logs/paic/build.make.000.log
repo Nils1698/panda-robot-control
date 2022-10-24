@@ -1,4 +1,0 @@
-[35m[1mScanning dependencies of target paic[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/paic.dir/src/paic.cpp.o[0m
-[100%] [32m[1mLinking CXX shared library /home/neurorobotic_student/panda-robot-control/panda_ws/devel/.private/paic/lib/libpaic.so[0m
-[100%] Built target paic

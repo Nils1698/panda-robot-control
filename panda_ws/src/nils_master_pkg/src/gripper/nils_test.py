@@ -1,7 +1,6 @@
 
 
 import serial
-
 import time
 
  
@@ -19,10 +18,7 @@ PORT_WRITE_TIMEOUT=1
  
 
 serial_port = serial.Serial(port_name,BAUD,timeout=PORT_TIMEOUT,write_timeout=PORT_WRITE_TIMEOUT)
-
 serial_port.reset_input_buffer()
-
- 
 
 def send(string):
   print(f"Send: '{string}'")

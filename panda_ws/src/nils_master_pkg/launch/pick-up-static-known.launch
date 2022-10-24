@@ -21,17 +21,13 @@
     <!-- Launch files for the camera -->
     <node name="my_rc_genicam_camera_node" pkg="rc_genicam_camera" type="rc_genicam_camera" args="_device:=$(arg device) _config_file:=$(arg config_file) _calib_file:=$(arg calib_file) _frame_id:=$(arg frame_id) _calib_id:=$(arg calib_id) " output="screen"/>
 
-    <!-- Launch files for TF transformer -->
-    <remap from="/target_detection_camera" to="/target_pose_meas_cov_stamped" />
+    <!-- Launch hardcoded coordinates -->
+    <node pkg="nils_master_pkg" name="publish_hardcoded_coordinates" type="publish_hardcoded_coordinates" output="screen"/>
 
-    <!-- Launch tf converter from cam to panda -->
-    <node pkg="nils_master_pkg" name="publish_tf_apriltag_pose_to_controller_gripper" type="publish_tf_apriltag_pose_to_controller_gripper" output="screen"/>
+    <!-- Launch gripper -->
+    <node pkg="nils_master_pkg" name="gripper_static_known" type="gripper_static_known.py" output="screen"/>
 
 
     <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="-0.0725 -0.155 1.566 0.707 0.707 0.0 0.0 camera panda_link0" />
-    
-    <!--Adds an tf frame to the tf tree. However the robot does not care about this up to now.-->
-    <group if="$(arg attach_gripper)">
-        <node pkg="tf2_ros" type="static_transform_publisher" name="gripper_broadcaster" args="0.0 0.195 0.0 0.0 0.0 0.0 1.0 panda_link8 robotiq_arg2f_base_link"/>
-    </group>
+
 </launch>

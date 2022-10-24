@@ -3,7 +3,6 @@
 
 object_detector/CMakeFiles/object_detector.dir/src/object_detector.cpp.o
  /home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/src/object_detector.cpp
- /home/neurorobotic_student/panda-robot-control/panda_ws/src/paic/include/paic/paic.h
  /opt/ros/noetic/include/cv_bridge/cv_bridge.h
  /opt/ros/noetic/include/geometry_msgs/Point.h
  /opt/ros/noetic/include/geometry_msgs/PointStamped.h

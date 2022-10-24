@@ -4,7 +4,6 @@
 #include <sensor_msgs/image_encodings.h>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
-#include "paic/paic.h" 
 // #include <qr_code_detector_wrapper/qr_code_detector_wrapper.hpp>
 
 static const std::string OPENCV_WINDOW = "Image window";
@@ -38,7 +37,6 @@ public:
     try
     {
       cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
-      sayHello();
       // My additions to the code:
       // geometry_msgs::PointStamped pointStamped;
       // pointStamped.header.stamp.sec = msg->header.stamp.sec;

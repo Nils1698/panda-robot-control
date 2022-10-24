@@ -1,0 +1,28 @@
+digraph G {
+"camera" -> "panda_link0"[label=" Broadcaster: /link1_broadcaster\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"panda_link8" -> "panda_NE"[label=" Broadcaster: /franka_control\nAverage rate: 29.614\nBuffer length: 4.998\nMost recent transform: 1666273711.387\nOldest transform: 1666273706.389\n"];
+"panda_link7" -> "panda_link8"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"panda_NE" -> "panda_EE"[label=" Broadcaster: /franka_control\nAverage rate: 29.614\nBuffer length: 4.998\nMost recent transform: 1666273711.387\nOldest transform: 1666273706.389\n"];
+"panda_EE" -> "panda_K"[label=" Broadcaster: /franka_control\nAverage rate: 29.614\nBuffer length: 4.998\nMost recent transform: 1666273711.387\nOldest transform: 1666273706.389\n"];
+"panda_link0" -> "panda_link1"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 30.202\nBuffer length: 4.967\nMost recent transform: 1666273711.355\nOldest transform: 1666273706.389\n"];
+"panda_link1" -> "panda_link2"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 30.202\nBuffer length: 4.967\nMost recent transform: 1666273711.355\nOldest transform: 1666273706.389\n"];
+"panda_link2" -> "panda_link3"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 30.202\nBuffer length: 4.967\nMost recent transform: 1666273711.355\nOldest transform: 1666273706.389\n"];
+"panda_link3" -> "panda_link4"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 30.202\nBuffer length: 4.967\nMost recent transform: 1666273711.355\nOldest transform: 1666273706.389\n"];
+"panda_link4" -> "panda_link5"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 30.202\nBuffer length: 4.967\nMost recent transform: 1666273711.355\nOldest transform: 1666273706.389\n"];
+"panda_link5" -> "panda_link6"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 30.202\nBuffer length: 4.967\nMost recent transform: 1666273711.355\nOldest transform: 1666273706.389\n"];
+"panda_link6" -> "panda_link7"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 30.202\nBuffer length: 4.967\nMost recent transform: 1666273711.355\nOldest transform: 1666273706.389\n"];
+"panda_link0" -> "panda_link0_sc"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"panda_link1" -> "panda_link1_sc"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"panda_link2" -> "panda_link2_sc"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"panda_link3" -> "panda_link3_sc"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"panda_link4" -> "panda_link4_sc"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"panda_link5" -> "panda_link5_sc"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"panda_link6" -> "panda_link6_sc"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"panda_link7" -> "panda_link7_sc"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"panda_link8" -> "robotiq_arg2f_base_link"[label=" Broadcaster: /gripper_broadcaster\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"camera" -> "tag_1"[label=" Broadcaster: /apriltag_ros_continuous_node\nAverage rate: 5.551\nBuffer length: 4.864\nMost recent transform: 878242.957\nOldest transform: 878238.093\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1666273711.4194844"[ shape=plaintext ] ;
+}->"camera";
+}

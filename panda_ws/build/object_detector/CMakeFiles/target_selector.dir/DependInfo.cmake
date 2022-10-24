@@ -19,7 +19,6 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/neurorobotic_student/panda-robot-control/panda_ws/src/object_detector/include"
   "/home/neurorobotic_student/panda-robot-control/panda_ws/devel/include"
-  "/home/neurorobotic_student/panda-robot-control/panda_ws/src/paic/include"
   "/home/neurorobotic_student/panda-robot-control/panda_ws/src/apriltag_ros/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/eigen3"
@@ -30,7 +29,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/neurorobotic_student/panda-robot-control/panda_ws/build/paic/CMakeFiles/paic.dir/DependInfo.cmake"
   "/home/neurorobotic_student/panda-robot-control/panda_ws/build/apriltag_ros/CMakeFiles/apriltag_ros_continuous_detector.dir/DependInfo.cmake"
   "/home/neurorobotic_student/panda-robot-control/panda_ws/build/apriltag_ros/CMakeFiles/apriltag_ros_single_image_detector.dir/DependInfo.cmake"
   "/home/neurorobotic_student/panda-robot-control/panda_ws/build/apriltag_ros/CMakeFiles/apriltag_ros_common.dir/DependInfo.cmake"
