@@ -61,6 +61,7 @@ class PosePubDetected
                 case 1:
                     pubPose(0.3, 0.0, 0.6, 0.0, 0.0, 1.0, 0.0);
                     pubMsg("Awaiting coordinates");
+                    ROS_INFO("%s\n", cameraToController.c_str());
                     if (cameraToController == "No objects visible"){
                         task = 1;
                     } else if (cameraToController == "Coordinates are being published...") {
