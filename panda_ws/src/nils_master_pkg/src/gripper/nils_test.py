@@ -1,9 +1,6 @@
-
-
 import serial
 import time
 
- 
 
 port_name = "/dev/ttyACM0"
 
@@ -32,9 +29,9 @@ def send(string):
   return False
 
 send("init\n")
+
 time.sleep(1)
-send("ctrl stop\n")
-time.sleep(1)
-send("m home\n")
+x = input()
+send(f"{x}\n")
 
 serial_port.close()

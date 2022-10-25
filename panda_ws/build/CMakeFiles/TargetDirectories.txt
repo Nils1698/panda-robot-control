@@ -123,6 +123,7 @@
 /home/neurorobotic_student/panda-robot-control/panda_ws/build/nils_master_pkg/CMakeFiles/publish_hardcoded_coordinates.dir
 /home/neurorobotic_student/panda-robot-control/panda_ws/build/nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_predictor_gripper.dir
 /home/neurorobotic_student/panda-robot-control/panda_ws/build/nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_controller_gripper.dir
+/home/neurorobotic_student/panda-robot-control/panda_ws/build/nils_master_pkg/CMakeFiles/publish_detected_coordinates.dir
 /home/neurorobotic_student/panda-robot-control/panda_ws/build/nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_predictor.dir
 /home/neurorobotic_student/panda-robot-control/panda_ws/build/nils_master_pkg/CMakeFiles/publish_apriltag_pose.dir
 /home/neurorobotic_student/panda-robot-control/panda_ws/build/nils_master_pkg/CMakeFiles/rebuild_cache.dir

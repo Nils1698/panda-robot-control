@@ -1,33 +1,84 @@
 #!/usr/bin/env python
+import py_compile
 import rospy
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
+from std_msgs.msg import String
+from geometry_msgs.msg import Twist 
 import cv2
-import os
 import numpy as np
 
 class Image2Object(object):
     def __init__(self):
         # Params
+        self.br = CvBridge()
+        self.loop_rate = rospy.Rate(10)
+        self.printed = False
+
+        #Object detector
         self.image = None
         self.image_message = None
-        self.br = CvBridge()
-        # Node cycle rate (in Hz).
-        self.loop_rate = rospy.Rate(10)
+        self.objsToGrabTransformed = []
+
+        #Messenger
+        self.action = ""
+        self.msg2Controller = ""
+        self.awaitingResponse = True
+
+        #Coordinates Msg
+        self.msg = Twist()
 
         # Publishers
         self.pub = rospy.Publisher('/image_raw_but_better', Image,queue_size=10)
+        self.pubM = rospy.Publisher('/camera2controller', String, queue_size=10)
+        self.PubCoor = rospy.Publisher('/objCoordinates', Twist, queue_size=10)
 
         # Subscribers
         rospy.Subscriber("/image_raw",Image,self.callback)
+        rospy.Subscriber("/controller2camera",String, self.callbackMsg)
         
+    def callbackMsg(self, data):
+        self.action = data.data
 
+    '''
+    Mission Plan for picking up objects at unknown locations
+    '''
+    def switch(self, lang):
+        if lang == "Are you ready?":
+            self.msg2Controller = "Ready!"
+        if (len(self.objsToGrabTransformed) == 0):
+            self.msg2Controller = "No objects visible"
+        elif lang == "Awaiting coordinates":
+            px = self.objsToGrabTransformed[0][0]
+            py = self.objsToGrabTransformed[0][1]
+            pz = self.objsToGrabTransformed[0][2]
+            self.pubCoordinates(px, py, pz, 0.0, 0.0, 1.0, 0.0)
+            self.msg2Controller = "Coordinates are being published..."
+        elif lang == "Good job gripper... We did it!":
+            self.msg2Controller = "Likewise!"
+        self.pubM.publish(self.msg2Controller)
+
+    '''
+    Publish Coordinates
+    '''
+    def pubCoordinates(self, px, py, pz, ox, oy, oz, ow):
+        self.msg.linear.x = px
+        self.msg.linear.y = py
+        self.msg.linear.z = pz
+        self.PubCoor.publish(self.msg)
+
+    '''
+    Object detector that creates an array with the tranformed x and y coordinates
+    '''
     def callback(self, msg):
-        self.image = self.br.imgmsg_to_cv2(msg)
-        # Length of cropped image width: 1.448m height: 0.192m
-        # Cropping an image
+        # Length of cropped image width: 1.448m (1230pixels) height: 0.192m (170)
 
-        # Get image dimensions
+        #Intialize
+        objsToGrab = []
+        self.objsToGrabTransformed = []
+        self.image = self.br.imgmsg_to_cv2(msg)
+
+        # Get image dimensions 1544, 2064
         (h, w) = self.image.shape[:2]
         (cX, cY) = (w // 2, h // 2)
 
@@ -35,56 +86,76 @@ class Image2Object(object):
         M = cv2.getRotationMatrix2D((cX, cY), -1, 1.0)
         rotated = cv2.warpAffine(self.image, M, (w, h))
 
-        # Crop image
-        cropped_image = rotated[930:1100, 550:1780]
+        # Add black rectangles everywhere except for the converyor belt
+        cv2.rectangle(rotated, (0,0), (2064, 930), (0,0,0), -1)
+        cv2.rectangle(rotated, (0,0), (550, 1544), (0,0,0), -1)
+        cv2.rectangle(rotated, (0,1100), (2064, 1544), (0,0,0), -1)
+        cv2.rectangle(rotated, (1780,0), (2064, 1544), (0,0,0), -1)
 
         # Gaussain Blur to remove noise
-        blurred = cv2.GaussianBlur(cropped_image, (7, 7), 0)
+        blurred = cv2.GaussianBlur(rotated, (7, 7), 0)
 
         # Thresholding
         ret,imgt = cv2.threshold(blurred,30,255,cv2.THRESH_BINARY)
 
         # Remove more noise using erosion and dialation
         kernel = np.ones((5, 5), np.uint8)
-        img_erosion = cv2.erode(imgt, kernel, iterations=4)
-        img_dilation = cv2.dilate(img_erosion, kernel, iterations=4)
+        img_erosion = cv2.erode(imgt, kernel, iterations=5)
+        img_dilation = cv2.dilate(img_erosion, kernel, iterations=6)
 
         # Find contours of the found objects and grab them
-        contours, hierarchy = cv2.findContours(img_dilation, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        cnts = cv2.findContours(img_dilation, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        contours = cnts[0]
 
-        if len(contours) > 1:
-            print(f"There are {len(contours)} objects visible.\nTake some objects of the conveyor to start.")
-        elif len(contours) == 0:
-            print(f"Put an object on the table to start.")
-        elif cv2.contourArea(contours[0]) > 7000:
-            print(f"The object is too big.")
-        else:
-            for i in range(len(contours)):
-                M = cv2.moments(contours[i])
-                if M['m00'] != 0:
-                    cx = int(M['m10']/M['m00'])
-                    cy = int(M['m01']/M['m00'])
-                    if cx > 1000 or cx < 50:
-                        print("The object is too far.")
-                    else:
-                        cv2.drawContours(cropped_image, [contours[i]], -1, (255, 255, 255), 2)
-                        cv2.circle(cropped_image, (cx, cy), 7, (255, 255, 255), -1)
-                        cv2.putText(cropped_image, str(i), (cx - 10, cy),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
-                        print(f"x: {cx} y: {cy}")
-        
+        # Use contours to filter relevant objects
+        for i in range(len(contours)):
+            M = cv2.moments(contours[i])    
+            top_point = tuple(contours[i][contours[i][:,:,1].argmin()][0])
+            bottom_point = tuple(contours[i][contours[i][:,:,1].argmax()][0])
+            objHeight = bottom_point[1] - top_point[1]
+            if M['m00'] != 0:
+                cx = int(M['m10']/M['m00'])
+                cy = int(M['m01']/M['m00'])
+                if cx > 2780 or cx < 600:
+                    print("The object is too far.")
+                elif cv2.contourArea(contours[i]) > 7000 or cv2.contourArea(contours[i]) < 2000:
+                    pass
+                elif objHeight > 150:
+                    pass
+                else:
+                    cv2.drawContours(self.image, [contours[i]], -1, (255, 255, 255), 2)
+                    cv2.circle(self.image, (cx, cy), 7, (255, 255, 255), -1)
+                    cv2.putText(self.image, str(i), (cx - 50, cy),
+                    cv2.FONT_HERSHEY_SIMPLEX, 1.5, (255, 255, 255), 2)
+                    objsToGrab.append((cx, cy, 0, i))
 
-        #cv2.drawContours(cropped_image, contours, -1, (255, 255, 255), 3)
+        objsToGrab.sort(key=lambda x: x[0], reverse=True)
 
-        self.image = cropped_image
+        #print(f"There are {len(objsToGrab)} objects available to grab.")
+
+        #Transformation
+        for objToGrab in objsToGrab:
+            xPixel = objToGrab[0] - 550
+            yPixel = objToGrab[1] - 930
+
+            #I am switching the x and y axis here
+            xMeter = yPixel * (1.448/1230)
+            yMeter = xPixel * (0.192/170)
+            zMeter = objToGrab[2]
+            if not self.printed:
+                print(f'x= {"{:.2f}".format(xMeter)} y= {"{:.2f}".format(yMeter)} z= {"{:.2f}".format(zMeter)}')
+            self.objsToGrabTransformed.append((xMeter, yMeter, zMeter, i))
 
         self.image_message = self.br.cv2_to_imgmsg(self.image, encoding="passthrough")
+        self.printed = True
 
     def start(self):
         rospy.loginfo("Timing images")
         while not rospy.is_shutdown():
             if self.image_message is not None:
                 self.pub.publish(self.image_message)
+
+            self.switch(self.action)
             self.loop_rate.sleep()
 
 if __name__ == '__main__':
