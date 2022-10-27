@@ -27,6 +27,8 @@
     <!-- Launch object detector -->
     <node pkg="nils_master_pkg" name="img2objPose" type="img2objPose.py" output="screen"/>
 
+   <!-- Launch gripper -->
+    <node pkg="nils_master_pkg" name="gripper_static_unknown" type="gripper_static_unknown.py" output="screen"/>
 
     <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="-0.0725 -0.155 1.566 0.707 0.707 0.0 0.0 camera panda_link0" />
 

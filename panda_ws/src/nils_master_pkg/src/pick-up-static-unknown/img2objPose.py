@@ -18,7 +18,8 @@ class Image2Object(object):
         #Object detector
         self.image = None
         self.image_message = None
-        self.objsToGrabTransformed = []
+        self.objsToGrabTransformedSend = []
+        self.iterations = 0
 
         #Messenger
         self.action = ""
@@ -46,16 +47,20 @@ class Image2Object(object):
     def switch(self, lang):
         if lang == "Are you ready?":
             self.msg2Controller = "Ready!"
-        if (len(self.objsToGrabTransformed) == 0):
-            self.msg2Controller = "No objects visible"
-        elif lang == "Awaiting coordinates":
-            px = self.objsToGrabTransformed[0][0]
-            py = self.objsToGrabTransformed[0][1]
-            pz = self.objsToGrabTransformed[0][2]
-            self.pubCoordinates(px, py, pz, 0.0, 0.0, 1.0, 0.0)
-            self.msg2Controller = "Coordinates are being published..."
-        elif lang == "Good job gripper... We did it!":
-            self.msg2Controller = "Likewise!"
+        else:
+            if (len(self.objsToGrabTransformedSend) < 1):
+                self.msg2Controller = "No objects visible"
+
+            elif lang == "Awaiting coordinates" and len(self.objsToGrabTransformedSend) > 0:
+                px = self.objsToGrabTransformedSend[0][0]
+                py = self.objsToGrabTransformedSend[0][1]
+                pz = self.objsToGrabTransformedSend[0][2]
+                self.pubCoordinates(px, py, pz, 0.0, 0.0, 1.0, 0.0)
+                self.msg2Controller = "Coordinates are being published..."
+
+            elif lang == "Good job gripper... We did it!":
+                self.msg2Controller = "Likewise!"
+            
         self.pubM.publish(self.msg2Controller)
 
     '''
@@ -75,7 +80,8 @@ class Image2Object(object):
 
         #Intialize
         objsToGrab = []
-        self.objsToGrabTransformed = []
+        objsToGrabTransformed = []
+        prevObjVisible = 0
         self.image = self.br.imgmsg_to_cv2(msg)
 
         # Get image dimensions 1544, 2064
@@ -122,30 +128,46 @@ class Image2Object(object):
                     pass
                 elif objHeight > 150:
                     pass
+                elif cx > 850 and cx < 1050 and cy < 970 and cy > 900:
+                    pass
                 else:
                     cv2.drawContours(self.image, [contours[i]], -1, (255, 255, 255), 2)
                     cv2.circle(self.image, (cx, cy), 7, (255, 255, 255), -1)
                     cv2.putText(self.image, str(i), (cx - 50, cy),
                     cv2.FONT_HERSHEY_SIMPLEX, 1.5, (255, 255, 255), 2)
+                    #print(f'obj#= {i} x= {"{:.2f}".format(cx)} y= {"{:.2f}".format(cy)}')
                     objsToGrab.append((cx, cy, 0, i))
 
         objsToGrab.sort(key=lambda x: x[0], reverse=True)
 
         #print(f"There are {len(objsToGrab)} objects available to grab.")
 
+        objVisible = len(objsToGrab)
+        prevObjVisible = objVisible
+
         #Transformation
-        for objToGrab in objsToGrab:
-            xPixel = objToGrab[0] - 550
-            yPixel = objToGrab[1] - 930
+        if objVisible == 0 or (objVisible != prevObjVisible):
+            self.objsToGrabTransformedSend = []
+            self.iterations = 0
+        else:
+            for i in range(len(objsToGrab)):
+                xPixel = objsToGrab[i][0] - 550
+                yPixel = objsToGrab[i][1] - 930
 
-            #I am switching the x and y axis here
-            xMeter = yPixel * (1.448/1230)
-            yMeter = xPixel * (0.192/170)
-            zMeter = objToGrab[2]
-            if not self.printed:
-                print(f'x= {"{:.2f}".format(xMeter)} y= {"{:.2f}".format(yMeter)} z= {"{:.2f}".format(zMeter)}')
-            self.objsToGrabTransformed.append((xMeter, yMeter, zMeter, i))
+                #I am switching the x and y axis here
+                xMeter = yPixel * (1.448/1230)
+                yMeter = xPixel * (0.192/170)
+                zMeter = objsToGrab[i][2]
+                if not self.printed:
+                    print(f'obj#= {i} x= {"{:.2f}".format(xMeter)} y= {"{:.2f}".format(yMeter)} z= {"{:.2f}".format(zMeter)}')
 
+                objsToGrabTransformed.append((xMeter, yMeter, zMeter, i))
+
+            if self.iterations>10:
+                self.objsToGrabTransformedSend = objsToGrabTransformed
+
+            self.iterations+=1
+        
         self.image_message = self.br.cv2_to_imgmsg(self.image, encoding="passthrough")
         self.printed = True
 
