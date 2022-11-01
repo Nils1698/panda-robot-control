@@ -51,7 +51,7 @@ while PORT_STATUS=="PORT_OPEN":
     serial_port.close()
     PORT_STATUS=="PORT_NOT_OPEN"
 
-  while i < 200:
+  while i < 5:
     print(last_line)
   #time.sleep(0.001) # yield thread
     try:
@@ -68,9 +68,6 @@ while PORT_STATUS=="PORT_OPEN":
         print("Decoding error: ", end='')
         print(serialString)
         continue
-
-      monitor_output += last_line
-      monitor_output = monitor_output.split("\n",1)[1] # remove first line
 
       i += 1
 

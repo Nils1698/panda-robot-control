@@ -64,10 +64,10 @@ class PosePubDetected
                     pubGripper("Are you ready?");
                     pubMsg("Are you ready?");
                     if ((cameraToController == "Ready!") && (gripperToController == "Ready!")) {
-                        ROS_INFO("All nodes ready.");
-                        pubPose(0.2, 0.0, 0.6, 0.0, 0.0, 1.0, 0.0);
-                        if(isPoseReached(currX, currY, currZ, 0.2, 0.0, 0.6))
+                        pubPose(0.2, 0.0, 0.7, 0.0, 0.0, 1.0, 0.0);
+                        if(isPoseReached(currX, currY, currZ, 0.2, 0.0, 0.7))
                         {
+                            ROS_INFO("All nodes ready.");
                             ROS_INFO("Task 1 finished.");
                             task = 1;
                         }
@@ -77,7 +77,7 @@ class PosePubDetected
                 case 1:
                     pubMsg("Awaiting coordinates");
                     if (cameraToController == "No objects visible"){
-                        pubPose(0.2, 0.0, 0.6, 0.0, 0.0, 1.0, 0.0);
+                        pubPose(0.2, 0.0, 0.7, 0.0, 0.0, 1.0, 0.0);
                         task = 1;
                     } 
                     else if (cameraToController == "Coordinates are being published...") {
@@ -134,6 +134,7 @@ class PosePubDetected
                     }
                     break;
                 case 7:
+                    pubGripper("Transporting object");
                     pubPose(gox, goy, 0.4, 0.0, 0.0, 1.0, 0.0);
                     if(isPoseReached(currX, currY, currZ, gox, goy, 0.4))
                     {
@@ -142,6 +143,7 @@ class PosePubDetected
                     }
                     break;
                 case 8:
+                    pubGripper("Transporting object");
                     pubPose(0.7, dropPos, 0.4, 0.0, 0.0, 1.0, 0.0);
                     if(isPoseReached(currX, currY, currZ, 0.7, dropPos, 0.4))
                     {
@@ -150,9 +152,9 @@ class PosePubDetected
                     }
                     break;
                 case 9:
-                    
-                    pubPose(0.7, dropPos, 0.2, 0.0, 0.0, 1.0, 0.0);
-                    if(isPoseReached(currX, currY, currZ, 0.7, dropPos, 0.2))
+                    pubGripper("Transporting object");
+                    pubPose(0.7, dropPos, 0.22, 0.0, 0.0, 1.0, 0.0);
+                    if(isPoseReached(currX, currY, currZ, 0.7, dropPos, 0.22))
                     {
                         ROS_INFO("Task 9 finished.");
                         task = 10;
@@ -175,8 +177,8 @@ class PosePubDetected
                     }
                     break;
                 case 12:
-                    pubPose(0.2, 0.0, 0.6, 0.0, 0.0, 1.0, 0.0);
-                    if(isPoseReached(currX, currY, currZ, 0.2, 0.0, 0.6))
+                    pubPose(0.2, 0.0, 0.7, 0.0, 0.0, 1.0, 0.0);
+                    if(isPoseReached(currX, currY, currZ, 0.2, 0.0, 0.7))
                     {
                         ROS_INFO("Task 12 finished.");
                         usleep(200000);
