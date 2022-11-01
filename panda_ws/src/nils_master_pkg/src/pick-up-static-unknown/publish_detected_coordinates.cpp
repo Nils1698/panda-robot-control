@@ -21,6 +21,7 @@ class PosePubDetected
 
     public:
         int task = 0;
+        int numObj = 0;
 
         //Wanted x,y,z pose
         float wantX;
@@ -52,6 +53,8 @@ class PosePubDetected
             float currX = msg.O_T_EE[12];
             float currY = msg.O_T_EE[13];
             float currZ = msg.O_T_EE[14];
+
+            float dropPos = 0.0 + 0.1 * numObj;
 
             //ROS_INFO("WantX %f\n", wantX);
 
@@ -139,16 +142,17 @@ class PosePubDetected
                     }
                     break;
                 case 8:
-                    pubPose(0.7, 0.0, 0.4, 0.0, 0.0, 1.0, 0.0);
-                    if(isPoseReached(currX, currY, currZ, 0.7, 0.0, 0.4))
+                    pubPose(0.7, dropPos, 0.4, 0.0, 0.0, 1.0, 0.0);
+                    if(isPoseReached(currX, currY, currZ, 0.7, dropPos, 0.4))
                     {
                         ROS_INFO("Task 8 finished.");
                         task = 9;
                     }
                     break;
                 case 9:
-                    pubPose(0.7, 0.0, 0.2, 0.0, 0.0, 1.0, 0.0);
-                    if(isPoseReached(currX, currY, currZ, 0.7, 0.0, 0.2))
+                    
+                    pubPose(0.7, dropPos, 0.2, 0.0, 0.0, 1.0, 0.0);
+                    if(isPoseReached(currX, currY, currZ, 0.7, dropPos, 0.2))
                     {
                         ROS_INFO("Task 9 finished.");
                         task = 10;
@@ -157,6 +161,7 @@ class PosePubDetected
                 case 10:
                     pubGripper("Open gripper");
                     if (gripperToController == "Gripper opened") {
+                        numObj = numObj + 1;
                         ROS_INFO("Task 10 finished.");
                         task = 11;
                     }
