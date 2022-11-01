@@ -1299,6 +1299,19 @@ publish_tf_apriltag_pose_to_controller_gripper/fast:
 .PHONY : publish_tf_apriltag_pose_to_controller_gripper/fast
 
 #=============================================================================
+# Target rules for targets named publish_detected_coordinates
+
+# Build rule for target.
+publish_detected_coordinates: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 publish_detected_coordinates
+.PHONY : publish_detected_coordinates
+
+# fast build rule for target.
+publish_detected_coordinates/fast:
+	$(MAKE) -f nils_master_pkg/CMakeFiles/publish_detected_coordinates.dir/build.make nils_master_pkg/CMakeFiles/publish_detected_coordinates.dir/build
+.PHONY : publish_detected_coordinates/fast
+
+#=============================================================================
 # Target rules for targets named publish_tf_apriltag_pose_to_predictor
 
 # Build rule for target.
@@ -2945,6 +2958,7 @@ help:
 	@echo "... publish_hardcoded_coordinates"
 	@echo "... publish_tf_apriltag_pose_to_predictor_gripper"
 	@echo "... publish_tf_apriltag_pose_to_controller_gripper"
+	@echo "... publish_detected_coordinates"
 	@echo "... publish_tf_apriltag_pose_to_predictor"
 	@echo "... publish_apriltag_pose"
 	@echo "... nils_master_pkg_generate_messages_eus"

@@ -93,11 +93,18 @@ target_link_libraries(publish_tf_apriltag_pose_to_predictor_gripper ${catkin_LIB
 target_include_directories(publish_tf_apriltag_pose_to_predictor_gripper SYSTEM PUBLIC
 )
 
-#Files to pick up a static file at an known location
+#Files to pick up a static object at an known location
 
 add_executable(publish_hardcoded_coordinates src/pick-up-static-known/publish_hardcoded_coordinates.cpp)
 target_link_libraries(publish_hardcoded_coordinates ${catkin_LIBRARIES})
 target_include_directories(publish_hardcoded_coordinates SYSTEM PUBLIC
+)
+
+#Files to pick up static objects at an unknown location
+
+add_executable(publish_detected_coordinates src/pick-up-static-unknown/publish_detected_coordinates.cpp)
+target_link_libraries(publish_detected_coordinates ${catkin_LIBRARIES})
+target_include_directories(publish_detected_coordinates SYSTEM PUBLIC
 )
 
 #############

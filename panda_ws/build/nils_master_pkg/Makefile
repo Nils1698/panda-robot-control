@@ -213,6 +213,21 @@ publish_tf_apriltag_pose_to_controller_gripper/fast:
 .PHONY : publish_tf_apriltag_pose_to_controller_gripper/fast
 
 # Convenience name for target.
+nils_master_pkg/CMakeFiles/publish_detected_coordinates.dir/rule:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nils_master_pkg/CMakeFiles/publish_detected_coordinates.dir/rule
+.PHONY : nils_master_pkg/CMakeFiles/publish_detected_coordinates.dir/rule
+
+# Convenience name for target.
+publish_detected_coordinates: nils_master_pkg/CMakeFiles/publish_detected_coordinates.dir/rule
+
+.PHONY : publish_detected_coordinates
+
+# fast build rule for target.
+publish_detected_coordinates/fast:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/publish_detected_coordinates.dir/build.make nils_master_pkg/CMakeFiles/publish_detected_coordinates.dir/build
+.PHONY : publish_detected_coordinates/fast
+
+# Convenience name for target.
 nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_predictor.dir/rule:
 	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f CMakeFiles/Makefile2 nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_predictor.dir/rule
 .PHONY : nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_predictor.dir/rule
@@ -509,6 +524,33 @@ src/pick-up-static-known/publish_hardcoded_coordinates.cpp.s:
 	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/publish_hardcoded_coordinates.dir/build.make nils_master_pkg/CMakeFiles/publish_hardcoded_coordinates.dir/src/pick-up-static-known/publish_hardcoded_coordinates.cpp.s
 .PHONY : src/pick-up-static-known/publish_hardcoded_coordinates.cpp.s
 
+src/pick-up-static-unknown/publish_detected_coordinates.o: src/pick-up-static-unknown/publish_detected_coordinates.cpp.o
+
+.PHONY : src/pick-up-static-unknown/publish_detected_coordinates.o
+
+# target to build an object file
+src/pick-up-static-unknown/publish_detected_coordinates.cpp.o:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/publish_detected_coordinates.dir/build.make nils_master_pkg/CMakeFiles/publish_detected_coordinates.dir/src/pick-up-static-unknown/publish_detected_coordinates.cpp.o
+.PHONY : src/pick-up-static-unknown/publish_detected_coordinates.cpp.o
+
+src/pick-up-static-unknown/publish_detected_coordinates.i: src/pick-up-static-unknown/publish_detected_coordinates.cpp.i
+
+.PHONY : src/pick-up-static-unknown/publish_detected_coordinates.i
+
+# target to preprocess a source file
+src/pick-up-static-unknown/publish_detected_coordinates.cpp.i:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/publish_detected_coordinates.dir/build.make nils_master_pkg/CMakeFiles/publish_detected_coordinates.dir/src/pick-up-static-unknown/publish_detected_coordinates.cpp.i
+.PHONY : src/pick-up-static-unknown/publish_detected_coordinates.cpp.i
+
+src/pick-up-static-unknown/publish_detected_coordinates.s: src/pick-up-static-unknown/publish_detected_coordinates.cpp.s
+
+.PHONY : src/pick-up-static-unknown/publish_detected_coordinates.s
+
+# target to generate assembly for a file
+src/pick-up-static-unknown/publish_detected_coordinates.cpp.s:
+	cd /home/neurorobotic_student/panda-robot-control/panda_ws/build && $(MAKE) -f nils_master_pkg/CMakeFiles/publish_detected_coordinates.dir/build.make nils_master_pkg/CMakeFiles/publish_detected_coordinates.dir/src/pick-up-static-unknown/publish_detected_coordinates.cpp.s
+.PHONY : src/pick-up-static-unknown/publish_detected_coordinates.cpp.s
+
 src/prediction_handler.o: src/prediction_handler.cpp.o
 
 .PHONY : src/prediction_handler.o
@@ -710,6 +752,7 @@ help:
 	@echo "... publish_hardcoded_coordinates"
 	@echo "... publish_tf_apriltag_pose_to_predictor_gripper"
 	@echo "... publish_tf_apriltag_pose_to_controller_gripper"
+	@echo "... publish_detected_coordinates"
 	@echo "... publish_tf_apriltag_pose_to_predictor"
 	@echo "... publish_apriltag_pose"
 	@echo "... rebuild_cache"
@@ -735,6 +778,9 @@ help:
 	@echo "... src/pick-up-static-known/publish_hardcoded_coordinates.o"
 	@echo "... src/pick-up-static-known/publish_hardcoded_coordinates.i"
 	@echo "... src/pick-up-static-known/publish_hardcoded_coordinates.s"
+	@echo "... src/pick-up-static-unknown/publish_detected_coordinates.o"
+	@echo "... src/pick-up-static-unknown/publish_detected_coordinates.i"
+	@echo "... src/pick-up-static-unknown/publish_detected_coordinates.s"
 	@echo "... src/prediction_handler.o"
 	@echo "... src/prediction_handler.i"
 	@echo "... src/prediction_handler.s"

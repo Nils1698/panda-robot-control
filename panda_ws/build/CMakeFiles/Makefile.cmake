@@ -523,6 +523,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "nils_master_pkg/CMakeFiles/publish_hardcoded_coordinates.dir/DependInfo.cmake"
   "nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_predictor_gripper.dir/DependInfo.cmake"
   "nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_controller_gripper.dir/DependInfo.cmake"
+  "nils_master_pkg/CMakeFiles/publish_detected_coordinates.dir/DependInfo.cmake"
   "nils_master_pkg/CMakeFiles/publish_tf_apriltag_pose_to_predictor.dir/DependInfo.cmake"
   "nils_master_pkg/CMakeFiles/publish_apriltag_pose.dir/DependInfo.cmake"
   "nils_master_pkg/CMakeFiles/nils_master_pkg_generate_messages_eus.dir/DependInfo.cmake"
