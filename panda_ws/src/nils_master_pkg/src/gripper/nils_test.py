@@ -46,14 +46,15 @@ while PORT_STATUS=="PORT_OPEN":
   i = 0
   x = input()
   send(f"{x}\n")
+  time.sleep(1)
 
   if x == "close":
     serial_port.close()
     PORT_STATUS=="PORT_NOT_OPEN"
 
-  while i < 5:
+  while False:
+    measurements = last_line.replace("\n","").split(" ")[:-3]
     print(last_line)
-  #time.sleep(0.001) # yield thread
     try:
       serialString = serial_port.readline()
       if(serialString==b''): # time out
@@ -61,8 +62,6 @@ while PORT_STATUS=="PORT_OPEN":
 
       try:
         last_line = serialString.decode("utf-8").replace("\r","").replace("\t"," ")
-        #if(verbose): print("%  "+last_line)
-        #handle_incoming(last_line)
 
       except UnicodeDecodeError:
         print("Decoding error: ", end='')
