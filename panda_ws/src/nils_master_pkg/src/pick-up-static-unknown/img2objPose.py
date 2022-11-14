@@ -165,7 +165,7 @@ class Image2Object(object):
         blurred = cv2.GaussianBlur(rotated, (7, 7), 0)
 
         # Thresholding
-        ret,imgt = cv2.threshold(blurred,30,255,cv2.THRESH_BINARY)
+        ret,imgt = cv2.threshold(blurred,30,255,cv2.THRESH_BINARY) 
 
         # Remove more noise using erosion and dialation
         kernel = np.ones((5, 5), np.uint8)
@@ -181,7 +181,8 @@ class Image2Object(object):
             M = cv2.moments(contours[i])    
             top_point = tuple(contours[i][contours[i][:,:,1].argmin()][0])
             bottom_point = tuple(contours[i][contours[i][:,:,1].argmax()][0])
-            objHeight = bottom_point[1] - top_point[1]
+            x,y,w,h = cv2.boundingRect(contours[i])
+            print(f"Object width: {round(w*(1448/1230),4)} height: {round(h*(192/170),4)}")
             if M['m00'] != 0:
                 cx = int(M['m10']/M['m00'])
                 cy = int(M['m01']/M['m00'])
@@ -189,7 +190,7 @@ class Image2Object(object):
                     pass
                 elif cv2.contourArea(contours[i]) > 7000 or cv2.contourArea(contours[i]) < 2000:
                     pass
-                elif objHeight > 150:
+                elif h > 150:
                     pass
                 elif cx > 850 and cx < 1050 and cy < 970 and cy > 900:
                     pass

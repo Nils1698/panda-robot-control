@@ -32,7 +32,6 @@ def send(string):
     print("Send failed!")
   return False
 
-
 send("init\n")
 
 time.sleep(1)
@@ -40,21 +39,19 @@ time.sleep(1)
 send("sub-clear\n")
 
 time.sleep(1)
-
-
-while PORT_STATUS=="PORT_OPEN":
-  i = 0
-  x = input()
-  send(f"{x}\n")
+for i in range(10):
+  send("grip 2\n")
   time.sleep(1)
-
-  if x == "close":
-    serial_port.close()
-    PORT_STATUS=="PORT_NOT_OPEN"
-
-  while False:
-    measurements = last_line.replace("\n","").split(" ")[:-3]
-    print(last_line)
+  send("ctrl stop\n")
+  time.sleep(2)
+  send("m pos\n")
+  time.sleep(0.5)
+  send("ctrl stop\n")
+  time.sleep(0.5)
+  send("m open\n")
+  time.sleep(2)
+'''
+  for i in range(20):
     try:
       serialString = serial_port.readline()
       if(serialString==b''): # time out
@@ -68,9 +65,21 @@ while PORT_STATUS=="PORT_OPEN":
         print(serialString)
         continue
 
-      i += 1
 
     except serial.SerialException:
       print("SensorInterface - Lost conenction!")
       PORT_STATUS = "PORT_CLOSING"
       break
+
+    measurements = last_line.replace("\n","").split(" ")[:-3]
+    if last_line[0:5] != "debug":
+      print(last_line[0:5])'''
+#while PORT_STATUS=="PORT_OPEN":
+#  i = 0
+#  x = input()
+#  send(f"{x}\n")
+#  time.sleep(1)
+
+#  if x == "close":
+#    serial_port.close()
+  #    PORT_STATUS=="PORT_NOT_O
