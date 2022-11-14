@@ -1,12 +1,12 @@
 #!/usr/bin/env python
-import py_compile
 import rospy
+import cv2
+import numpy as np
+from math import atan2, cos, sin, sqrt, pi
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 from std_msgs.msg import String
 from geometry_msgs.msg import Twist 
-import cv2
-import numpy as np
 
 class Image2Object(object):
     def __init__(self):
@@ -73,7 +73,70 @@ class Image2Object(object):
         self.PubCoor.publish(self.msg)
 
     '''
-    Object detector that creates an array with the tranformed x and y coordinates
+    Draws the orientation of the object
+    '''
+    def drawAxis(self, img, p_, q_, color, scale):
+        p = list(p_)
+        q = list(q_)
+        
+        ## [visualization1]
+        angle = atan2(p[1] - q[1], p[0] - q[0]) # angle in radians
+        hypotenuse = sqrt((p[1] - q[1]) * (p[1] - q[1]) + (p[0] - q[0]) * (p[0] - q[0]))
+        
+        # Here we lengthen the arrow by a factor of scale
+        q[0] = p[0] - scale * hypotenuse * cos(angle)
+        q[1] = p[1] - scale * hypotenuse * sin(angle)
+        cv2.line(img, (int(p[0]), int(p[1])), (int(q[0]), int(q[1])), color, 3, cv2.LINE_AA)
+        
+        # create the arrow hooks
+        p[0] = q[0] + 9 * cos(angle + pi / 4)
+        p[1] = q[1] + 9 * sin(angle + pi / 4)
+        cv2.line(img, (int(p[0]), int(p[1])), (int(q[0]), int(q[1])), color, 3, cv2.LINE_AA)
+        
+        p[0] = q[0] + 9 * cos(angle - pi / 4)
+        p[1] = q[1] + 9 * sin(angle - pi / 4)
+        cv2.line(img, (int(p[0]), int(p[1])), (int(q[0]), int(q[1])), color, 3, cv2.LINE_AA)
+        ## [visualization1]
+
+    '''
+    Calculates the orientation of the objects
+    '''
+    def getOrientation(self, pts, img):
+        # Construct a buffer used by the pca analysis
+        sz = len(pts)
+        data_pts = np.empty((sz, 2), dtype=np.float64)
+        for i in range(data_pts.shape[0]):
+            data_pts[i,0] = pts[i,0,0]
+            data_pts[i,1] = pts[i,0,1]
+        
+        # Perform PCA analysis
+        mean = np.empty((0))
+        mean, eigenvectors, eigenvalues = cv2.PCACompute2(data_pts, mean)
+        
+        # Store the center of the object
+        cntr = (int(mean[0,0]), int(mean[0,1]))
+        ## [pca]
+        
+        ## [visualization]
+        # Draw the principal components
+        cv2.circle(img, cntr, 3, (255, 0, 255), 2)
+        p1 = (cntr[0] + 0.02 * eigenvectors[0,0] * eigenvalues[0,0], cntr[1] + 0.02 * eigenvectors[0,1] * eigenvalues[0,0])
+        p2 = (cntr[0] - 0.02 * eigenvectors[1,0] * eigenvalues[1,0], cntr[1] - 0.02 * eigenvectors[1,1] * eigenvalues[1,0])
+        self.drawAxis(img, cntr, p1, (255, 255, 255), 1)
+        self.drawAxis(img, cntr, p2, (255, 255, 255), 5)
+        
+        angle = atan2(eigenvectors[0,1], eigenvectors[0,0]) # orientation in radians
+        ## [visualization]
+        
+        # Label with the rotation angle
+        label = str(round(angle,2)) + " rad"
+        textbox = cv2.rectangle(img, (cntr[0]+40, cntr[1]-25), (cntr[0] + 140, cntr[1] + 10), (255,255,255), -1)
+        cv2.putText(img, label, (cntr[0]+40, cntr[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,0), 1, cv2.LINE_AA)
+        
+        return angle
+
+    '''
+    Object detector that creates an array with the tranformed x and y coordinates (https://automaticaddison.com/how-to-determine-the-orientation-of-an-object-using-opencv/)
     '''
     def callback(self, msg):
         # Length of cropped image width: 1.448m (1230pixels) height: 0.192m (170)
@@ -106,8 +169,8 @@ class Image2Object(object):
 
         # Remove more noise using erosion and dialation
         kernel = np.ones((5, 5), np.uint8)
-        img_erosion = cv2.erode(imgt, kernel, iterations=5)
-        img_dilation = cv2.dilate(img_erosion, kernel, iterations=6)
+        img_erosion = cv2.erode(imgt, kernel, iterations=3)
+        img_dilation = cv2.dilate(img_erosion, kernel, iterations=3)
 
         # Find contours of the found objects and grab them
         cnts = cv2.findContours(img_dilation, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -123,7 +186,7 @@ class Image2Object(object):
                 cx = int(M['m10']/M['m00'])
                 cy = int(M['m01']/M['m00'])
                 if cx > 2780 or cx < 600:
-                    print("The object is too far.")
+                    pass
                 elif cv2.contourArea(contours[i]) > 7000 or cv2.contourArea(contours[i]) < 2000:
                     pass
                 elif objHeight > 150:
@@ -136,6 +199,13 @@ class Image2Object(object):
                     cv2.putText(self.image, str(i), (cx - 50, cy),
                     cv2.FONT_HERSHEY_SIMPLEX, 1.5, (255, 255, 255), 2)
                     #print(f'obj#= {i} x= {"{:.2f}".format(cx)} y= {"{:.2f}".format(cy)}')
+
+                    approx = cv2.approxPolyDP(contours[i],0.001*cv2.arcLength(contours[i],True),True)
+                    #print(f"Object  {i} has a len(approx) of {len(approx)}.")
+                    if len(approx) < 60:
+                        # Find the orientation of each shape
+                        self.getOrientation(contours[i], self.image)
+
                     objsToGrab.append((cx, cy, 0, i))
 
         objsToGrab.sort(key=lambda x: x[0], reverse=True)

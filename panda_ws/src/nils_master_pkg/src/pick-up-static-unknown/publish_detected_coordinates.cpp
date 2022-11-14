@@ -4,8 +4,10 @@
 #include <franka_msgs/FrankaState.h>
 #include <geometry_msgs/Twist.h>
 #include <geometry_msgs/PoseWithCovarianceStamped.h>
+#include <tf2/LinearMath/Quaternion.h>
 #include <sstream>
 #include "std_msgs/String.h"
+#include <math.h>
 
 class PosePubDetected
 {
@@ -33,7 +35,7 @@ class PosePubDetected
         bool coorSaved = false;
         std::string cameraToController;
         std::string gripperToController;
-
+        tf2::Quaternion myQuaternion;
 
         PosePubDetected()
         {
@@ -66,8 +68,9 @@ class PosePubDetected
                 case 0:
                     pubGripper("Are you ready?");
                     pubMsg("Are you ready?");
+                    //myQuaternion.setRPY( 0, 0, -M_PI/4);
                     if ((cameraToController == "Ready!") && (gripperToController == "Ready!")) {
-                        pubPose(0.2, 0.0, 0.7, 0.0, 0.0, 1.0, 0.0);
+                        pubPose(0.2, 0.0, 0.7, 0.0, 0.0, 1.0, 0.0);//myQuaternion.getX(), myQuaternion.getY(), myQuaternion.getZ(), myQuaternion.getW());
                         if(isPoseReached(currX, currY, currZ, 0.2, 0.0, 0.7))
                         {
                             ROS_INFO("All nodes ready.");
@@ -79,8 +82,9 @@ class PosePubDetected
                     break;
                 case 1:
                     pubMsg("Awaiting coordinates");
+                    //myQuaternion.setRPY( 0, 0, -M_PI/4);
                     if (cameraToController == "No objects visible"){
-                        pubPose(0.2, 0.0, 0.7, 0.0, 0.0, 1.0, 0.0);
+                        pubPose(0.2, 0.0, 0.7, 0.0, 0.0, 1.0, 0.0);//myQuaternion.getX(), myQuaternion.getY(), myQuaternion.getZ(), myQuaternion.getW());
                         task = 1;
                     } 
                     else if (cameraToController == "Coordinates are being published...") {
@@ -256,6 +260,7 @@ class PosePubDetected
             msg.pose.pose.orientation.x = ox;
             msg.pose.pose.orientation.y = oy;
             msg.pose.pose.orientation.z = oz;
+            msg.pose.pose.orientation.w = ow;
             
             //ROS_INFO_STREAM("Sending random velocity command:"<<" linear="<<msg.pose.pose.position.x<<" angular="<<msg.pose.pose.orientation.x);
 

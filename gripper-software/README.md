@@ -10,6 +10,18 @@ The gripper-software package has been designed by Jacob Fiskaali Hertz and is us
 
 ## Setting up the gripper software
 
+In order to use the Software it is necessary to download the Teenzy software. A guide on how to install the software can be found on the main page under "Setup a ros interface to the gripper". Once this is completed, you can open VisualCode and install the PlatformIO extension. PlatformIO is a cross-platform, cross-architecture, multi-framework professional IDE tool for embedded system and software engineers who write embedded applications.
+
+Make sure to restart VisualCode once the installation is completed. A new menu point should pop up in the sidebar and in the footer you hould see a small 'Home' symbol. Click on it to open the PlatformIO Home page. Here you can navigate to 'Open project' and select the 'gripper-software' folder of this git repo. Be sure to select the more nested folder since there exist 2 'gripper-software' folders.
+
+Next you should be able to build and upload the code. In order to do so select first the correct environment. You can select the environment in the bottom bar. Make sure your current environment is 'env:main (gripper-software)'. Then in the bottom bar press the arrow symbol that is pointing to the left. The code will now be uploaded. If there is an error it most probably because the gripper cannot be detected or you are in the wrong environment.
+
+Once this is done, you can start the gripper software:
+
+```
+python GraspianGripperSoftware/SamplerSoftware/__main__.py
+```
+
 ## Debugging
 
 ## Notes

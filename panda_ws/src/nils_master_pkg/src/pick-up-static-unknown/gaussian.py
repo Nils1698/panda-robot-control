@@ -1,47 +1,61 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.stats import norm
  
 # Creating a series of data of in range of 1-50.
-x = np.linspace(5,8,200)
+x = np.linspace(6,7,200)
  
-#Creating a Function.
-def normal_dist(x , mean , sd):
-    prob_density = (np.pi*sd) * np.exp(-0.5*((x-mean)/sd)**2)
-    return prob_density
- 
-#Mean and Standard devaition of the camera
-width1 = 6.7
-sd1 = 0.41 #Todo
+'''
+Merge 2 Gaussians
+'''
+def merge_gaussian(m1, m2, sd1, sd2):
+    #New mean
+    m12 = m1*(sd2**2/(sd1**2+sd2**2)) + m2*(sd1**2/(sd1**2+sd2**2))
 
-#Mean and Standard devaition of the gripper
-width2 = 6.4
-sd2 = 0.4 #Todo
+    #New standard deviation
+    sd12 = np.sqrt(sd1**2*sd2**2/(sd1**2+sd2**2))
+
+    return m12, sd12
+
+'''
+Calculate mean and variance
+'''
+def mean_variance(data):
+    # Number of observations
+    n = len(data)
+    # Mean of the data
+    mean = sum(data) / n
+    # Square deviations
+    deviations = [(x - mean) ** 2 for x in data]
+    # Variance
+    variance = sum(deviations) / n
+    print(f"mean {round(mean,2)} variance {round(variance,2)}")
+    return mean, variance
+
+#Random measurements
+randnums1 = np.random.uniform(6,7,50)
+randnums2 = np.random.uniform(6,6.9,100)
+
+#Mean and Standard devaition of the camera
+mean1, sd1 = mean_variance(randnums1)
+mean2, sd2 = mean_variance(randnums2)
  
 #Apply function to the data.
-pdf1 = normal_dist(x, width1, sd1)
-pdf2 = normal_dist(x, width2, sd2)
+mean12, sd12 = merge_gaussian(mean1, mean2, sd1, sd2)
 
-#Calculating the intersection
-cross1 = normal_dist(width2, width1 , sd1)
-cross2 = normal_dist(width1, width2 , sd2)
-
-if cross1 > cross2:
-    print(f"The more correct value with a probability of {round(cross1,2)}% is {width1}cm.")
-else:
-    print(f"The more correct value with a probability of {round(cross2,2)}% is {width2}cm.")
+print(f"mean {round(mean12,2)} variance {round(sd12,2)}")
  
 #Plotting the Results
-plt.plot(x,pdf1 , color = 'red')
-plt.plot(x,pdf2 , color = 'blue')
-#Plot horizontal lines
-plt.hlines(y = cross1, xmin = 5, xmax = width2, color = 'red', linestyle = ':')
-plt.hlines(y = cross2, xmin = 5, xmax = width1, color = 'blue', linestyle = ':')
+plt.plot(x, norm.pdf(x,mean1,sd1), color = 'red')
+plt.plot(x, norm.pdf(x,mean2,sd2), color = 'blue')
+plt.plot(x, norm.pdf(x,mean12,sd12), color = 'purple')
+
+
 #Plot vertical lines
-plt.vlines(ymin = 0, ymax = max(pdf1), x = width1, color = 'grey', linestyle = ':', linewidth=0.5)
-plt.vlines(ymin = 0, ymax = max(pdf2), x = width2, color = 'grey', linestyle = ':', linewidth=0.5)
-plt.vlines(ymin = 0, ymax = cross1, x = width2, color = 'red', linestyle = ':')
-plt.vlines(ymin = 0, ymax = cross2, x = width1, color = 'blue', linestyle = ':')
-plt.xlabel('Data points')
+plt.vlines(ymin = 0, ymax = max(norm.pdf(x,mean1,sd1)), x = mean1, color = 'red', linestyle = ':', linewidth=1)
+plt.vlines(ymin = 0, ymax = max(norm.pdf(x,mean2,sd2)), x = mean2, color = 'blue', linestyle = ':', linewidth=1)
+plt.vlines(ymin = 0, ymax = max(norm.pdf(x,mean12,sd12)), x = mean12, color = 'purple', linestyle = ':', linewidth=1)
+plt.xlabel('Diameter in cm')
 plt.ylabel('Probability Density')
 
 plt.show()
