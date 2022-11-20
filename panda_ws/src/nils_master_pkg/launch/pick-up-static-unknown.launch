@@ -14,8 +14,8 @@
 
     <!-- Debugging and display of detections -->
     <group if="$(arg debug)">
-        <node type="rviz" name="rviz" pkg="rviz" args="-d $(find object_detector)/config/rviz_custom.rviz" />
-        <node pkg="rqt_image_view" type="rqt_image_view" name="image_view_tag_detections" args="/tag_detections_image"/>
+        <!--<node type="rviz" name="rviz" pkg="rviz" args="-d $(find object_detector)/config/rviz_custom.rviz" />-->
+        <node pkg="rqt_image_view" type="rqt_image_view" name="image_view_tag_detections" args="/image_raw_but_better"/>
     </group>
 
     <!-- Launch files for the camera -->

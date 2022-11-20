@@ -257,7 +257,7 @@ void AICController::starting(const ros::Time& /*time*/) {
   // Setting Initial position to a safe location:
   // mu_d << 0.0345169,-0.167844,-0.000332711,-1.74526,0.00905814,1.56589,0.824567;
   mu_d << 0.0,0.0, 0.0, -1.57, 0.0, 1.57, -1.57;
-
+  mu_d_dot << 0.0,0.0,0.0,0.0,0.0,0.0,0.0;
   // Right
   //mu_d << 0.15086,0.235858,-0.458875,-2.44786,0.0599695,2.6241,0.450365;
 
@@ -266,6 +266,7 @@ void AICController::starting(const ros::Time& /*time*/) {
   //var_mu = 5.0;
   //var_muprime = 10.0;
   // For no gravity use these
+  //TUNING PARAMETERS
   var_mu = 15.0;
   var_muprime = 30.0;
   var_q = 1;
@@ -374,7 +375,7 @@ void AICController::update(const ros::Time& time, const ros::Duration& period) {
 //  mu_d_dot  = 0.998 * mu_d_dot + 0.001998 * (mu_d - mu_d_prev) / h; // emulating velocity reference // TODO: Replace with inverse dynamics when available
 //  mu_d_prev = mu_d;
 
-  mu_d_dot  = (mu_d - mu_d_prev) / h; // emulating velocity reference // TODO: Replace with inverse dynamics when available
+  //mu_d_dot  = (mu_d - mu_d_prev) / h; // emulating velocity reference // TODO: Replace with inverse dynamics when available
   mu_d_prev = mu_d;
 
   /// CatmullRomVel trajectory method: // Not working for non-zero x-position commands

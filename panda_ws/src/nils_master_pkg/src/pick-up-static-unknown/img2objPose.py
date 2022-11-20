@@ -5,8 +5,9 @@ import numpy as np
 from math import atan2, cos, sin, sqrt, pi
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
-from std_msgs.msg import String
+from std_msgs.msg import String, Float64
 from geometry_msgs.msg import Twist 
+from gaussian import *
 
 class Image2Object(object):
     def __init__(self):
@@ -33,10 +34,14 @@ class Image2Object(object):
         self.pub = rospy.Publisher('/image_raw_but_better', Image,queue_size=10)
         self.pubM = rospy.Publisher('/camera2controller', String, queue_size=10)
         self.PubCoor = rospy.Publisher('/objCoordinates', Twist, queue_size=10)
+        self.PubWC = rospy.Publisher('/objWidthC', Float64, queue_size=10)
 
         # Subscribers
         rospy.Subscriber("/image_raw",Image,self.callback)
         rospy.Subscriber("/controller2camera",String, self.callbackMsg)
+
+        # Gaussian
+        self.pWidth = 0
         
     def callbackMsg(self, data):
         self.action = data.data
@@ -52,10 +57,12 @@ class Image2Object(object):
                 self.msg2Controller = "No objects visible"
 
             elif lang == "Awaiting coordinates" and len(self.objsToGrabTransformedSend) > 0:
+                self.printed = False
                 px = self.objsToGrabTransformedSend[0][0]
                 py = self.objsToGrabTransformedSend[0][1]
                 pz = self.objsToGrabTransformedSend[0][2]
-                self.pubCoordinates(px, py, pz, 0.0, 0.0, 1.0, 0.0)
+                oz = self.objsToGrabTransformedSend[0][4]
+                self.pubCoordinates(px, py, pz, 0.0, 0.0, oz, 0.0)
                 self.msg2Controller = "Coordinates are being published..."
 
             elif lang == "Good job gripper... We did it!":
@@ -70,7 +77,17 @@ class Image2Object(object):
         self.msg.linear.x = px
         self.msg.linear.y = py
         self.msg.linear.z = pz
+        self.msg.angular.x = 0.0
+        self.msg.angular.y = 0.0
+        self.msg.angular.z = oz
         self.PubCoor.publish(self.msg)
+
+    '''
+    Publish Coordinates
+    '''
+    def pubWidth(self, width):
+        
+        self.PubWC.publish(Float64(width))
 
     '''
     Draws the orientation of the object
@@ -144,8 +161,10 @@ class Image2Object(object):
         #Intialize
         objsToGrab = []
         objsToGrabTransformed = []
+        width = []
         prevObjVisible = 0
         self.image = self.br.imgmsg_to_cv2(msg)
+        oz = 0.0
 
         # Get image dimensions 1544, 2064
         (h, w) = self.image.shape[:2]
@@ -182,7 +201,7 @@ class Image2Object(object):
             top_point = tuple(contours[i][contours[i][:,:,1].argmin()][0])
             bottom_point = tuple(contours[i][contours[i][:,:,1].argmax()][0])
             x,y,w,h = cv2.boundingRect(contours[i])
-            print(f"Object width: {round(w*(1448/1230),4)} height: {round(h*(192/170),4)}")
+            #print(f"Object width: {round(w*(1448/1230),4)} height: {round(h*(192/170),4)}")
             if M['m00'] != 0:
                 cx = int(M['m10']/M['m00'])
                 cy = int(M['m01']/M['m00'])
@@ -201,18 +220,16 @@ class Image2Object(object):
                     cv2.FONT_HERSHEY_SIMPLEX, 1.5, (255, 255, 255), 2)
                     #print(f'obj#= {i} x= {"{:.2f}".format(cx)} y= {"{:.2f}".format(cy)}')
 
-                    approx = cv2.approxPolyDP(contours[i],0.001*cv2.arcLength(contours[i],True),True)
+                    approx = cv2.approxPolyDP(contours[i],0.01*cv2.arcLength(contours[i],True),True)
                     #print(f"Object  {i} has a len(approx) of {len(approx)}.")
-                    if len(approx) < 60:
+                    if len(approx) <= 10:
                         # Find the orientation of each shape
-                        self.getOrientation(contours[i], self.image)
+                        oz = self.getOrientation(contours[i], self.image) + 1.5707
 
-                    objsToGrab.append((cx, cy, 0, i))
+                    objsToGrab.append((cx, cy, 0, i, oz))
 
         objsToGrab.sort(key=lambda x: x[0], reverse=True)
-
         #print(f"There are {len(objsToGrab)} objects available to grab.")
-
         objVisible = len(objsToGrab)
         prevObjVisible = objVisible
 
@@ -229,24 +246,30 @@ class Image2Object(object):
                 xMeter = yPixel * (1.448/1230)
                 yMeter = xPixel * (0.192/170)
                 zMeter = objsToGrab[i][2]
-                if not self.printed:
-                    print(f'obj#= {i} x= {"{:.2f}".format(xMeter)} y= {"{:.2f}".format(yMeter)} z= {"{:.2f}".format(zMeter)}')
 
-                objsToGrabTransformed.append((xMeter, yMeter, zMeter, i))
+                width = objsToGrab[i][4]*(1448/1230)
+                oz = objsToGrab[i][4]
+                #if not self.printed:
+                    #print(f'obj#= {i} x= {"{:.2f}".format(xMeter)} y= {"{:.2f}".format(yMeter)} z= {"{:.2f}".format(zMeter)} oz= {"{:.2f}".format(oz)}')
+                    #self.printed = True
 
-            if self.iterations>10:
-                self.objsToGrabTransformedSend = objsToGrabTransformed
+                objsToGrabTransformed.append((xMeter, yMeter, zMeter, i, oz))
+
+            if self.iterations>11:
+               self.objsToGrabTransformedSend = objsToGrabTransformed
+            #    self.pWidth = self.objsToGrabTransformedSend[0][4]
 
             self.iterations+=1
         
         self.image_message = self.br.cv2_to_imgmsg(self.image, encoding="passthrough")
-        self.printed = True
 
     def start(self):
         rospy.loginfo("Timing images")
         while not rospy.is_shutdown():
             if self.image_message is not None:
                 self.pub.publish(self.image_message)
+                self.pubWidth(self.pWidth)
+                
 
             self.switch(self.action)
             self.loop_rate.sleep()

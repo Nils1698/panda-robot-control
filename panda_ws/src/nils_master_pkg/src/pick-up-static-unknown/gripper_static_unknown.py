@@ -51,32 +51,32 @@ class GripperStaticUnknown(object):
   '''
   def switch(self, lang):
     toc = time.perf_counter()
-
+    #print(toc - self.tic)
     #Ready
     if lang == "Are you ready?" and not self.initialized:
       self.send("init\n")
       time.sleep(0.01)
       self.send("sub-clear\n")
+      time.sleep(0.01)
+      self.send("sub S1 force all\n")
+      time.sleep(0.01)
+      self.send("sub S2 force all\n")
+      time.sleep(0.01)
+      self.send("pub-on\n")
       self.initialized = True
       self.msg2Controller = "Ready!"
     else:
       #Ready to grasp
       if lang == "Ready to grasp" and self.gripperOpen:
-        self.send("sub S1 force all\n")
-        time.sleep(0.01)
-        self.send("sub S2 force all\n")
-        time.sleep(0.01)
-        self.send("pub-on\n")
         time.sleep(0.01)
         self.send("grip 2\n")
+        time.sleep(2)
         self.tic = time.perf_counter()
-        time.sleep(3)
         self.gripperOpen = False
         self.getData = True
 
       elif self.objAttachedSys and not self.gripperOpen:
         self.msg2Controller = "Object Grasped"
-
       if toc - self.tic > 20 and not self.gripperOpen and lang == "Ready to grasp":
         rospy.logwarn("No object found.")
         self.msg2Controller = "Object lost"
@@ -115,7 +115,7 @@ class GripperStaticUnknown(object):
       else:
         self.measurements = self.last_line.replace("\n","").split(" ")[:-3]
         self.isObjAttached(self.measurements)
-        rospy.loginfo(self.measurements)
+        print(self.measurements)
         try:
           serialString = self.serial_port.readline()
           if(serialString==b''): # time out
@@ -129,6 +129,8 @@ class GripperStaticUnknown(object):
 
         except serial.SerialException:
           print("SensorInterface - Lost conenction!")
+
+        #self.send("m pos\n")
           
   '''
   Gives information if there is an object attached or not
@@ -150,21 +152,19 @@ class GripperStaticUnknown(object):
 
     self.objAttachedCount.append(objAttached)
 
-    if len(self.objAttachedCount) > 15:
+    if len(self.objAttachedCount) > 20:
       self.objAttachedCount.pop(0)
-
+    print(self.objAttachedCount)
     for obj in self.objAttachedCount:
       if obj == 0:
         countAttached += 1
       if obj == 1:
         countAttached -= 1
 
-    if countAttached >= 10:
+    if countAttached >= 15:
       self.objAttachedSys = False
-    elif countAttached <= -10:
+    if countAttached <= -15:
       self.objAttachedSys = True
-    else:
-      self.objAttachedSys = None
 
   '''
   Function to open the gripper
@@ -174,8 +174,7 @@ class GripperStaticUnknown(object):
     time.sleep(1)
     self.send("m open\n")
     time.sleep(1)
-    self.send("sub-clear\n")
-    time.sleep(0.01)
+    self.objAttachedCount = [0] * 20
     self.objAttachedCount = []
     self.objAttachedSys = None
     self.getData = False
