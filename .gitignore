@@ -4,3 +4,8 @@
 */.vscode/
 */__pycache__/
 */tmp/
+*.cmake
+*.make
+*.txt
+*.includecache
+*.log
