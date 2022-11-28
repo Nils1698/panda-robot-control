@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import rospy
-from std_msgs.msg import String
+from std_msgs.msg import String, Float64
 import time
 import re
 import serial
@@ -19,14 +19,15 @@ class GripperStaticUnknown(object):
     self.serial_port.reset_input_buffer()
 
     self.measurements = []
+    self.objAttachedCount = []
     self.initialized = False
     self.gripperOpen = True
     self.getData = False
     self.objAttachedSys = None
-    self.objAttachedCount = []
     self.msg2Controller = ""
     self.last_line = ""
     self.action = ""
+    self.msg2Gaussian = 0.0
     self.tic = 0
 
     #Subscribers
@@ -34,9 +35,10 @@ class GripperStaticUnknown(object):
     
     #Publishers
     self.pubM = rospy.Publisher('/gripper2controller', String, queue_size=1000)
+    self.pubGa = rospy.Publisher('/gripper2gaussian', Float64, queue_size=1000)
 
   def send(self, string):
-    print(f"Send: {string}")
+    #print(f"Send: {string}")
     try:
       self.serial_port.write(string.encode())
       return True
@@ -51,8 +53,8 @@ class GripperStaticUnknown(object):
   '''
   def switch(self, lang):
     toc = time.perf_counter()
-    #print(toc - self.tic)
-    #Ready
+
+    #Start ActionPlan
     if lang == "Are you ready?" and not self.initialized:
       self.send("init\n")
       time.sleep(0.01)
@@ -87,7 +89,7 @@ class GripperStaticUnknown(object):
         self.getData = False        
 
       #Lost object
-      if lang == "Object grasped" and not self.gripperOpen and self.objAttachedSys == False:
+      if lang == "Object grasped" and not self.gripperOpen and not self.objAttachedSys :
         rospy.logwarn("The object fell down")
         self.msg2Controller = "Object lost"
         self.getData = False
@@ -119,15 +121,15 @@ class GripperStaticUnknown(object):
       else:
         self.measurements = self.last_line.replace("\n","").split(" ")[:-3]
         self.isObjAttached(self.measurements)
-        print(self.measurements)
+        #print(self.measurements)
 
         if len(self.last_line) == 6 and bool(re.search(r'\d+\.\d+', self.last_line)):
           width = self.last_line.replace("\n","")
-          rospy.logwarn(f"The measured object width is {width}mm.")
-
+          self.msg2Gaussian = float(width)
+          
         try:
           serialString = self.serial_port.readline()
-          if(serialString==b''): # time out
+          if(serialString==b''):
             pass
           try:
             self.last_line = serialString.decode("utf-8").replace("\r","").replace("\t"," ")
@@ -138,12 +140,9 @@ class GripperStaticUnknown(object):
 
         except serial.SerialException:
           print("SensorInterface - Lost conenction!")
-        print(round(toc - self.tic,1))
         if round(toc - self.tic,1) == 10.1:
           self.send("m pos\n")
 
-        #self.send("m pos\n")
-          
   '''
   Gives information if there is an object attached or not
   '''
@@ -167,7 +166,7 @@ class GripperStaticUnknown(object):
     if len(self.objAttachedCount) > 20:
       self.objAttachedCount.pop(0)
 
-    print(self.objAttachedCount)
+    #print(self.objAttachedCount)
     for obj in self.objAttachedCount:
       if obj == 0:
         countAttached += 1
@@ -187,6 +186,7 @@ class GripperStaticUnknown(object):
   def openGripper(self):
     self.send("m open\n")
     time.sleep(2)
+    self.msg2Gaussian = 0.0
     self.objAttachedCount = [0] * 20
     self.objAttachedCount = []
     self.objAttachedSys = None
@@ -201,10 +201,13 @@ class GripperStaticUnknown(object):
   def callback(self, data):
     self.action = data.data
 
-
+  '''
+  Start function
+  '''
   def start(self):
       while not rospy.is_shutdown():
         self.pubM.publish(self.msg2Controller)
+        self.pubGa.publish(self.msg2Gaussian)
 
         self.switch(self.action)
         self.loop_rate.sleep()

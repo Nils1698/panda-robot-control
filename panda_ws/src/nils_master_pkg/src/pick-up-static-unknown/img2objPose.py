@@ -2,10 +2,15 @@
 import rospy
 import cv2
 import numpy as np
+import imutils
+import argparse
 from math import atan2, cos, sin, sqrt, pi
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 from std_msgs.msg import String, Float64
+from scipy.spatial import distance as dist
+from imutils import perspective
+from imutils import contours
 from geometry_msgs.msg import Twist 
 from gaussian import *
 
@@ -34,14 +39,14 @@ class Image2Object(object):
         self.pub = rospy.Publisher('/image_raw_but_better', Image,queue_size=10)
         self.pubM = rospy.Publisher('/camera2controller', String, queue_size=10)
         self.PubCoor = rospy.Publisher('/objCoordinates', Twist, queue_size=10)
-        self.PubWC = rospy.Publisher('/objWidthC', Float64, queue_size=10)
+        self.PubGa = rospy.Publisher('/camera2gaussian', Float64, queue_size=10)
 
         # Subscribers
         rospy.Subscriber("/image_raw",Image,self.callback)
         rospy.Subscriber("/controller2camera",String, self.callbackMsg)
 
         # Gaussian
-        self.pWidth = 0
+        self.pWidth = 0.0
         
     def callbackMsg(self, data):
         self.action = data.data
@@ -62,10 +67,15 @@ class Image2Object(object):
                 py = self.objsToGrabTransformedSend[0][1]
                 pz = self.objsToGrabTransformedSend[0][2]
                 oz = self.objsToGrabTransformedSend[0][4]
+                self.pWidth = self.objsToGrabTransformedSend[0][5]
+                
                 self.pubCoordinates(px, py, pz, 0.0, 0.0, oz, 0.0)
                 self.msg2Controller = "Coordinates are being published..."
 
-            elif lang == "Good job gripper... We did it!":
+            if lang == "Stop sending width":
+                self.pWidth = 0.0
+
+            if lang == "Good job gripper... We did it!":
                 self.msg2Controller = "Likewise!"
             
         self.pubM.publish(self.msg2Controller)
@@ -81,13 +91,6 @@ class Image2Object(object):
         self.msg.angular.y = 0.0
         self.msg.angular.z = oz
         self.PubCoor.publish(self.msg)
-
-    '''
-    Publish Coordinates
-    '''
-    def pubWidth(self, width):
-        
-        self.PubWC.publish(Float64(width))
 
     '''
     Draws the orientation of the object
@@ -214,6 +217,8 @@ class Image2Object(object):
                 elif cx > 850 and cx < 1050 and cy < 970 and cy > 900:
                     pass
                 else:
+                    dA,dB = self.getHeightAndWidth(contours[i])
+                    w = min(dA,dB)
                     cv2.drawContours(self.image, [contours[i]], -1, (255, 255, 255), 2)
                     cv2.circle(self.image, (cx, cy), 7, (255, 255, 255), -1)
                     cv2.putText(self.image, str(i), (cx - 50, cy),
@@ -226,7 +231,7 @@ class Image2Object(object):
                         # Find the orientation of each shape
                         oz = self.getOrientation(contours[i], self.image) + 1.5707
 
-                    objsToGrab.append((cx, cy, 0, i, oz))
+                    objsToGrab.append((cx, cy, 0, i, oz, w))
 
         objsToGrab.sort(key=lambda x: x[0], reverse=True)
         #print(f"There are {len(objsToGrab)} objects available to grab.")
@@ -247,28 +252,52 @@ class Image2Object(object):
                 yMeter = xPixel * (0.192/170)
                 zMeter = objsToGrab[i][2]
 
-                width = objsToGrab[i][4]*(1448/1230)
                 oz = objsToGrab[i][4]
+                wi = objsToGrab[i][5]*(1448/1230)
                 #if not self.printed:
                     #print(f'obj#= {i} x= {"{:.2f}".format(xMeter)} y= {"{:.2f}".format(yMeter)} z= {"{:.2f}".format(zMeter)} oz= {"{:.2f}".format(oz)}')
                     #self.printed = True
 
-                objsToGrabTransformed.append((xMeter, yMeter, zMeter, i, oz))
+                objsToGrabTransformed.append((xMeter, yMeter, zMeter, i, oz, wi))
 
             if self.iterations>11:
-               self.objsToGrabTransformedSend = objsToGrabTransformed
+                self.objsToGrabTransformedSend = objsToGrabTransformed
             #    self.pWidth = self.objsToGrabTransformedSend[0][4]
 
             self.iterations+=1
         
         self.image_message = self.br.cv2_to_imgmsg(self.image, encoding="passthrough")
 
+    '''
+    Finds the width of the object no matter the orientation
+    '''
+    def getHeightAndWidth(self, c):
+        #https://pyimagesearch.com/2016/03/28/measuring-size-of-objects-in-an-image-with-opencv/
+        box = cv2.minAreaRect(c)
+        box = cv2.cv.BoxPoints(box) if imutils.is_cv2() else cv2.boxPoints(box)
+        box = np.array(box, dtype="int")
+        box = perspective.order_points(box)   
+        (tl, tr, br, bl) = box
+        (tltrX, tltrY) = self.midpoint(tl, tr)
+        (blbrX, blbrY) = self.midpoint(bl, br)
+        (tlblX, tlblY) = self.midpoint(tl, bl)
+        (trbrX, trbrY) = self.midpoint(tr, br)
+        dA = dist.euclidean((tltrX, tltrY), (blbrX, blbrY))
+        dB = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
+        return dA, dB
+
+    '''
+    Calculates the middle of the object
+    '''
+    def midpoint(self, ptA, ptB):
+        return ((ptA[0] + ptB[0]) * 0.5, (ptA[1] + ptB[1]) * 0.5)
+
     def start(self):
         rospy.loginfo("Timing images")
         while not rospy.is_shutdown():
             if self.image_message is not None:
                 self.pub.publish(self.image_message)
-                self.pubWidth(self.pWidth)
+                self.PubGa.publish(self.pWidth)
                 
 
             self.switch(self.action)

@@ -63,5 +63,6 @@
     "typeinfo": "cpp",
     "variant": "cpp",
     "bit": "cpp"
-  }
+  },
+  "cmake.sourceDirectory": "/home/neurorobotic_student/panda-robot-control/panda_ws/src"
 }
