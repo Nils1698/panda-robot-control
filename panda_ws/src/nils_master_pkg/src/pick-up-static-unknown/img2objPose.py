@@ -212,8 +212,8 @@ class Image2Object(object):
                     pass
                 elif cv2.contourArea(contours[i]) > 7000 or cv2.contourArea(contours[i]) < 2000:
                     pass
-                elif h > 150:
-                    pass
+                #elif h > 150:
+                #    pass
                 elif cx > 850 and cx < 1050 and cy < 970 and cy > 900:
                     pass
                 else:
@@ -227,9 +227,9 @@ class Image2Object(object):
 
                     approx = cv2.approxPolyDP(contours[i],0.01*cv2.arcLength(contours[i],True),True)
                     #print(f"Object  {i} has a len(approx) of {len(approx)}.")
-                    if len(approx) <= 10:
+                    #if len(approx) <= 10:
                         # Find the orientation of each shape
-                        oz = self.getOrientation(contours[i], self.image) + 1.5707
+                    oz = self.getOrientation(contours[i], self.image) + 1.5707
 
                     objsToGrab.append((cx, cy, 0, i, oz, w))
 
@@ -237,7 +237,7 @@ class Image2Object(object):
         #print(f"There are {len(objsToGrab)} objects available to grab.")
         objVisible = len(objsToGrab)
         prevObjVisible = objVisible
-
+        
         #Transformation
         if objVisible == 0 or (objVisible != prevObjVisible):
             self.objsToGrabTransformedSend = []
@@ -259,7 +259,6 @@ class Image2Object(object):
                     #self.printed = True
 
                 objsToGrabTransformed.append((xMeter, yMeter, zMeter, i, oz, wi))
-
             if self.iterations>11:
                 self.objsToGrabTransformedSend = objsToGrabTransformed
             #    self.pWidth = self.objsToGrabTransformedSend[0][4]

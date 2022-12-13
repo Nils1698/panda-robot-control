@@ -71,7 +71,7 @@ class GripperStaticUnknown(object):
       #Ready to grasp
       if lang == "Ready to grasp" and self.gripperOpen:
         time.sleep(0.01)
-        self.send("grip 2\n")
+        self.send("grip 3\n")
         time.sleep(2)
         self.send("ctrl stop\n")
         time.sleep(0.1)

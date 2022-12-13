@@ -8,6 +8,8 @@
 #include <sstream>
 #include "std_msgs/String.h"
 #include <math.h>
+#include <stdio.h>
+#include <sys/time.h>
 
 class PosePubDetected
 {
@@ -29,6 +31,8 @@ class PosePubDetected
     public:
         int task = 0;
         int numObj = 0;
+
+        struct timeval begin, end;
 
         //Wanted x,y,z pose
         float wantX;
@@ -88,6 +92,7 @@ class PosePubDetected
                     pubCamera("Are you ready?");
                     myQuaternion.setRPY( 0, 0, M_PI);
                     if ((cameraToController == "Ready!") && (gripperToController == "Ready!") && (gaussianToController == "Ready!")) {
+                        gettimeofday(&begin, 0);
                         pubPose(0.2, 0.0, 0.7, myQuaternion.getX(), myQuaternion.getY(), myQuaternion.getZ(), myQuaternion.getW());
                         if(isPoseReached(currX, currY, currZ, 0.2, 0.0, 0.7))
                         {
@@ -106,7 +111,7 @@ class PosePubDetected
                         task = 1;
                     } 
                     else if (cameraToController == "Coordinates are being published..." && (gaussianToController == "Retrieved camera width estimate")) {
-                        ROS_WARN("Going to x=%f y=%f z=%f oz=%f", wantX, wantY, wantZ, wantOZ);
+                        ROS_WARN("Going to x=%.2f y=%.2f z=%.2f oz=%.2f", wantX, wantY, wantZ, wantOZ);
                         coorSaved = true;
                         myQuaternion.setRPY( 0, 0, wantOZ);
                         gox = wantX;
@@ -138,8 +143,8 @@ class PosePubDetected
                     }
                     break;
                 case 5:
-                    pubPose(gox, goy, 0.27, myQuaternion.getX(), myQuaternion.getY(), myQuaternion.getZ(), myQuaternion.getW());
-                    if(isPoseReached(currX, currY, currZ, gox, goy, 0.27))
+                    pubPose(gox, goy, 0.26, myQuaternion.getX(), myQuaternion.getY(), myQuaternion.getZ(), myQuaternion.getW());
+                    if(isPoseReached(currX, currY, currZ, gox, goy, 0.26))
                     {
                         ROS_INFO("Task 5 finished.");
                         task = 6;
@@ -189,6 +194,12 @@ class PosePubDetected
                     if (gripperToController == "Gripper opened") {
                         numObj = numObj + 1;
                         ROS_WARN("Object Number %d dropped off succesfully!", numObj);
+                        gettimeofday(&end, 0);
+                        long seconds = end.tv_sec - begin.tv_sec;
+                        long microseconds = end.tv_usec - begin.tv_usec;
+                        double elapsed = seconds + microseconds*1e-6;
+
+                        ROS_WARN("Time measured: %.3f seconds.\n", elapsed);
                         ROS_INFO("Task 10 finished.");
                         task = 11;
                     }
@@ -208,6 +219,7 @@ class PosePubDetected
                     if(isPoseReached(currX, currY, currZ, 0.7, 0.0, 0.5))
                     {
                         ROS_INFO("Task 11 finished.");
+                        gettimeofday(&begin, 0);
                         task = 12;
                     }
                     break;
@@ -326,7 +338,7 @@ class PosePubDetected
         void msgCallbackCoor(const geometry_msgs::Twist& msgCoor)
         {
             //Transformation to World coordinates
-            wantX = msgCoor.linear.x + 0.363;
+            wantX = msgCoor.linear.x + 0.361;
             wantY = (msgCoor.linear.y - 0.47) * 1.05;
             wantZ = msgCoor.linear.z + 0.27; 
             wantOZ = msgCoor.angular.z + M_PI;        
